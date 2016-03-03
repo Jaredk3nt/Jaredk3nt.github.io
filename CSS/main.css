@@ -1,6 +1,6 @@
 
 body {
-	font-family: 'Open+Sans', sans-serif;
+	font-family: sans-serif;
 }
 
 .banner-background {
@@ -16,6 +16,7 @@ body {
 }
 
 .banner h1 {
+	font: Roboto, sans-serif;
 	text-align: center;
 }
 
