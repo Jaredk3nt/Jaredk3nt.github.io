@@ -98,10 +98,9 @@ a {
 	margin: 0 auto;
 }
 
-.story-text h3{
+.header {
 	font: Roboto, sans-serif;
-	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 30px;
-	color: #262626;
+	font-size: 24px;
+	color: #454545;
 }
