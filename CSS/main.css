@@ -39,9 +39,10 @@ a {
 }
 
 .banner-background {
+	margin-top: 39px;
 	width: 100%;
 	height: auto;
-	background: url(../resources/hero.png) no-repeat;
+	background: color #6CA6CD;
 }
 
 .banner {
