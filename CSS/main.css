@@ -39,6 +39,7 @@ a {
 }
 
 .banner-background {
+	margin: 0 auto;
 	margin-top: 39px;
 	width: 760px;
 	height: auto;
