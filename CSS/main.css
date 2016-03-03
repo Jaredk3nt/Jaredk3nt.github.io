@@ -1,7 +1,6 @@
 
 .body {
-	font: Arial, Helvetica, sans-serif;
-
+	font-family: 'Open+Sans', sans-serif;
 }
 
 .banner-background {
@@ -28,8 +27,8 @@
 .portfolio {
 	margin: 0 auto;
 	padding: 10px;
-	width: 100px;
-	height: 50px;
+	max-width: 200px;
+	max-height: 100px;
 }
 
 .icon {
