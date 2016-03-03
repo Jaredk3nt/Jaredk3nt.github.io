@@ -3,6 +3,35 @@ body {
 	font-family: sans-serif;
 }
 
+.head-bar {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 48px;
+	background-color: #fff;
+	z-index: 100;
+}
+
+.menu {
+	margin: 0 auto;
+	max-width: 760px;
+	padding: 0 30px;
+}
+
+.menu-first {
+	padding-left: 0;
+}
+
+.menu-item {
+	float: left;
+	color:  #262626;
+	text-transform: uppercase;
+	font: Roboto, sans-serif;
+	font-size: 11px;
+	letter-spacing: 2px;
+	padding: 19px 12px 0 12px;
+}
+
 .banner-background {
 	width: 100%;
 	height: auto;
@@ -24,17 +53,5 @@ body {
 	margin: 0 auto;
 	width: 200px;
 	height: 200px;
-}
-
-.portfolio {
-	margin: 0 auto;
-	padding: 10px;
-	max-width: 200px;
-	max-height: 100px;
-}
-
-.icon {
-	width: 50px;
-	height: 50px;
 }
 
