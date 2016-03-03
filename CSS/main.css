@@ -40,7 +40,6 @@ a {
 
 .menu-item:hover {
 	color: #202020;
-	font-size: 12px;
 }
 
 .banner-background {
@@ -63,6 +62,7 @@ a {
 	font-size: 36px;
 	color: #fff;
 	text-align: center;
+	letter-spacing: 4px;
 }
 
 .slogan {
@@ -70,6 +70,7 @@ a {
 	font-size: 16px;
 	color: #fff;
 	text-align: center;
+	margin-top: 10px;
 }
 
 .logo-div {
