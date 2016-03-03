@@ -14,19 +14,19 @@
 	text-align: center;
 }
 
-.logo {
+.logo-div {
 	margin: 0 auto;
 	width: 200px;
 	height: 200px;
-}
-
-.icon{
-
-	width: 100px;
-	height: 100px;
 }
 
 .portfolio {
 	margin: 0 auto;
 	padding: 10px;
 }
+
+.icon {
+	width: 100px;
+	height: 100px;
+}
+
