@@ -42,6 +42,11 @@ a {
 	color: #202020;
 }
 
+.menu-logo {
+	width: 50px;
+	height: 50px;
+}
+
 .banner-background {
 	margin: 0 auto;
 	margin-top: 39px;
