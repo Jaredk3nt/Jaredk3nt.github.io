@@ -129,6 +129,8 @@ h3 {
 .contact {
 	color: #fff;
 	margin: 0 auto;
+	max-width: 760px;
+	padding: 50px;
 }
 
 .contact-text {
