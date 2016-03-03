@@ -64,7 +64,7 @@ h3 {
 .banner-background {
 	margin: 0 auto;
 	margin-top: 50px;
-	width: 760px;
+	width: 100%;
 	height: auto;
 	background-color: #303030;
 	background-size: cover;
@@ -73,7 +73,7 @@ h3 {
 .banner {
 	margin: 0 auto;
 	max-width: 760px;
-	padding: 30px;
+	padding: 50px;
 }
 
 .name {
@@ -102,9 +102,17 @@ h3 {
 	font-size: 16px;
 	max-width: 660px;
 	margin: 0 auto;
+	font-weight: lighter;
+	color: #333;
 }
 
 .story-text {
 	max-width: 760px;
 	margin: 0 auto;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	background: #262626;
 }
