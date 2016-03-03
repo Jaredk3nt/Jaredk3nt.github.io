@@ -87,3 +87,12 @@ a {
 	height: 200px;
 }
 
+.text {
+	padding-top: 15px;
+	font-size: 11px;
+}
+
+.story-text {
+	max-width: 760px;
+	margin: 0 auto;
+}
