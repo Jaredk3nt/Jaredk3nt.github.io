@@ -38,6 +38,11 @@ a {
 	height: 35px;
 }
 
+.menu-item:hover {
+	color: #202020;
+	font-size: 12px;
+}
+
 .banner-background {
 	margin: 0 auto;
 	margin-top: 39px;
