@@ -5,7 +5,6 @@
 }
 
 .banner {
-	display: block;
 	margin: 0 auto;
 	margin-left: auto;
 	margin-right: auto;
@@ -16,11 +15,13 @@
 }
 
 .logo {
+	margin: 0 auto;
 	width: 200px;
 	height: 200px;
 }
 
 .icon{
+
 	width: 100px;
 	height: 100px;
 }
