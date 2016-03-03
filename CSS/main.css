@@ -53,12 +53,17 @@ a {
 	padding: 30px;
 }
 
-.banner h1 {
+.name {
 	font: Roboto, sans-serif;
+	font-size: 36px;
+	color: #fff;
 	text-align: center;
 }
 
-.banner h2 {
+.slogan {
+	font: Roboto, sans-serif;
+	font-size: 30px;
+	color: #fff;
 	text-align: center;
 }
 
