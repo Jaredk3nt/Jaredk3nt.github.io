@@ -4,6 +4,7 @@ body {
 }
 
 .head-bar {
+	display: block;
 	position: fixed;
 	top: 0;
 	width: 100%;
