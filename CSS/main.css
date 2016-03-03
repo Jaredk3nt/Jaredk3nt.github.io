@@ -89,8 +89,8 @@ a {
 
 .text {
 	padding-top: 15px;
-	font-size: 11px;
-	max-width: 560px;
+	font-size: 13px;
+	max-width: 660px;
 	margin: 0 auto;
 }
 
@@ -99,8 +99,10 @@ a {
 	margin: 0 auto;
 }
 
-.story-text h2{
+.story-text h3{
 	font: Roboto, sans-serif;
 	text-transform: uppercase;
 	letter-spacing: 2px;
+	font-size: 30px;
+	color: #262626;
 }
