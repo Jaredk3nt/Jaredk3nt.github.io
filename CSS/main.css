@@ -55,7 +55,7 @@ a {
 	margin-top: 50px;
 	width: 760px;
 	height: auto;
-	background: url(../resources/hero.png) no-repeat center center;
+	background-color: #303030;
 	background-size: cover;
 }
 
