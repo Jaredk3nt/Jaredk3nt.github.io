@@ -7,6 +7,17 @@ a {
 	cursor: pointer;
 }
 
+h1, h2, h3, h4 {
+	color: #333;
+	text-transform: uppercase;
+}
+
+h3 {
+	font: 19px 'Open Sans', sans-serif;
+	font-weight: lighter;
+	letter-spacing: 2px;
+}
+
 .head-bar {
 	display: block;
 	position: fixed;
@@ -96,11 +107,4 @@ a {
 .story-text {
 	max-width: 760px;
 	margin: 0 auto;
-}
-
-.header {
-	font: Roboto, sans-serif;
-	letter-spacing: 2px;
-	font-size: 24px;
-	color: #454545;
 }
