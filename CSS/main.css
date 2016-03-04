@@ -117,6 +117,10 @@ h3 {
 	margin: 0 auto;
 }
 
+.story-text h2 {
+	text-align: center;
+}
+
 #develop {
 	display: inline-block;
 	text-align: left;
