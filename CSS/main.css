@@ -24,6 +24,10 @@ h3 {
 	font-weight: lighter;
 }
 
+.wrapper {
+	position: relative;
+}
+
 .head-bar {
 	display: block;
 	position: fixed;
@@ -131,6 +135,10 @@ h3 {
 	margin: 0 auto;
 	max-width: 760px;
 	padding: 50px;
+}
+
+.contact h2 {
+	color: #808080;
 }
 
 .contact-text {
