@@ -1,4 +1,4 @@
-
+/* Main CSS for built in tags */
 body {
 	font-family: sans-serif;
 }
@@ -30,6 +30,7 @@ h3 {
 	height: 100%;
 }
 
+/* CSS for head bar */
 .head-bar {
 	position: fixed;
 	top: 0;
@@ -69,11 +70,12 @@ h3 {
 .menu-logo {
 	float: left;
 	margin: 0 auto;
-	padding: 7px;
+	padding: 5px;
 	width: 32px;
 	height: 32px;
 }
 
+/* CSS for the main banner*/
 .banner-background {
 	margin: 0;
 	margin-top: 50px;
@@ -114,6 +116,7 @@ h3 {
 	padding: 25px;
 }
 
+/* CSS for cover letter portion*/
 .story-text {
 	max-width: 760px;
 	margin: 0 auto;
@@ -144,7 +147,61 @@ h3 {
 	color: #333;
 }
 
+/* CSS for language proficiency portion */
+.language-div {
+	margin: 100px auto;
+	width: 130px;
+}
 
+@color: #fff
+
+.circle {
+	position: relative;
+	overflow: hidden;
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	background: #fff;
+	box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #fff;
+}
+
+.language {
+	position: absolute;
+	top: 38px;
+	left: 30px
+	width: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	font: 18px Roboto, sans-serif;
+	transition: opacity .2s ease;
+}
+
+&:hover {
+	animation: border .4s ease 1 forwards;
+	cursor: none;
+
+	.circle {
+		opacity: 0;
+	}
+}
+
+@keyframes border {
+	0% {
+       box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+     }
+     25% {
+       box-shadow: 0 -125px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+     }
+     50% {
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+     }
+     75% {
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+     }
+     100% {
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 120px 40px 0 2px @color, 0 0 0 2px #262626;
+     }
+}
 
 /* footer css
 
