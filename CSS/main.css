@@ -26,6 +26,8 @@ h3 {
 
 .wrapper {
 	position: relative;
+	height: auto;
+	height: 100%;
 }
 
 .head-bar {
