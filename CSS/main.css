@@ -164,27 +164,29 @@ h3 {
 	background: #E94E3D;
 	box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px  #E94E3D;
 
-	.language {
-		position: absolute;
-		top: 38px;
-		left: 30px
-		width: 60px;
-		text-align: center;
-		text-transform: uppercase;
-		font: 18px sans-serif;
-		transition: opacity .2s ease;
-	}
 
-	&:hover {
-		animation: border .4s ease 1 forwards;
-		cursor: none;
 
-		.language {
-			opacity: 0;
-		}
-	}
 }
 
+.language {
+	position: absolute;
+	top: 38px;
+	left: 30px
+	width: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	font: 18px sans-serif;
+	transition: opacity .2s ease;
+}
+
+.circle:hover {
+	animation: border .4s ease 1 forwards;
+	cursor: none;
+
+	.language {
+		opacity: 0;
+	}
+}
 
 
 @keyframes border {
