@@ -44,6 +44,7 @@ h3 {
 	margin: 0 auto;
 	max-width: 760px;
 	padding: 0 30px;
+	margin-bottom: 19px;
 }
 
 .menu-first {
@@ -119,13 +120,15 @@ h3 {
 #develop {
 	display: inline-block;
 	text-align: left;
-	max-width: 380px;
+	max-width: 300px;
+	padding: 15px;
 }
 
 #design {
 	display: inline-block;
 	text-align: right;
-	max-width: 380px;
+	max-width: 300px;
+	padding: 15px;
 }
 
 .text {
