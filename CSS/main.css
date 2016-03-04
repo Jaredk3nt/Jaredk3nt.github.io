@@ -194,16 +194,16 @@ h3 {
        box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px  #E94E3D;
      }
      25% {
-       box-shadow: 0 -125px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #fff;
+       box-shadow: 0 -125px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
      }
      50% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #fff;
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
      }
      75% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #fff;
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
      }
      100% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 120px 40px 0 2px @color, 0 0 0 2px #fff;
+       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 120px 40px 0 2px @color, 0 0 0 2px #262626;
      }
 }
 
