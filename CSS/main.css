@@ -31,13 +31,13 @@ h3 {
 }
 
 .head-bar {
-	display: block;
 	position: fixed;
 	top: 0;
 	width: 100%;
 	height: 38px;
 	background-color: #fff;
 	z-index: 100;
+	padding: 10px;
 }
 
 .menu {
@@ -58,7 +58,7 @@ h3 {
 	font: Roboto, sans-serif;
 	font-size: 11px;
 	letter-spacing: 2px;
-	padding: 19px 12px 0 12px;
+	padding: 12px 12px 0 12px;
 	height: 35px;
 }
 
@@ -102,6 +102,8 @@ h3 {
 	font-size: 16px;
 	color: #fff;
 	text-align: center;
+	font-weight: lighter;
+	letter-spacing: 4px;
 	margin-top: 10px;
 }
 
