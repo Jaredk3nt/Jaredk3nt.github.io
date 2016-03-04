@@ -180,7 +180,7 @@ h3 {
 	animation: border .4s ease 1 forwards;
 	cursor: none;
 
-	.circle {
+	.language {
 		opacity: 0;
 	}
 }
