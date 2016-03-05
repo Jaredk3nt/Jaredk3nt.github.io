@@ -157,6 +157,7 @@ h3 {
 .circle {
 	width: 150px;
 	height: 150px;
+	vertical-align: middle;
 	border-radius: 50%;
 	border: 3px solid #262626;
 	background: #fff;
