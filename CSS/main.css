@@ -56,7 +56,7 @@ h3 {
 	float: left;
 	color: #454545;
 	text-transform: uppercase;
-	font: Roboto, sans-serif;
+	font: "Roboto", sans-serif;
 	font-size: 11px;
 	letter-spacing: 2px;
 	padding: 12px 12px 0 12px;
@@ -153,7 +153,6 @@ h3 {
 	width: 130px;
 }
 
-@color:  #E94E3D;
 
 .circle {
 	position: relative;
@@ -162,10 +161,7 @@ h3 {
 	height: 120px;
 	border-radius: 50%;
 	background: #E94E3D;
-	box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px  #E94E3D;
-
-
-
+	box-shadow: 60px -60px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #E94E3D;
 }
 
 .language {
@@ -191,19 +187,19 @@ h3 {
 
 @keyframes border {
 	0% {
-       box-shadow: 60px -60px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px  #E94E3D;
+       box-shadow: 60px -60px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px  #E94E3D;
      }
      25% {
-       box-shadow: 0 -125px 0 2px @color, -60px -60px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+       box-shadow: 0 -125px 0 2px #E94E3D, -60px -60px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #262626;
      }
      50% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, -60px 60px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+       box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, -60px 60px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #262626;
      }
      75% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 60px 60px 0 2px @color, 0 0 0 2px #262626;
+       box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, 0px 125px 0 2px #E94E3D, 60px 60px 0 2px #E94E3D, 0 0 0 2px #262626;
      }
      100% {
-       box-shadow: 0 -125px 0 2px @color, -125px 0px 0 2px @color, 0px 125px 0 2px @color, 120px 40px 0 2px @color, 0 0 0 2px #262626;
+       box-shadow: 0 -125px 0 2px #E94E3D, -125px 0px 0 2px #E94E3D, 0px 125px 0 2px #E94E3D, 120px 40px 0 2px #E94E3D, 0 0 0 2px #262626;
      }
 }
 
