@@ -151,12 +151,12 @@ h3 {
 .language-div {
 	margin: 100px auto;
 	width: 130px;
+	display: inline-block;
 }
 
 .circle {
 	width: 150px;
 	height: 150px;
-	float:left;
 	border-radius: 50%;
 	border: 3px solid #262626;
 	background: #fff;
