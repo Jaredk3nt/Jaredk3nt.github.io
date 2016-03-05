@@ -153,7 +153,29 @@ h3 {
 	width: 130px;
 }
 
+.circle {
+	width: 120px;
+	height: 120px;
+	border-radius: 50%;
+	border: 3px solid #262626;
+	background: #fff;
+}
 
+.language {
+	position: absolute;
+	top: 38px;
+	left: 30px;
+	width: 60px;
+	text-align: center;
+	text-transform: uppercase;
+	font: 18px sans-serif;
+}
+
+
+
+
+
+/* UNUSED CODE
 .circle {
 	display: inline-block;
 	float: left;
@@ -208,7 +230,7 @@ h3 {
      }
 }
 
-/* footer css
+footer css
 
 .footer {
 	position: absolute;
