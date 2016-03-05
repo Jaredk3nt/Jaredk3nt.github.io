@@ -154,8 +154,9 @@ h3 {
 }
 
 .circle {
-	width: 120px;
-	height: 120px;
+	width: 150px;
+	height: 150px;
+	float:left;
 	border-radius: 50%;
 	border: 3px solid #262626;
 	background: #fff;
@@ -169,6 +170,7 @@ h3 {
 	text-align: center;
 	text-transform: uppercase;
 	font: 18px sans-serif;
+	color: #333;
 }
 
 
