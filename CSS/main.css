@@ -155,7 +155,7 @@ h3 {
 
 
 .circle {
-	display: inline-block;
+	display: inline;
 	position: relative;
 	overflow: hidden;
 	width: 120px;
@@ -177,8 +177,11 @@ h3 {
 }
 
 .language-div:hover {
-	animation: border .4s ease 1 forwards;
 	cursor: none;
+
+	.circle {
+		animation: border .4s ease 1 forwards;
+	}
 
 	.language {
 		opacity: 0;
