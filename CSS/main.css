@@ -155,7 +155,8 @@ h3 {
 
 
 .circle {
-	display: inline;
+	display: inline-block;
+	float: left;
 	position: relative;
 	overflow: hidden;
 	width: 120px;
