@@ -175,7 +175,7 @@ h3 {
 	transition: opacity .2s ease;
 }
 
-.circle:hover {
+.language-div:hover {
 	animation: border .4s ease 1 forwards;
 	cursor: none;
 
