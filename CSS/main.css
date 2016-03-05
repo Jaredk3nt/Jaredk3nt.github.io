@@ -147,37 +147,6 @@ h3 {
 	color: #333;
 }
 
-/* CSS for language proficiency portion */
-.language-div {
-	margin: 100px auto;
-	width: 130px;
-	display: inline-block;
-}
-
-.circle {
-	width: 150px;
-	height: 150px;
-	vertical-align: middle;
-	border-radius: 50%;
-	border: 3px solid #262626;
-	background: #fff;
-}
-
-.language {
-	position: absolute;
-	top: 38px;
-	left: 30px;
-	width: 60px;
-	text-align: center;
-	text-transform: uppercase;
-	font: 18px sans-serif;
-	color: #333;
-}
-
-
-
-
-
 /* UNUSED CODE
 .circle {
 	display: inline-block;
@@ -233,30 +202,4 @@ h3 {
      }
 }
 
-footer css
-
-.footer {
-	position: absolute;
-	bottom: 0;
-	background: #262626;
-	width: 100%;
-	margin: 0;
-}
-
-.contact {
-	color: #fff;
-	margin: 0 auto;
-	max-width: 760px;
-	padding: 50px;
-}
-
-.contact h2 {
-	color: #808080;
-}
-
-.contact-text {
-	color: #fff;
-	font: 16px Roboto, sans-serif;
-	font-style: italic;
-}
 */
