@@ -21,9 +21,11 @@
 .portfolio-elem img {
 	width: 480px;
 	height: auto;
+	z-index: 1;
 }
 
 .title {
+	z-index: 2;
 	visibility: hidden;
 	display: none;
 	position: absolute;
