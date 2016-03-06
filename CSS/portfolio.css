@@ -5,11 +5,11 @@
 	background-color: #efefef;
 	padding: 0px;
 	height: auto;
+	text-align: center;
 }
 
 .p-grid-list li {
 	display: inline-block;
-
 	margin: 5px 5px 0 5px;
 	vertical-align: top;
 	height: 250px;
