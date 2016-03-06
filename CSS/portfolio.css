@@ -22,3 +22,15 @@
 	display: block;
 	position: relative;
 }
+
+.title {
+	color: #fff;
+	background: #262626;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.p-grid-list li:hover .title {
+	visibility: visible;
+	opacity: 1;
+}
