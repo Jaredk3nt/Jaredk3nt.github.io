@@ -1,0 +1,26 @@
+.list-wrapper {
+
+}
+
+#portfolio-list {
+	margin-right: -2px;
+	margin-left: -2px;
+	background-color: #efefef;
+}
+
+#portfolio-list li {
+	display: inline-block;
+	max-width: 430px;
+	text-align: left;
+
+	:hover {
+
+	}
+}
+
+.title {
+	display: none;
+	position: absolute;
+	background-color: #262626;
+	margin: 0;
+}
