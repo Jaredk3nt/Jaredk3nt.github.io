@@ -2,14 +2,20 @@
 #portfolio-list {
 	margin-right: -2px;
 	margin-left: -2px;
+	margin-top: 58px;
 	background-color: #efefef;
 }
 
 #portfolio-list li {
 	display: inline-block;
 	width: 25%;
-	max-width: 430px;
 	text-align: left;
+}
+
+.portfolio-elem {
+	max-width: 480px;
+	width: 25%;
+	display: inline-block;
 }
 
 .title {
