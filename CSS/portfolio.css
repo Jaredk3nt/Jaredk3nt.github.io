@@ -24,12 +24,15 @@
 }
 
 .title {
+	p
 	color: #fff;
 	background: #262626;
 	visibility: hidden;
 	opacity: 0;
 }
-
+.p-grid-list li:hover {
+	content: "test 1";
+}
 .p-grid-list li:hover .title {
 	visibility: visible;
 	opacity: 1;
