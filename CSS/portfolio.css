@@ -36,5 +36,5 @@
 }
 
 .title:hover{
-	visibility: visible;
+	display: inline-block;
 }
