@@ -1,5 +1,4 @@
-
-#portfolio-list {
+.p-grid-list {
 	margin-right: -2px;
 	margin-left: -2px;
 	margin-top: 58px;
@@ -7,34 +6,18 @@
 	padding: 0px;
 }
 
-#portfolio-list li {
+.p-grid-list li {
 	display: inline-block;
-	width: 25%;
-	text-align: left;
+	
+	margin: 5px 5px 0 5px;
+	vertical-align: top;
+	height: 250px;
 }
 
-.portfolio-elem {
-	width: 480px;
-	width: 25%;
-	height: auto;
-	display: inline-block;
-}
-
-.portfolio-elem img {
-	width: 480px;
-	height: auto;
-	z-index: 1;
-}
-
-.title {
-	z-index: 2;
-	visibility: hidden;
-	display: none;
-	position: absolute;
-	background-color: #262626;
-	margin: 0;
-}
-
-.title:hover{
-	display: inline-block;
+.p-grid-list li > a,
+.p-grid-list li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
 }
