@@ -7,17 +7,19 @@
 
 #portfolio-list li {
 	display: inline-block;
+	width: 25%;
 	max-width: 430px;
 	text-align: left;
-
-	:hover {
-
-	}
 }
 
 .title {
+	visibility: hidden;
 	display: none;
 	position: absolute;
 	background-color: #262626;
 	margin: 0;
+}
+
+.title:hover{
+	visibility: visible;
 }
