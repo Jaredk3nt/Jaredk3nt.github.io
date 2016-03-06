@@ -13,9 +13,11 @@
 }
 
 .portfolio-elem {
-	max-width: 480px;
+	width: 480px;
 	width: 25%;
+	height: auto;
 	display: inline-block;
+	margin: 1px;
 }
 
 .portfolio-elem img {
