@@ -18,6 +18,11 @@
 	display: inline-block;
 }
 
+.portfolio-elem img {
+	width: 25%;
+	height: auto;
+}
+
 .title {
 	visibility: hidden;
 	display: none;
