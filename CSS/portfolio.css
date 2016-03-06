@@ -24,16 +24,14 @@
 }
 
 .title {
-	p
+	position: absolute;
 	color: #fff;
 	background: #262626;
-	visibility: hidden;
+	display: none;
 	opacity: 0;
 }
-.p-grid-list li:hover {
-	content: "test 1";
-}
+
 .p-grid-list li:hover .title {
-	visibility: visible;
+	display: block;
 	opacity: 1;
 }
