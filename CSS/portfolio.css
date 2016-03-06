@@ -4,6 +4,7 @@
 	margin-left: -2px;
 	margin-top: 58px;
 	background-color: #efefef;
+	padding: 0px;
 }
 
 #portfolio-list li {
@@ -17,7 +18,6 @@
 	width: 25%;
 	height: auto;
 	display: inline-block;
-	margin: 1px;
 }
 
 .portfolio-elem img {
