@@ -33,6 +33,11 @@ h3 {
 	.socialbar {
 		display: none;
 	}
+
+	.menu {
+		float: left;
+		width: 100%;
+	}
 }
 
 .wrapper {
