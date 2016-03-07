@@ -41,6 +41,15 @@ h3 {
 	}
 }
 
+@media (max-width: 760px){
+	.name {
+		font-size: 30px;
+	}
+	.slogan {
+		font-size: 12px;
+	}
+}
+
 .wrapper {
 	position: relative;
 	height: auto;
