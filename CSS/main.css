@@ -24,6 +24,17 @@ h3 {
 	font-weight: lighter;
 }
 
+/* css for mobile devices, clean up the menu bar*/
+@media (max-width: 980px){
+	.menu-logo{
+		display: none;
+	}
+
+	.socialbar {
+		display: none;
+	}
+}
+
 .wrapper {
 	position: relative;
 	height: auto;
