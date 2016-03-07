@@ -16,25 +16,24 @@
 	z-index: 1;
 }
 
-.p-grid-list li > a,
-.p-grid-list li > a img {
-	border: none;
-	outline: none;
-	display: block;
-	position: relative;
-}
-
-
 .title {
 	position: absolute;
 	color: #fff;
 	background: #262626;
 	display: none;
 	opacity: 0;
-	z-index: 2;
+	z-index: 99;
 }
 
 .p-grid-list li:hover .title {
 	display: block;
 	opacity: 1;
+}
+
+.p-grid-list li > a,
+.p-grid-list li > a img {
+	border: none;
+	outline: none;
+	display: block;
+	position: relative;
 }
