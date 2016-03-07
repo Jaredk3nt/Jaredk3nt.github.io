@@ -37,6 +37,7 @@ h3 {
 	.menu {
 		float: left;
 		width: 100%;
+		padding: 0;
 	}
 }
 
