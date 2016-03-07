@@ -13,6 +13,7 @@
 	margin: 0;
 	vertical-align: top;
 	height: 250px;
+	z-index: 1;
 }
 
 .p-grid-list li > a,
@@ -23,12 +24,6 @@
 	position: relative;
 }
 
-.imgContainer {
-	position: relative;
-	display: table;
-	height: 250px;
-	width: 250px;
-}
 
 .title {
 	position: absolute;
@@ -36,6 +31,7 @@
 	background: #262626;
 	display: none;
 	opacity: 0;
+	z-index: 2;
 }
 
 .p-grid-list li:hover .title {
