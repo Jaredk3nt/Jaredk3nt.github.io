@@ -14,11 +14,15 @@
   vertical-align: top;
 }
 
-.skill-title {
+.s-text {
   position: absolute;
   margin: auto;
   top: 75px; left: 0; right: 0; bottom: 0;
   height: 100px;
+  text-align: center;
+}
+
+.skill-title {
   font: 16px 'Open Sans', sans-serif;
   text-transform: uppercase;
   text-align: center;
@@ -28,7 +32,8 @@
 }
 
 .skill-lv {
+  font: 12px 'Open Sans', sans-serif;
   text-transform: uppercase;
   font-style: lighter;
-  font: 12px 'Open Sans', sans-serif;
+  text-align: center; 
 }
