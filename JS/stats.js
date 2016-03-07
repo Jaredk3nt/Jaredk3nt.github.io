@@ -16,5 +16,11 @@ var data = [
 
 var options = {};
 
-var ctx = document.getElementById("champChart").getContext("2d");
-var champChart = new Chart(ctx).Doughnut(data,options);
+var showGraph = function() {
+  var ctx = document.getElementById("champChart").getContext("2d");
+  var champChart = new Chart(ctx).Doughnut(data,options);
+}
+
+window.onload = function() {
+  showGraph();
+}
