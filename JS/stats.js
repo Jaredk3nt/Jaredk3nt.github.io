@@ -23,7 +23,10 @@ var data2 = [
   }
 ];
 
-var options = {};
+var options = {
+  percentageInnerCutout : 80,
+  animateScale : true
+};
 
 var showGraph = function() {
   var ctx = document.getElementById("python").getContext("2d");
