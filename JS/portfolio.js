@@ -28,7 +28,7 @@ var setTitleSizes = function() {
     var width = img[i].width;
     var wpx = width.toString() + "px";
     console.log(wpx);
-    text[i].style.width = wpx;
+    text[i].style.width = wpx;    
   }
 }
 
