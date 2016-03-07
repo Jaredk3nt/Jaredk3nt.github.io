@@ -14,11 +14,12 @@
 }
 
 .skill-title {
+  position: absolute;
   font: 16px 'Open Sans', sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
 
 .skillGraph {
-  display: absolute;
+  position: relative;
 }
