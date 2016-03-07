@@ -3,7 +3,7 @@ var irelia = new Irelia({
   secure:true,
   host: 'prod.api.pvp.net',
   path: '/api/lol/',
-  key: '',
+  key: 'aa751b44-85aa-447b-ad09-6b004dcf0e8c',
   debug:true
 });
 
