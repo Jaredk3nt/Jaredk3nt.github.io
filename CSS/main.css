@@ -77,6 +77,7 @@ h3 {
 
 .socialbar {
 	float: right;
+	max-height: 25px;
 }
 
 .social-icon {
