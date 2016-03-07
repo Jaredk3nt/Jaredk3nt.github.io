@@ -30,3 +30,7 @@ var setTitleSizes = function() {
     text.style.width = wpx;
   }
 }
+
+window.onload =function(){
+  setTitleSizes();
+}
