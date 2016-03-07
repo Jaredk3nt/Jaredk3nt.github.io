@@ -3,7 +3,7 @@
   margin-top: 58px;
   margin: 58px auto 0 auto;
   height: auto;
-  background-color: #efefef;
+  background-color: #fff;
 }
 
 .graph {
@@ -25,4 +25,10 @@
 }
 
 .skillGraph {
+}
+
+.skill-lv {
+  text-transform: uppercase;
+  font-style: lighter;
+  font: 12px 'Open Sans', sans-serif;
 }
