@@ -3,11 +3,29 @@ var irelia = new Irelia({
   secure:true,
   host: 'prod.api.pvp.net',
   path: '/api/lol/',
-  key: 'aa751b44-85aa-447b-ad09-6b004dcf0e8c',
+  key: '',
   debug:true
 });
 
+var data = [
+  {
+    value:75,
+    color:"#262626",
+    highlight: "#505050",
+    lable:""
+  },
+  {
+    value:25,
+    color:"#ffffff",
+    highlight: "#ffffff",
+    lable:""
+  }
+];
 
+var options = {};
+
+var ctx = document.getElementById("champChart").getContext("2d");
+var champChart = new Chart(ctx).Doughnut(data,options);
 
 irelia.getChampions('na', true, function(err, summoner){
   if(err){
