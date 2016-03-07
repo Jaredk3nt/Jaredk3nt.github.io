@@ -1,7 +1,6 @@
 #skills {
   text-align: center;
-  margin-top: 58px;
-  margin: 58px auto 0 auto;
+  margin: 100px auto 0 auto;
   height: auto;
   background-color: #fff;
 }
@@ -17,7 +16,7 @@
 .s-text {
   position: absolute;
   margin: auto;
-  top: 75px; left: 0; right: 0; bottom: 0;
+  top: 60px; left: 0; right: 0; bottom: 0;
   height: 100px;
   text-align: center;
 }
@@ -36,4 +35,5 @@
   text-transform: uppercase;
   font-style: lighter;
   text-align: center; 
+  color: #808080;
 }
