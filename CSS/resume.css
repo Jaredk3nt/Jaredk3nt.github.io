@@ -1,4 +1,4 @@
-.skills {
+#skills {
   text-align: center;
   margin-top: 58px;
   margin: 0 auto;
@@ -6,8 +6,19 @@
   background-color: #efefef;
 }
 
-.skillGraph {
+.graph {
   display: inline-block;
+  text-align: center;
   margin: 10px;
   vertical-align: top;
+}
+
+.skill-title {
+  font: 16px 'Open Sans', sans-serif;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.skillGraph {
+  display: absolute;
 }
