@@ -17,8 +17,10 @@ var data = [
 var options = {};
 
 var showGraph = function() {
-  var ctx = document.getElementById("champChart").getContext("2d");
-  var champChart = new Chart(ctx).Doughnut(data,options);
+  var ctx = document.getElementById("python").getContext("2d");
+  var pyChart = new Chart(ctx).Doughnut(data,options);
+  ctx = document.getElementById("java").getContext("2d");
+  var javaChart = new Chart(ctx).Doughnut(data,options);
 }
 
 window.onload = function() {
