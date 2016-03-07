@@ -7,6 +7,7 @@
 }
 
 .graph {
+  position: relative;
   display: inline-block;
   text-align: center;
   margin: 10px;
@@ -15,11 +16,16 @@
 
 .skill-title {
   position: absolute;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
   font: 16px 'Open Sans', sans-serif;
   text-transform: uppercase;
   text-align: center;
 }
 
 .skillGraph {
-  position: relative;
 }
