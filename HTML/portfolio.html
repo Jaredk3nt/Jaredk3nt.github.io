@@ -13,6 +13,14 @@
 	<script src = "../JS/portfolio.js"></script>
 </head>
 <body>
+    <div id = "pModal" class = "portfolio_modal">
+        <div class = "modal_content">
+            <img id = "pImg">
+            <h2>Project Title</h2>
+            <p>Project detailed description within the modal</p>
+        </div>
+    </div>
+    
 	<div class = "head-bar">
 		<div class = "menu-logo">
 			<img src = "../resources/logo.svg" onerror = "this.src='logo.png'">
@@ -37,14 +45,7 @@
 			</div>
 		</div>
 	</div>
-    <div id = "pModal" class = "portfolio_modal">
-        <div class = "modal_content">
-            <span class = "close_modal" onclick = "close-action()">x</span>
-            <img id = "pImg">
-            <h2>Project Title</h2>
-            <p>Project detailed description within the modal</p>
-        </div>
-    </div>
+    
 	<ul id = "p-grid-list" class = "p-grid-list">
 		<li onclick = "modal_action(1)">
 			<div id = "cheatercheater-title" class = "title">Cheater Cheater</div>
