@@ -1,4 +1,12 @@
-var setTitleSizes = function() {
+var modal_action = function(x){
+    document.getElementById('pModal').style.display = "block";
+}
+
+var close_action = function(){
+    document.getElementById('pModal').style.display = "none"
+}
+
+var setTitleSizes = function(){
   var text = [];
   var img = [];
   /*
@@ -32,6 +40,14 @@ var setTitleSizes = function() {
   }
 }
 
+/* set the sizes for the title hovers on window load */
 window.onload =function(){
   setTitleSizes();
+}
+
+/* close onclick outside of the modal */
+window.onclick = function(event){
+    if (event.target == modal){
+        close_action();
+    }
 }
