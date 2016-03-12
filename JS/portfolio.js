@@ -1,18 +1,57 @@
-function Project(title, description, img_link){ 
+/* class for the project, to hold all pertanent information */
+function Project(title, description, img_link) { 
     this.title = title;
     this.description = description;
     this.img_link = img_link;
 }
 
-var cc = new Project("CheaterCheater", "Android mobile application I developed over the summer of 2015 to create all possible combinations of a Scrabble hand and show their values.", "../resources/projects/cc.png");
-
+/* open the modal and display the appropriate information */
 var modal_action = function (x) {
     var modal =  document.getElementById('pModal');
-    if (x === 1) {
-        document.getElementById('pTitle').innerHTML = cc.title;
-        document.getElementById('pImg').src = cc.img_link;
-        document.getElementById('pDescrip').innerHTML = cc.description;
+    var modal_content = document.getElementById('pContent');
+    var title = document.getElementById('pTitle');
+    var img = document.getElementById('pImg');
+    var descrip = document.getElementById('pDescrip');
+    
+    /* declaring projects here until I can get database space to hold data before pulling,
+    this is quite gross. */
+    var cc = new Project("CheaterCheater", "Android mobile application I developed over the summer of 2015 to create all possible combinations of a Scrabble hand and show their values.", "../resources/projects/cc.png");
+    
+    var steam = new Project("Steam Redesign", "Personal project, redesigning the clucky UI of the steam desktop application to a more modern interface", "../resources/projects/steam.png");
+    
+    var imdb = new Project("iMDB Redesign", "iMDB website redesign concept. Taking the outdated UI iMDB currently uses and transforming it into a simple material design.", "../resources/projects/imdb.png");
+    
+    var lol = new Project("League of Legends Champion Screen Redesign", "Taking a flat and modern approach to the champion shop screen on the League of Legends client", "../resources/projects/lol.png");
+    
+    /* switch over project options */
+    switch(x){
+        case 1:
+            title.innerHTML = cc.title;
+            img.src = cc.img_link;
+            descrip.innerHTML = cc.description;
+            break;
+        case 2:
+            title.innerHTML = steam.title;
+            img.src = steam.img_link;
+            descrip.innerHTML = steam.description;
+            break;
+        case 3:
+            title.innerHTML = imdb.title;
+            img.src = imdb.img_link;
+            descrip.innerHTML = imdb.description;
+            break;
+        case 4:
+            title.innerHTML = lol.title;
+            img.src = lol.img_link;
+            descrip.innerHTML = lol.description;
+            break;
+        default:
+            title.innerHTML = "Default Title";
+            img.src = steam.img_link;
+            descrip.innerHTML = "default description text";
     }
+
+    modal_content.style.height = img.height + 20;
     modal.style.display = "block";
 };
 
