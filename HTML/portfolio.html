@@ -13,7 +13,7 @@
 	<script src = "../JS/portfolio.js"></script>
 </head>
 <body>
-	<div class = "head-bar" style = "display: block">
+	<div class = "head-bar">
 		<div class = "menu-logo">
 			<img src = "../resources/logo.svg" onerror = "this.src='logo.png'">
 		</div>
@@ -39,7 +39,7 @@
 	</div>
     <div id = "pModal" class = "portfolio_modal">
         <div class = "modal_content">
-            <span class = "close_modal">x</span>
+            <span class = "close_modal" onclick = "close-action()">x</span>
             <img id = "pImg">
             <h2>Project Title</h2>
             <p>Project detailed description within the modal</p>
@@ -48,27 +48,20 @@
 	<ul id = "p-grid-list" class = "p-grid-list">
 		<li onclick = "modal_action(1)">
 			<div id = "cheatercheater-title" class = "title">Cheater Cheater</div>
-			<a href = "../HTML/projects/cheatercheater.html">
-				<img id = "cheatercheater-img" class = "portfolio-img" src = "../resources/projects/icons/cheatcheat.jpg"></img>
-			</a>
+            <img id = "cheatercheater-img" class = "portfolio-img" src = "../resources/projects/icons/cheatcheat.jpg"></img>
 		</li>
 		<li onclick = "modal_action(2)">
 			<div id = "steam-title" class = "title">Steam Client UI Redesign</div>
-			<a href = "../HTML/projects/steam.html">
-				<img id = "steam-img" class = "portfolio-img" src = "../resources/projects/icons/steam.jpg"></img>
+            <img id = "steam-img" class = "portfolio-img" src = "../resources/projects/icons/steam.jpg"></img>
 			</a>
 		</li>
 		<li onclick = "modal_action(3)">
 			<div id = "imdb-title" class = "title">IMDB web redesign</div>
-			<a href = "../HTML/projects/imdb.html">
 				<img id = "imdb-img" class = "portfolio-img" src = "../resources/projects/icons/imdb.jpg"></img>
-			</a>
 		</li>
 		<li onclick = "modal_action(4)">
 			<div id = "lol-title" class = "title">League of Legends Redesign</div>
-			<a href = "../HTML/projects/lol.html">
-				<img id = "lol-img" class = "portfolio-img" src = "../resources/projects/icons/lol.jpg"></img>
-			</a>
+            <img id = "lol-img" class = "portfolio-img" src = "../resources/projects/icons/lol.jpg"></img>
 		</li>
 	</ul>
 </body>
