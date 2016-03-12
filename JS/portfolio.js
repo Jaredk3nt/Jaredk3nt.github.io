@@ -17,7 +17,7 @@ var modal_action = function (x) {
     this is quite gross. */
     var cc = new Project("CheaterCheater", "Android mobile application I developed over the summer of 2015 to create all possible combinations of a Scrabble hand and show their values.", "../resources/projects/cc.png");
     
-    var steam = new Project("Steam Redesign", "Personal project, redesigning the clucky UI of the steam desktop application to a more modern interface", "../resources/projects/steam.png");
+    var steam = new Project("Steam Redesign", "Personal project, redesigning the clucky UI of the steam desktop application to a more modern interface", "../resources/projects/Steam.png");
     
     var imdb = new Project("iMDB Redesign", "iMDB website redesign concept. Taking the outdated UI iMDB currently uses and transforming it into a simple material design.", "../resources/projects/imdb.png");
     
