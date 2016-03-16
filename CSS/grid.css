@@ -84,4 +84,5 @@ following the semantic of having a max of 12*/
 .column {
     padding: 5px;
     min-height: 50px;
+    background-color: #ccc;
 }
