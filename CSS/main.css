@@ -50,9 +50,9 @@ h3 {
 }
 
 .wrapper {
-	position: relative;
+	position: absolute;
 	height: auto;
-	height: 100%;
+    width: 100%;
 }
 
 /* CSS for head bar */
@@ -112,19 +112,13 @@ h3 {
 }
 
 /* CSS for the main banner*/
-.banner-background {
-	margin: 0;
-	margin-top: 50px;
-	width: 100%;
-	height: auto;
-	background-color: #303030;
-	background-size: cover;
-}
 
 .banner {
 	margin: 0 auto;
 	max-width: 760px;
 	padding: 50px;
+    margin-top: 58px;
+    background-color: #262626;
 }
 
 .name {
@@ -155,7 +149,9 @@ h3 {
 /* CSS for cover letter portion*/
 .story-text {
 	max-width: 760px;
-	margin: 0 auto;
+    margin-top: 55px;
+	margin-right: auto;
+    margin-left: auto;
 }
 
 .story-text h2 {

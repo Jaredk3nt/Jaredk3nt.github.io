@@ -109,3 +109,7 @@ set up single item grid down screen */
     min-height: 50px;
     background-color: #ccc;
 }
+
+.column .column {
+    background-color: #fff;
+}
