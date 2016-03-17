@@ -123,11 +123,11 @@ p {
 	max-width: 760px;
     margin-top: 58px;
     background-color: #262626;
+	height: auto;
 }
 
 .banner-contents {
-	margin-top: 25px;
-	margin-bottom: 25px;
+	padding: 25px;
 }
 
 .name {
@@ -191,8 +191,13 @@ p {
 /* blog portion css */
 #blog-div {
 	max-width: 760px;
-	margin: 0 auto;
+	margin-left: auto; margin-right: auto; margin-top: 15px; 
 	padding: 10px;
+}
+
+.date {
+	font: 300 12px/1.5 Roboto, sans-serif;
+	font-style: italic;
 }
 
 .divider-span {
