@@ -125,6 +125,11 @@ p {
     background-color: #262626;
 }
 
+.banner-contents {
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
 .name {
 	font: Roboto, sans-serif;
 	font-size: 36px;
