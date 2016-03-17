@@ -15,13 +15,18 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-	font-size: 26px;
+	font:300 19px/1.7 'Open Sans', sans-serif;
 	font-weight: normal;
 }
 
 h3 {
 	font-size: 19px;
 	font-weight: lighter;
+}
+
+p {
+	font:300 16px/1.5 Roboto, sans-serif;
+	color: #333;
 }
 
 /* css for mobile devices, clean up the menu bar*/
@@ -116,9 +121,13 @@ h3 {
 .banner {
 	margin: 0 auto;
 	max-width: 760px;
-	padding: 50px;
     margin-top: 58px;
     background-color: #262626;
+	height: auto;
+}
+
+.banner-contents {
+	padding: 25px;
 }
 
 .name {
@@ -141,9 +150,9 @@ h3 {
 
 .logo-div {
 	margin: 0 auto;
-	width: 200px;
-	height: 200px;
 	padding-left: 25px; padding-right: 25px; padding-bottom: 25px;
+	width: 150px;
+	height: 150px;
 }
 
 /* CSS for cover letter portion*/
@@ -179,59 +188,24 @@ h3 {
 	color: #333;
 }
 
-/* UNUSED CODE
-.circle {
-	display: inline-block;
-	float: left;
-	position: relative;
-	overflow: hidden;
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	background: #fff;
-	box-shadow: 60px -60px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #fff;
+/* blog portion css */
+#blog-div {
+	max-width: 760px;
+	margin-left: auto; margin-right: auto; margin-top: 15px;
+	padding-top: 15px;
 }
 
-.language {
-	position: absolute;
-	top: 38px;
-	left: 30px;
-	width: 60px;
-	text-align: center;
-	text-transform: uppercase;
-	font: 18px sans-serif;
-	transition: opacity .2s ease;
+.blog-story {
+	padding-left: 10px; padding-right: 10px;
+	margin-bottom: 50px;
 }
 
-.language-div:hover {
-	cursor: none;
-
-	.circle {
-		animation: border .4s ease 1 forwards;
-	}
-
-	.language {
-		opacity: 0;
-	}
+.date {
+	font: 300 12px/1.5 Roboto, sans-serif;
+	font-style: italic;
+	color: #555;
 }
 
+.divider-span {
 
-@keyframes border {
-	0% {
-       box-shadow: 60px -60px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px  #fff;
-     }
-     25% {
-       box-shadow: 0 -125px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     50% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     75% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, 0px 125px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     100% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, 0px 125px 0 2px #fff, 120px 40px 0 2px #fff, 0 0 0 2px #262626;
-     }
 }
-
-*/
