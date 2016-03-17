@@ -191,13 +191,18 @@ p {
 /* blog portion css */
 #blog-div {
 	max-width: 760px;
-	margin-left: auto; margin-right: auto; margin-top: 15px; 
-	padding: 10px;
+	margin-left: auto; margin-right: auto; margin-top: 15px;
+	padding-top: 15px;
+}
+
+.blog-story {
+	padding-left: 10px; padding-right: 10px;
 }
 
 .date {
 	font: 300 12px/1.5 Roboto, sans-serif;
 	font-style: italic;
+	color: #555;
 }
 
 .divider-span {
