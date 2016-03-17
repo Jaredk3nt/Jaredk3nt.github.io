@@ -24,6 +24,11 @@ h3 {
 	font-weight: lighter;
 }
 
+p {
+	font-size: 14px;
+	color: #333;
+}
+
 /* css for mobile devices, clean up the menu bar*/
 @media (max-width: 760px){
 	.menu-logo{
@@ -179,59 +184,13 @@ h3 {
 	color: #333;
 }
 
-/* UNUSED CODE
-.circle {
-	display: inline-block;
-	float: left;
-	position: relative;
-	overflow: hidden;
-	width: 120px;
-	height: 120px;
-	border-radius: 50%;
-	background: #fff;
-	box-shadow: 60px -60px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #fff;
+/* blog portion css */
+#blog-div {
+	max-width: 760px;
+	margin: 0 auto;
+	padding: 10px;
 }
 
-.language {
-	position: absolute;
-	top: 38px;
-	left: 30px;
-	width: 60px;
-	text-align: center;
-	text-transform: uppercase;
-	font: 18px sans-serif;
-	transition: opacity .2s ease;
+.divider-span {
+	
 }
-
-.language-div:hover {
-	cursor: none;
-
-	.circle {
-		animation: border .4s ease 1 forwards;
-	}
-
-	.language {
-		opacity: 0;
-	}
-}
-
-
-@keyframes border {
-	0% {
-       box-shadow: 60px -60px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px  #fff;
-     }
-     25% {
-       box-shadow: 0 -125px 0 2px #fff, -60px -60px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     50% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, -60px 60px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     75% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, 0px 125px 0 2px #fff, 60px 60px 0 2px #fff, 0 0 0 2px #262626;
-     }
-     100% {
-       box-shadow: 0 -125px 0 2px #fff, -125px 0px 0 2px #fff, 0px 125px 0 2px #fff, 120px 40px 0 2px #fff, 0 0 0 2px #262626;
-     }
-}
-
-*/
