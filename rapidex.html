@@ -147,7 +147,7 @@
             document.getElementById("loader").style.display = "block";
             console.log("loading...");
             //grab the pokemon they search for
-            var pokemon = document.getElementById("searchBar").value;
+            var pokemon = document.getElementById("searchBar").value.lowerFirstLetter();
             //make the full URL based on search
             //pokemon = pokemon.toLowerCase;
             var url = baseurl.concat(pokemon);
@@ -238,6 +238,10 @@
 
         String.prototype.capitalizeFirstLetter = function() {
             return this.charAt(0).toUpperCase() + this.slice(1);
+        }
+
+		String.prototype.lowerFirstLetter = function() {
+            return this.charAt(0).toLowerCase() + this.slice(1);
         }
     </script>
 </body>
