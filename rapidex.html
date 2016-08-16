@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PokeSearch</title>
-    
+
     <style>
         h1 {
             font-family: sans-serif;
@@ -18,23 +18,23 @@
             padding: 0;
             font-family: sans-serif;
         }
-        
+
         h3 {
             margin: 0;
             padding: 0;
             font-family: sans-serif;
         }
-        
+
         p {
             font-family: sans-serif;
             margin-top: 1px;
         }
-        
+
         body {
             padding: 0;
             margin: 0;
         }
-        
+
         #searchContainer {
             align-content: center;
             text-align: center;
@@ -43,7 +43,7 @@
             width: 100%;
             margin: 0 auto;
         }
-        
+
         #searchButton {
             width: 200px;
             background: #EE6767;
@@ -55,28 +55,28 @@
             height: 25px;
             transition: all .1s linear;
         }
-        
+
         #searchButton:hover {
             cursor: pointer;
         }
-        
+
         #searchButton:active {
             transform: scale(0.95, 0.95);
             background: #d65c5c;
         }
-        
+
         #pokeDisplay {
             align-content: center;
             text-align: center;
             margin: 0 auto;
             padding-left: 20px; padding-right: 20px;
         }
-        
+
         #pokeImg {
             margin: 0 auto;
             padding-top: 15px;
         }
-        
+
         #searchBar {
             margin: 0px;
             padding: 5px;
@@ -85,31 +85,48 @@
             height: 25px;
             border-style: none;
         }
-        
+
         #searchBar:focus {
             outline: none;
             border-style: none;
         }
-        
+
         .title {
             font-size: 12px;
             font-weight: 700;
             margin-bottom: 5px;
         }
-        
+
         #pokeID {
             margin-bottom: 15px;
         }
+
+        #loader {
+            border: 8px solid #f3f3f3; /* Light grey */
+            border-top: 8px solid #ea4242; /* Blue */
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            animation: spin 2s linear infinite;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
     </style>
-    
+
 </head>
 <body>
-    
+
     <div id="searchContainer">
         <h1>RAPIDEX</h1>
         <input id="searchBar" type="text" placeholder="Search For Pokemon">
         <div id="searchButton">SEARCH</div>
     </div>
+    <div id="loader" style="display:none"></div>
     <div id="pokeDisplay">
         <img id="pokeImg">
         <h2 id="pokeName"></h2>
@@ -119,45 +136,48 @@
         <p id="weakTitle" class="title" style="visibility:hidden">Weak to</p>
         <p id="pokeWeak"></p>
     </div>
-     
-    
+
+
     <script>
         var xmlhttp = new XMLHttpRequest();
         var baseurl = "http://pokeapi.co/api/v2/pokemon/";
         document.getElementById("searchButton").addEventListener("click", pokeSearch);
-        
+
         function pokeSearch() {
+            document.getElementById("loader").style.display = "block";
+            console.log("loading...");
             //grab the pokemon they search for
             var pokemon = document.getElementById("searchBar").value;
             //make the full URL based on search
             //pokemon = pokemon.toLowerCase;
             var url = baseurl.concat(pokemon);
             url = url.concat("/");
-            
+
+
+
+            xmlhttp.open("GET", url, true);
             xmlhttp.onload = function() {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     var json = JSON.parse(xmlhttp.responseText);
-                    
+
                     console.log("First onload function");
-                    
+
                     pokeDisplay(json);
                 }
             }
-            
-            xmlhttp.open("GET", url, false);
             xmlhttp.send();
         }
         //placing the data into the page
         function pokeDisplay(json) {
             console.log("In pokeDisplay");
-            
+
             var name = json.name.capitalizeFirstLetter();
             document.getElementById("pokeName").innerHTML = name;
             document.getElementById("pokeID").innerHTML = "#" + json.id;
             document.getElementById("pokeImg").src = json.sprites.front_default;
             var types = json.types;
             document.getElementById("pokeType").innerHTML = "";
-            
+
             var weaknesses = "";
             var urls = [];
             for (i = 0; i < types.length; i++) {
@@ -166,33 +186,35 @@
                 }
                 var typeObj = types[i];
                 document.getElementById("pokeType").innerHTML += typeObj.type.name.capitalizeFirstLetter();
-                urls.push(typeObj.type.url); 
+                urls.push(typeObj.type.url);
             }
             document.getElementById("typeTitle").style.visibility = "visible";
             document.getElementById("weakTitle").style.visibility = "visible";
 
             document.getElementById("pokeWeak").innerHTML = ""
-            
+
             console.log("before call to displayWeaknesses");
-            
+
             displayTypeWeakness(urls[0]);
             if(urls.length === 2) {
                 document.getElementById("pokeWeak").innerHTML += " / ";
                 displayTypeWeakness(urls[1]);
             }
-            
+            document.getElementById("loader").style.display = "none";
+            console.log("done loading...");
+
             //not sure why this doesnt work currently
 //            for (i = 0; i < urls.length; i++) {
 //                console.log("url" + i + ":length " + urls.length);
 //                displayTypeWeakness(urls[i]);
 //            }
         }
-        
+
         function displayTypeWeakness(url) {
             //make http call to new url to get type info
             var xhrType = new XMLHttpRequest();
-            
-            xhrType.open("GET", url, false);
+
+            xhrType.open("GET", url, true);
             xhrType.onload = function() {
                 if (xhrType.readyState === 4) {
                     if (xhrType.status === 200) {
@@ -213,7 +235,7 @@
             xhrType.send();
             return;
         }
-        
+
         String.prototype.capitalizeFirstLetter = function() {
             return this.charAt(0).toUpperCase() + this.slice(1);
         }
