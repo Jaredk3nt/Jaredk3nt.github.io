@@ -1,0 +1,110 @@
+h1 {
+    font-family: sans-serif;
+    color: #fff;
+    margin-bottom: 10px;
+    margin-top: 0;
+    font-size: 30px;
+}
+h2 {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+h3 {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+p {
+    font-family: sans-serif;
+    margin-top: 1px;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#searchContainer {
+    align-content: center;
+    text-align: center;
+    background: #ea4242;
+    padding-top: 10px; padding-bottom: 20px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#searchButton {
+    width: 200px;
+    background: #EE6767;
+    margin: 0 auto;
+    font-family: sans-serif;
+    color: #fff;
+    padding-top: 12px; padding-left: 5px; padding-right: 5px;
+    font-size: 12px;
+    height: 25px;
+    transition: all .1s linear;
+}
+
+#searchButton:hover {
+    cursor: pointer;
+}
+
+#searchButton:active {
+    transform: scale(0.95, 0.95);
+    background: #d65c5c;
+}
+
+#pokeDisplay {
+    align-content: center;
+    text-align: center;
+    margin: 0 auto;
+    padding-left: 20px; padding-right: 20px;
+}
+
+#pokeImg {
+    margin: 0 auto;
+    padding-top: 15px;
+}
+
+#searchBar {
+    margin: 0px;
+    padding: 5px;
+    outline: none;
+    width: 200px;
+    height: 25px;
+    border-style: none;
+}
+
+#searchBar:focus {
+    outline: none;
+    border-style: none;
+}
+
+.title {
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+#pokeID {
+    margin-bottom: 15px;
+}
+
+#loader {
+    border: 8px solid #f3f3f3; /* Light grey */
+    border-top: 8px solid #ea4242; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
