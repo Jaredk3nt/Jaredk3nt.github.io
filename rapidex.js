@@ -1,3 +1,11 @@
+/* TODO :
+    -add a check to not re-call pokeSearch if the name of the pokemon hasn't changed so spamming the button doesn't make multiple calls to the backend
+    
+    -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend
+    
+    -add section for what types they are good against
+*/
+
 var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
