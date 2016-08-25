@@ -1,5 +1,5 @@
 /* TODO :
-    -add a check to not re-call pokeSearch if the name of the pokemon hasn't changed so spamming the button doesn't make multiple calls to the backend
+    *-add a check to not re-call pokeSearch if the name of the pokemon hasn't changed so spamming the button doesn't make multiple calls to the backend
     
     -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend (web-storage)
     store: localstorage.setItem('key', JSON.stringify({name: 'value'}));
@@ -19,7 +19,7 @@ function pokeSearch() {
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerFirstLetter();
     //test if they are re-searching for whats already there
     //prevent another api call
-    if(pokemon === currentShowing){
+    if (pokemon === currentShowing) {
         //keep the current showing
     } else {
         document.getElementById("pokeDisplay").style.display = "none";
@@ -30,15 +30,15 @@ function pokeSearch() {
         url = url.concat("/");
 
         xmlhttp.open("GET", url, true);
-        xmlhttp.onload = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        xmlhttp.onload = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 var json = JSON.parse(xmlhttp.responseText);
                 pokeDisplay(json);
             } else {
                 document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
                 document.getElementById("loader").style.display = "none";
                 document.getElementById("errorDisplay").style.display = "block";
-                console.error(xhrType.statusText);
+                console.error(xmlhttp.statusText);
             }
         }
         xmlhttp.send();
@@ -59,7 +59,7 @@ function pokeDisplay(json) {
     var urls = [];
     for (i = 0; i < types.length; i++) {
         if (i < types.length && i > 0) {
-             document.getElementById("pokeType").innerHTML += " / ";
+            document.getElementById("pokeType").innerHTML += " / ";
         }
         var typeObj = types[i];
         document.getElementById("pokeType").innerHTML += typeObj.type.name.capitalizeFirstLetter();
@@ -77,6 +77,7 @@ function pokeDisplay(json) {
     document.getElementById("loader").style.display = "none";
 }
 
+//api call for types
 function displayTypeWeakness(url) {
     //make http call to new url to get type info
     var xhrType = new XMLHttpRequest();
@@ -113,10 +114,10 @@ window.onload = function () {
     });
 }
 
-String.prototype.capitalizeFirstLetter = function() {
+String.prototype.capitalizeFirstLetter = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 }
 
-String.prototype.lowerFirstLetter = function() {
+String.prototype.lowerFirstLetter = function () {
     return this.charAt(0).toLowerCase() + this.slice(1);
 }
