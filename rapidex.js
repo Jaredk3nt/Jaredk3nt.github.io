@@ -14,28 +14,35 @@ var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
 function pokeSearch() {
-    document.getElementById("pokeDisplay").style.display = "none";
-    document.getElementById("errorDisplay").style.display = "none";
-    document.getElementById("loader").style.display = "block";
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerFirstLetter();
-    //make the full URL based on search
-    var url = baseurl.concat(pokemon);
-    url = url.concat("/");
+    var currentShowing = document.getElementById("pokeName").innerHTML.lowerFirstLetter();
+    //test if they are re-searching for whats already there
+    //prevent another api call
+    if(pokemon === currentShowing){
+        //keep the current showing
+    } else {
+        document.getElementById("pokeDisplay").style.display = "none";
+        document.getElementById("errorDisplay").style.display = "none";
+        document.getElementById("loader").style.display = "block";
+        //make the full URL based on search
+        var url = baseurl.concat(pokemon);
+        url = url.concat("/");
 
-    xmlhttp.open("GET", url, true);
-    xmlhttp.onload = function() {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            var json = JSON.parse(xmlhttp.responseText);
-            pokeDisplay(json);
-        } else {
-            document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
-            document.getElementById("loader").style.display = "none";
-            document.getElementById("errorDisplay").style.display = "block";
-            console.error(xhrType.statusText);
+        xmlhttp.open("GET", url, true);
+        xmlhttp.onload = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                var json = JSON.parse(xmlhttp.responseText);
+                pokeDisplay(json);
+            } else {
+                document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("errorDisplay").style.display = "block";
+                console.error(xhrType.statusText);
+            }
         }
+        xmlhttp.send();
     }
-    xmlhttp.send();
 }
 
 //placing the data into the page
