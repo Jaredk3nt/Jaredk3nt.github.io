@@ -53,7 +53,6 @@ function pokeDisplay(json) {
 
     displayTypeWeakness(urls[0]);
     if(urls.length === 2) {
-        document.getElementById("pokeWeak").innerHTML += " / ";
         displayTypeWeakness(urls[1]);
     }
     document.getElementById("loader").style.display = "none";
