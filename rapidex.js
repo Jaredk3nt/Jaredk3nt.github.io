@@ -2,6 +2,8 @@ var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
 function pokeSearch() {
+    document.getElementById("pokeDisplay").style.display = "none";
+    document.getElementById("errorDisplay").style.display = "none";
     document.getElementById("loader").style.display = "block";
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerFirstLetter();
@@ -15,6 +17,9 @@ function pokeSearch() {
             var json = JSON.parse(xmlhttp.responseText);
             pokeDisplay(json);
         } else {
+            document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("errorDisplay").style.display = "block";
             console.error(xhrType.statusText);
         }
     }
@@ -24,6 +29,7 @@ function pokeSearch() {
 //placing the data into the page
 function pokeDisplay(json) {
     var name = json.name.capitalizeFirstLetter();
+    document.getElementById("pokeDisplay").style.display = "block";
     document.getElementById("pokeName").innerHTML = name;
     document.getElementById("pokeID").innerHTML = "#" + json.id;
     document.getElementById("pokeImg").src = json.sprites.front_default;
