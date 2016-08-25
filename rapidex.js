@@ -3,7 +3,6 @@ var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
 function pokeSearch() {
     document.getElementById("loader").style.display = "block";
-    console.log("loading...");
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerFirstLetter();
     //make the full URL based on search
@@ -24,8 +23,6 @@ function pokeSearch() {
 
 //placing the data into the page
 function pokeDisplay(json) {
-    console.log("In pokeDisplay");
-
     var name = json.name.capitalizeFirstLetter();
     document.getElementById("pokeName").innerHTML = name;
     document.getElementById("pokeID").innerHTML = "#" + json.id;
@@ -48,15 +45,12 @@ function pokeDisplay(json) {
 
     document.getElementById("pokeWeak").innerHTML = "";
 
-    console.log("before call to displayWeaknesses");
-
     displayTypeWeakness(urls[0]);
     if(urls.length === 2) {
         document.getElementById("pokeWeak").innerHTML += " / ";
         displayTypeWeakness(urls[1]);
     }
     document.getElementById("loader").style.display = "none";
-    console.log("done loading...");
 }
 
 function displayTypeWeakness(url) {
@@ -87,6 +81,12 @@ function displayTypeWeakness(url) {
 
 window.onload = function () {
     document.getElementById("searchButton").addEventListener("click", pokeSearch);
+    document.getElementById("searchBar").addEventListener("keyup", function(event){
+        event.preventDefault();
+        if (event.keyCode == 13) {
+            pokeSearch();
+        }
+    });
 }
 
 String.prototype.capitalizeFirstLetter = function() {
