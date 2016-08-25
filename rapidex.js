@@ -1,7 +1,11 @@
 /* TODO :
     -add a check to not re-call pokeSearch if the name of the pokemon hasn't changed so spamming the button doesn't make multiple calls to the backend
     
-    -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend
+    -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend (web-storage)
+    store: localstorage.setItem('key', JSON.stringify({name: 'value'}));
+    get: alert(JSON.parse(localStorage.getItem('key')).name);
+    -set up JSON objects for each pokemon for storage
+    {name: 'name', id: '', type: 'type', img: 'url', weakness: ['','',..]}
     
     -add section for what types they are good against
 */
