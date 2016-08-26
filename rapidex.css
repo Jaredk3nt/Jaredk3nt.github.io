@@ -20,6 +20,7 @@ h3 {
 p {
     font-family: sans-serif;
     margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 body {
@@ -120,4 +121,8 @@ body {
     font-family: sans-serif;
     font-size: 36px;
     color: #EE6767;
+}
+
+#pokeType {
+    margin-bottom: 10px;
 }

@@ -68,17 +68,18 @@ function pokeDisplay(json) {
     document.getElementById("typeTitle").style.visibility = "visible";
     document.getElementById("weakTitle").style.visibility = "visible";
 
-    document.getElementById("pokeWeak").innerHTML = "";
+    document.getElementById("pokeWeak1").innerHTML = "";
+    document.getElementById("pokeWeak2").innerHTML = "";
 
-    displayTypeWeakness(urls[0]);
+    displayTypeWeakness(urls[0], 1);
     if(urls.length === 2) {
-        displayTypeWeakness(urls[1]);
+        displayTypeWeakness(urls[1], 2);
     }
     document.getElementById("loader").style.display = "none";
 }
 
 //api call for types
-function displayTypeWeakness(url) {
+function displayTypeWeakness(url, callNum) {
     //make http call to new url to get type info
     var xhrType = new XMLHttpRequest();
 
@@ -89,11 +90,16 @@ function displayTypeWeakness(url) {
                 console.log("Inside weakness onload");
                 var json = JSON.parse(xhrType.responseText);
                 var weakness = json.damage_relations.double_damage_from;
+                var pokeWeak = document.getElementById("pokeWeak1");
+                if (callNum === 2) {
+                    console.log(callNum);
+                    pokeWeak = document.getElementById("pokeWeak2");
+                }
                 for (i = 0; i < weakness.length; i++) {
                     if (i < weakness.length && i > 0) {
-                        document.getElementById("pokeWeak").innerHTML += " / ";
+                        pokeWeak.innerHTML += " / ";
                     }
-                    document.getElementById("pokeWeak").innerHTML += weakness[i].name.capitalizeFirstLetter();
+                    pokeWeak.innerHTML += weakness[i].name.capitalizeFirstLetter();
                 }
             } else {
                 console.error(xhrType.statusText);
@@ -102,6 +108,16 @@ function displayTypeWeakness(url) {
     }
     xhrType.send();
     return;
+}
+
+//check if the local storage already contains the pokemon
+function isStored(){
+    
+}
+
+//create the JSON object to store the pokemons data
+function createPokeJSON() {
+    
 }
 
 window.onload = function () {
