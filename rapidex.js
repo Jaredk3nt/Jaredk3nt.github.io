@@ -3,11 +3,15 @@
     
     -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend (web-storage)
     store: localstorage.setItem('key', JSON.stringify({name: 'value'}));
-    get: alert(JSON.parse(localStorage.getItem('key')).name);
+    get: JSON.parse(localStorage.getItem('key')).name;
     -set up JSON objects for each pokemon for storage
-    {name: 'name', id: '', type: 'type', img: 'url', weakness: ['','',..]}
+    {name: 'name', id: '', type: 'type', img: 'url'}
     
     -add section for what types they are good against
+    
+    *-remove overlapping types on pokemon weakness
+    
+    -some double pokemon show types they aren't weak against due to having types that are resistant to something as well as the other being weak to it, the algorithm needs to be expanded to include these
 */
 
 var xmlhttp = new XMLHttpRequest();
@@ -69,49 +73,9 @@ function pokeDisplay(json) {
     document.getElementById("weakTitle").style.visibility = "visible";
     localType(types);
 
-    
-    //create the initial json so we can add in weaknesses later
-    //var pokeJSON = createPokeJSON(name, json.id, formattedTypes);
-    //make async api calls for types
-//    displayTypeWeakness(urls[0], 1, pokeJSON);
-//    if(urls.length === 2) {
-//        displayTypeWeakness(urls[1], 2, pokeJSON);
-//    }
     document.getElementById("loader").style.display = "none";
     
 }
-
-//api call for types
-//function displayTypeWeakness(url, callNum, json) {
-//    //make http call to new url to get type info
-//    var xhrType = new XMLHttpRequest();
-//
-//    xhrType.open("GET", url, true);
-//    xhrType.onload = function() {
-//        if (xhrType.readyState === 4) {
-//            if (xhrType.status === 200) {
-//                console.log("Inside weakness onload");
-//                var json = JSON.parse(xhrType.responseText);
-//                var weakness = json.damage_relations.double_damage_from;
-//                var pokeWeak = document.getElementById("pokeWeak1");
-//                if (callNum === 2) {
-//                    console.log(callNum);
-//                    pokeWeak = document.getElementById("pokeWeak2");
-//                }
-//                for (i = 0; i < weakness.length; i++) {
-//                    if (i < weakness.length && i > 0) {
-//                        pokeWeak.innerHTML += " / ";
-//                    }
-//                    pokeWeak.innerHTML += weakness[i].name.capitalizeFirstLetter();
-//                }
-//            } else {
-//                console.error(xhrType.statusText);
-//            }
-//        }
-//    }
-//    xhrType.send();
-//    return;
-//}
 
 function localType(pTypes) {
     var allWeaknesses = [];
@@ -122,40 +86,37 @@ function localType(pTypes) {
         }
         for (j = 0; j < typeJSON.types.length; j++) {
             var type = typeJSON.types[j];
-            console.log(type.name);
             if (pTypes[i] == type.name) {
-                console.log("found type: " + pTypes[i] + " :: " + type.name);
                 for (k = 0; k < type.effects.weak_to.length; k++) {
                     allWeaknesses.push(type.effects.weak_to[k]);
                 }
             }
         }
     }
-    console.log(allWeaknesses.length);
     displayTypeWeaknesses(allWeaknesses);
 }
 
 function displayTypeWeaknesses(weaknesses) {
-    console.log("in displayTypeWeakness: " + weaknesses);
+    var alreadyDisplayed = [];
     var pokeWeak = document.getElementById("pokeWeak");
     for (i = 0; i < weaknesses.length; i++) {
-        pokeWeak.innerHTML += weaknesses[i];
-        if (!(i == weaknesses.length - 1)) {
-           pokeWeak.innerHTML += " / ";
+        var found = false;
+        for (j = 0; j < alreadyDisplayed.length; j++) {
+            if (alreadyDisplayed[j] == weaknesses[i]) {
+                found = true;
+                break;
+            }
         }
+        if (!found) {
+            alreadyDisplayed.push(weaknesses[i]);
+            pokeWeak.innerHTML += weaknesses[i];
+            if (!(i == weaknesses.length - 1)) {
+               pokeWeak.innerHTML += " / ";
+            }
+        }
+        
     }
 }
-
-////check if the local storage already contains the pokemon
-//function isStored(){
-//    
-//}
-//
-////create the JSON object to store the pokemons data
-//function createPokeJSON(pName, pId, pTypes) {
-//    var pokeJSON = {name: pName, id: pId, type: pTypes};
-//    console.log("json" + JSON.stringify(pokeJSON));
-//}
 
 window.onload = function () {
     document.getElementById("searchButton").addEventListener("click", pokeSearch);
