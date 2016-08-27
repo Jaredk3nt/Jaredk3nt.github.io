@@ -48,77 +48,114 @@ function pokeSearch() {
 //placing the data into the page
 function pokeDisplay(json) {
     var name = json.name.capitalizeFirstLetter();
+    var weaknesses = "";
+    
+    //var urls = [];
+    var formattedTypes = [];
+    //place information we already have
     document.getElementById("pokeDisplay").style.display = "block";
     document.getElementById("pokeName").innerHTML = name;
     document.getElementById("pokeID").innerHTML = "#" + json.id;
     document.getElementById("pokeImg").src = json.sprites.front_default;
-    var types = json.types;
     document.getElementById("pokeType").innerHTML = "";
+    document.getElementById("pokeWeak").innerHTML = "";
 
-    var weaknesses = "";
-    var urls = [];
-    for (i = 0; i < types.length; i++) {
-        if (i < types.length && i > 0) {
-            document.getElementById("pokeType").innerHTML += " / ";
-        }
-        var typeObj = types[i];
-        document.getElementById("pokeType").innerHTML += typeObj.type.name.capitalizeFirstLetter();
-        urls.push(typeObj.type.url);
+    var types = [];
+    //create an array of type names for finding weaknesses and display
+    for (i = 0; i < json.types.length; i++) {
+        types.push(json.types[i].type.name);
     }
     document.getElementById("typeTitle").style.visibility = "visible";
     document.getElementById("weakTitle").style.visibility = "visible";
+    localType(types);
 
-    document.getElementById("pokeWeak1").innerHTML = "";
-    document.getElementById("pokeWeak2").innerHTML = "";
-
-    displayTypeWeakness(urls[0], 1);
-    if(urls.length === 2) {
-        displayTypeWeakness(urls[1], 2);
-    }
+    
+    //create the initial json so we can add in weaknesses later
+    //var pokeJSON = createPokeJSON(name, json.id, formattedTypes);
+    //make async api calls for types
+//    displayTypeWeakness(urls[0], 1, pokeJSON);
+//    if(urls.length === 2) {
+//        displayTypeWeakness(urls[1], 2, pokeJSON);
+//    }
     document.getElementById("loader").style.display = "none";
+    
 }
 
 //api call for types
-function displayTypeWeakness(url, callNum) {
-    //make http call to new url to get type info
-    var xhrType = new XMLHttpRequest();
+//function displayTypeWeakness(url, callNum, json) {
+//    //make http call to new url to get type info
+//    var xhrType = new XMLHttpRequest();
+//
+//    xhrType.open("GET", url, true);
+//    xhrType.onload = function() {
+//        if (xhrType.readyState === 4) {
+//            if (xhrType.status === 200) {
+//                console.log("Inside weakness onload");
+//                var json = JSON.parse(xhrType.responseText);
+//                var weakness = json.damage_relations.double_damage_from;
+//                var pokeWeak = document.getElementById("pokeWeak1");
+//                if (callNum === 2) {
+//                    console.log(callNum);
+//                    pokeWeak = document.getElementById("pokeWeak2");
+//                }
+//                for (i = 0; i < weakness.length; i++) {
+//                    if (i < weakness.length && i > 0) {
+//                        pokeWeak.innerHTML += " / ";
+//                    }
+//                    pokeWeak.innerHTML += weakness[i].name.capitalizeFirstLetter();
+//                }
+//            } else {
+//                console.error(xhrType.statusText);
+//            }
+//        }
+//    }
+//    xhrType.send();
+//    return;
+//}
 
-    xhrType.open("GET", url, true);
-    xhrType.onload = function() {
-        if (xhrType.readyState === 4) {
-            if (xhrType.status === 200) {
-                console.log("Inside weakness onload");
-                var json = JSON.parse(xhrType.responseText);
-                var weakness = json.damage_relations.double_damage_from;
-                var pokeWeak = document.getElementById("pokeWeak1");
-                if (callNum === 2) {
-                    console.log(callNum);
-                    pokeWeak = document.getElementById("pokeWeak2");
+function localType(pTypes) {
+    var allWeaknesses = [];
+    for (i = 0; i < pTypes.length; i++) {
+        document.getElementById("pokeType").innerHTML += pTypes[i];
+        if (!(i == pTypes.length -1)) {
+            document.getElementById("pokeType").innerHTML += " / ";
+        }
+        for (j = 0; j < typeJSON.types.length; j++) {
+            var type = typeJSON.types[j];
+            console.log(type.name);
+            if (pTypes[i] == type.name) {
+                console.log("found type: " + pTypes[i] + " :: " + type.name);
+                for (k = 0; k < type.effects.weak_to.length; k++) {
+                    allWeaknesses.push(type.effects.weak_to[k]);
                 }
-                for (i = 0; i < weakness.length; i++) {
-                    if (i < weakness.length && i > 0) {
-                        pokeWeak.innerHTML += " / ";
-                    }
-                    pokeWeak.innerHTML += weakness[i].name.capitalizeFirstLetter();
-                }
-            } else {
-                console.error(xhrType.statusText);
             }
         }
     }
-    xhrType.send();
-    return;
+    console.log(allWeaknesses.length);
+    displayTypeWeaknesses(allWeaknesses);
 }
 
-//check if the local storage already contains the pokemon
-function isStored(){
-    
+function displayTypeWeaknesses(weaknesses) {
+    console.log("in displayTypeWeakness: " + weaknesses);
+    var pokeWeak = document.getElementById("pokeWeak");
+    for (i = 0; i < weaknesses.length; i++) {
+        pokeWeak.innerHTML += weaknesses[i];
+        if (!(i == weaknesses.length - 1)) {
+           pokeWeak.innerHTML += " / ";
+        }
+    }
 }
 
-//create the JSON object to store the pokemons data
-function createPokeJSON() {
-    
-}
+////check if the local storage already contains the pokemon
+//function isStored(){
+//    
+//}
+//
+////create the JSON object to store the pokemons data
+//function createPokeJSON(pName, pId, pTypes) {
+//    var pokeJSON = {name: pName, id: pId, type: pTypes};
+//    console.log("json" + JSON.stringify(pokeJSON));
+//}
 
 window.onload = function () {
     document.getElementById("searchButton").addEventListener("click", pokeSearch);
@@ -137,3 +174,22 @@ String.prototype.capitalizeFirstLetter = function () {
 String.prototype.lowerFirstLetter = function () {
     return this.charAt(0).toLowerCase() + this.slice(1);
 }
+
+var typeJSON = {"types":[{"name":"normal","effects":{"weak_to":["fighting"],"resistant_to":[],"immune_to":["ghost"]}},
+{"name":"fighting","effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
+{"name":"flying","effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
+{"name":"poison","effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},
+{"name":"ground","effects":{"weak_to":["water","grass","ice"],"resistant_to":["poison","rock"],"immune_to":["electric"]}},
+{"name":"rock","effects":{"weak_to":["fighting","ground","steel","water","grass"],"resistant_to":["normal","flying","poison","fire"],"immune_to":[]}},
+{"name":"bug","effects":{"weak_to":["flying","rock","fire"],"resistant_to":["fighting","ground","grass"],"immune_to":[]}},
+{"name":"ghost","effects":{"weak_to":["ghost","dark"],"resistant_to":["poison","bug"],"immune_to":["normal","fighting"]}},
+{"name":"steel","effects":{"weak_to":["fighting","ground","fire"],"resistant_to":["normal","flying","rock","bug","steel","grass","psychic","ice","dragon","fairy"],"immune_to":["poison"]}},
+{"name":"fire","effects":{"weak_to":["ground","rock","water"],"resistant_to":["bug","steel","fire","grass","ice","fairy"],"immune_to":[]}},
+{"name":"water","effects":{"weak_to":["grass","electric"],"resistant_to":["steel","fire","water","ice"],"immune_to":[]}},
+{"name":"grass","effects":{"weak_to":["flying","poison","bug","fire","ice"],"resistant_to":["ground","water","grass","electric"],"immune_to":[]}},
+{"name":"electric","effects":{"weak_to":["ground"],"resistant_to":["flying","steel","electric"],"immune_to":[]}},
+{"name":"psychic","effects":{"weak_to":["bug","ghost","dark"],"resistant_to":["fighting","psychic"],"immune_to":[]}},
+{"name":"ice","effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
+{"name":"dragon","effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
+{"name":"dark","effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
+{"name":"fairy","effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
