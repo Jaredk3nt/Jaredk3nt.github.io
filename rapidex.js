@@ -1,6 +1,4 @@
 /* TODO :
-    *-add a check to not re-call pokeSearch if the name of the pokemon hasn't changed so spamming the button doesn't make multiple calls to the backend
-    
     -add client side caching of pokemon they look up in a session so if they re-look them up it doesn't have to make extranious calls to the backend (web-storage)
     store: localstorage.setItem('key', JSON.stringify({name: 'value'}));
     get: JSON.parse(localStorage.getItem('key')).name;
@@ -9,16 +7,12 @@
     
     -add section for what types they are good against
     
-    *-remove overlapping types on pokemon weakness
-    
     -some double pokemon show types they aren't weak against due to having types that are resistant to something as well as the other being weak to it, the algorithm needs to be expanded to include these
     
     
     UI UPDATE NOTES
-    grey : #b7b7b7
-    pick a color for all types
-    make the top bar resize? look vs usability
-    USE ALL CAPS ON ERRYTHING
+    Type colors :
+    
 */
 
 var xmlhttp = new XMLHttpRequest();
@@ -41,11 +35,12 @@ function pokeSearch() {
         //make the full URL based on search
         var url = baseurl.concat(pokemon);
         url = url.concat("/");
-
+        console.log("begin request");
         xmlhttp.open("GET", url, true);
         xmlhttp.onload = function () {
             if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
                 var json = JSON.parse(xmlhttp.responseText);
+                console.log("end request");
                 pokeDisplay(json);
             } else {
                 document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
@@ -196,22 +191,41 @@ String.prototype.capitalizeString = function () {
 };
 
 var regionNames = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"];
-
+/*
+normal: #aaa
+    fighting: #C25942
+    flying: #B3BAE6
+    poison: #A246E8
+    ground: #D19F41
+    rock: #946715
+    bug: #92B368
+    ghost: #291B3B
+    steel: #DBDBDB
+    fire: #F2452E
+    water: #6B9DED
+    grass: #94DB76
+    electric: #E8E83F
+    psychic: #E23FE8
+    ice: #AAFAF2
+    dragon: #032B63
+    dark: #1D2024
+    fairy: #F7B5EE
+*/
 var typeJSON = {"types": [{"name": "normal", "color": "#aaa", "effects": {"weak_to": ["fighting"], "resistant_to":[],"immune_to":["ghost"]}},
-{"name":"fighting", "color": "#aaa", "effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
-{"name":"flying", "color": "#aaa", "effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
-{"name":"poison", "color": "#aaa", "effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},
-{"name":"ground", "color": "#aaa", "effects":{"weak_to":["water","grass","ice"],"resistant_to":["poison","rock"],"immune_to":["electric"]}},
-{"name":"rock", "color": "#aaa", "effects":{"weak_to":["fighting","ground","steel","water","grass"],"resistant_to":["normal","flying","poison","fire"],"immune_to":[]}},
-{"name":"bug", "color": "#aaa", "effects":{"weak_to":["flying","rock","fire"],"resistant_to":["fighting","ground","grass"],"immune_to":[]}},
-{"name":"ghost", "color": "#aaa", "effects":{"weak_to":["ghost","dark"],"resistant_to":["poison","bug"],"immune_to":["normal","fighting"]}},
-{"name":"steel", "color": "#aaa", "effects":{"weak_to":["fighting","ground","fire"],"resistant_to":["normal","flying","rock","bug","steel","grass","psychic","ice","dragon","fairy"],"immune_to":["poison"]}},
-{"name":"fire", "color": "#aaa", "effects":{"weak_to":["ground","rock","water"],"resistant_to":["bug","steel","fire","grass","ice","fairy"],"immune_to":[]}},
-{"name":"water", "color": "#aaa", "effects":{"weak_to":["grass","electric"],"resistant_to":["steel","fire","water","ice"],"immune_to":[]}},
-{"name":"grass", "color": "#aaa", "effects":{"weak_to":["flying","poison","bug","fire","ice"],"resistant_to":["ground","water","grass","electric"],"immune_to":[]}},
-{"name":"electric", "color": "#aaa", "effects":{"weak_to":["ground"],"resistant_to":["flying","steel","electric"],"immune_to":[]}},
-{"name":"psychic", "color": "#aaa", "effects":{"weak_to":["bug","ghost","dark"],"resistant_to":["fighting","psychic"],"immune_to":[]}},
-{"name":"ice", "color": "#aaa", "effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
-{"name":"dragon", "color": "#aaa", "effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
-{"name":"dark", "color": "#aaa", "effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
-{"name":"fairy", "color": "#aaa", "effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
+{"name":"fighting", "color": "#C25942", "effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
+{"name":"flying", "color": "#B3BAE6", "effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
+{"name":"poison", "color": "#A246E8", "effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},
+{"name":"ground", "color": "#D19F41", "effects":{"weak_to":["water","grass","ice"],"resistant_to":["poison","rock"],"immune_to":["electric"]}},
+{"name":"rock", "color": "#946715", "effects":{"weak_to":["fighting","ground","steel","water","grass"],"resistant_to":["normal","flying","poison","fire"],"immune_to":[]}},
+{"name":"bug", "color": "#92B368", "effects":{"weak_to":["flying","rock","fire"],"resistant_to":["fighting","ground","grass"],"immune_to":[]}},
+{"name":"ghost", "color": "#291B3B", "effects":{"weak_to":["ghost","dark"],"resistant_to":["poison","bug"],"immune_to":["normal","fighting"]}},
+{"name":"steel", "color": "#DBDBDB", "effects":{"weak_to":["fighting","ground","fire"],"resistant_to":["normal","flying","rock","bug","steel","grass","psychic","ice","dragon","fairy"],"immune_to":["poison"]}},
+{"name":"fire", "color": "#F2452E", "effects":{"weak_to":["ground","rock","water"],"resistant_to":["bug","steel","fire","grass","ice","fairy"],"immune_to":[]}},
+{"name":"water", "color": "#6B9DED", "effects":{"weak_to":["grass","electric"],"resistant_to":["steel","fire","water","ice"],"immune_to":[]}},
+{"name":"grass", "color": "#94DB76", "effects":{"weak_to":["flying","poison","bug","fire","ice"],"resistant_to":["ground","water","grass","electric"],"immune_to":[]}},
+{"name":"electric", "color": "#E8E83F", "effects":{"weak_to":["ground"],"resistant_to":["flying","steel","electric"],"immune_to":[]}},
+{"name":"psychic", "color": "#E23FE8", "effects":{"weak_to":["bug","ghost","dark"],"resistant_to":["fighting","psychic"],"immune_to":[]}},
+{"name":"ice", "color": "#AAFAF2", "effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
+{"name":"dragon", "color": "#032B63", "effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
+{"name":"dark", "color": "#1D2024", "effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
+{"name":"fairy", "color": "F7B5EE", "effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
