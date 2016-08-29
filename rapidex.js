@@ -44,7 +44,7 @@ function pokeSearch() {
                 document.getElementById("errorDisplay").style.display = "block";
                 console.error(xmlhttp.statusText);
             }
-        }
+        };
         xmlhttp.send();
     }
 }
@@ -63,6 +63,9 @@ function pokeDisplay(json) {
     document.getElementById("pokeImg").src = json.sprites.front_default;
     document.getElementById("pokeType").innerHTML = "";
     document.getElementById("pokeWeak").innerHTML = "";
+    
+    console.log(json.id);
+    showRegion(json.id);
 
     var types = [];
     //create an array of type names for finding weaknesses and display
@@ -81,12 +84,12 @@ function localType(pTypes) {
     var allWeaknesses = [];
     for (i = 0; i < pTypes.length; i++) {
         document.getElementById("pokeType").innerHTML += pTypes[i];
-        if (!(i == pTypes.length -1)) {
+        if (!(i === pTypes.length - 1)) {
             document.getElementById("pokeType").innerHTML += " / ";
         }
         for (j = 0; j < typeJSON.types.length; j++) {
             var type = typeJSON.types[j];
-            if (pTypes[i] == type.name) {
+            if (pTypes[i] === type.name) {
                 for (k = 0; k < type.effects.weak_to.length; k++) {
                     allWeaknesses.push(type.effects.weak_to[k]);
                 }
@@ -102,7 +105,7 @@ function displayTypeWeaknesses(weaknesses) {
     for (i = 0; i < weaknesses.length; i++) {
         var found = false;
         for (j = 0; j < alreadyDisplayed.length; j++) {
-            if (alreadyDisplayed[j] == weaknesses[i]) {
+            if (alreadyDisplayed[j] === weaknesses[i]) {
                 found = true;
                 break;
             }
@@ -110,33 +113,56 @@ function displayTypeWeaknesses(weaknesses) {
         if (!found) {
             alreadyDisplayed.push(weaknesses[i]);
             pokeWeak.innerHTML += weaknesses[i];
-            if (!(i == weaknesses.length - 1)) {
-               pokeWeak.innerHTML += " / ";
+            if (!(i === weaknesses.length - 1)) {
+                pokeWeak.innerHTML += " / ";
             }
         }
         
     }
 }
 
+function showRegion(id) {
+    console.log("in region: " + id);
+    var regionHolder = document.getElementById("region");
+    
+    if (id < 152){
+        regionHolder.innerHTML = regionNames[0];
+    } else if (152 <= id && id < 252) {
+        regionHolder.innerHTML = regionNames[1];
+    } else if (252 <= id && id < 387) {
+        regionHolder.innerHTML = regionNames[2];
+    } else if (387 <= id && id < 494) {
+        regionHolder.innerHTML = regionNames[3];
+    } else if (494 <= id && id < 650) {
+        regionHolder.innerHTML = regionNames[4];
+    } else {
+        regionHolder.innerHTML = regionNames[5];
+    }
+    
+    regionHolder.innerHTML += " Region";
+}
+
 window.onload = function () {
     document.getElementById("searchButton").addEventListener("click", pokeSearch);
-    document.getElementById("searchBar").addEventListener("keyup", function(event){
+    document.getElementById("searchBar").addEventListener("keyup", function (event) {
         event.preventDefault();
-        if (event.keyCode == 13) {
+        if (event.keyCode === 13) {
             pokeSearch();
         }
     });
-}
+};
 
 String.prototype.capitalizeFirstLetter = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
-}
+};
 
 String.prototype.lowerFirstLetter = function () {
     return this.charAt(0).toLowerCase() + this.slice(1);
-}
+};
 
-var typeJSON = {"types":[{"name":"normal","effects":{"weak_to":["fighting"],"resistant_to":[],"immune_to":["ghost"]}},
+var regionNames = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"];
+
+var typeJSON = {"types": [{"name": "normal", "effects": {"weak_to": ["fighting"], "resistant_to":[],"immune_to":["ghost"]}},
 {"name":"fighting","effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
 {"name":"flying","effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
 {"name":"poison","effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},

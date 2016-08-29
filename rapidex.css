@@ -61,8 +61,12 @@ body {
 #pokeDisplay {
     align-content: center;
     text-align: center;
-    margin: 0 auto;
+    margin: 15px auto;
     padding-left: 20px; padding-right: 20px;
+    width: 200px;
+    padding-bottom: 20px;
+    box-shadow: 4px 4px 20px #bbb;
+    border-radius: 5px;
 }
 
 #pokeImg {
@@ -91,7 +95,7 @@ body {
 }
 
 #pokeID {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 #loader {
@@ -125,4 +129,10 @@ body {
 
 #pokeType {
     margin-bottom: 10px;
+}
+
+#region {
+    margin-top: 2px;
+    margin-bottom: 10px;
+    font-style: italic;
 }
