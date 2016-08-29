@@ -1,3 +1,8 @@
+.text {
+    font-family: sans-serif;
+    letter-spacing: 2px;
+}
+
 h1 {
     font-family: sans-serif;
     color: #fff;
@@ -5,36 +10,36 @@ h1 {
     margin-top: 0;
     font-size: 30px;
 }
-h2 {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-h3 {
-    margin: 0;
-    padding: 0;
-    font-family: sans-serif;
-}
-
-p {
-    font-family: sans-serif;
-    margin-top: 1px;
-    margin-bottom: 1px;
-}
 
 body {
+    text-align: center;
+    align-content: center;
     padding: 0;
     margin: 0;
 }
 
-#searchContainer {
+/* NAVHEADER */
+#navHeader {
     align-content: center;
     text-align: center;
     background: #ea4242;
     padding-top: 10px; padding-bottom: 20px;
     width: 100%;
     margin: 0 auto;
+}
+
+#searchBar {
+    margin: 0px;
+    padding: 5px;
+    outline: none;
+    width: 200px;
+    height: 25px;
+    border-style: none;
+}
+
+#searchBar:focus {
+    outline: none;
+    border-style: none;
 }
 
 #searchButton {
@@ -58,49 +63,10 @@ body {
     background: #d65c5c;
 }
 
-#pokeDisplay {
-    align-content: center;
-    text-align: center;
-    margin: 15px auto;
-    padding-left: 20px; padding-right: 20px;
-    width: 200px;
-    padding-bottom: 20px;
-    box-shadow: 4px 4px 20px #bbb;
-    border-radius: 5px;
-}
-
-#pokeImg {
-    margin: 0 auto;
-    padding-top: 15px;
-}
-
-#searchBar {
-    margin: 0px;
-    padding: 5px;
-    outline: none;
-    width: 200px;
-    height: 25px;
-    border-style: none;
-}
-
-#searchBar:focus {
-    outline: none;
-    border-style: none;
-}
-
-.title {
-    font-size: 12px;
-    font-weight: 700;
-    margin-bottom: 5px;
-}
-
-#pokeID {
-    margin-bottom: 5px;
-}
-
+/* LOADER */
 #loader {
-    border: 8px solid #f3f3f3; /* Light grey */
-    border-top: 8px solid #ea4242; /* Blue */
+    border: 8px solid #f3f3f3;
+    border-top: 8px solid #ea4242;
     border-radius: 50%;
     width: 60px;
     height: 60px;
@@ -114,7 +80,8 @@ body {
     100% { transform: rotate(360deg); }
 }
 
-#errorDisplay {
+/* ERROR STATE */
+#errorState {
     text-align: center;
     margin: 0 auto;
     padding: 25px;
@@ -127,12 +94,115 @@ body {
     color: #EE6767;
 }
 
-#pokeType {
-    margin-bottom: 10px;
+/* POKEDISPLAY */
+#pokeDisplay {
+    outline-style: solid;
+    outline-color: #b7b7b7;
+    outline-width: 3px;
+    width: 325px;
+    min-height: 170px;
+    margin: 0 auto;
+    padding: 5px;
+    margin-top: 25px;
+}
+
+#imgHolder {
+    height:auto;
+    position: absolute;
+    float: left;
+    align-content: center;
+    text-align: center;
+    vertical-align: middle;
+    margin-top: 33px;
+    margin-left: 15px;
+}
+
+#pokeImg {
+    margin: 0 auto;
+    float: left;
+    position: relative;
+    z-index: 1;
+    padding-left: 4px;
+}
+
+#imgBackdrop {
+    background: #b7b7b7;
+    height: 100px;
+    width: 100px;
+    border-radius: 50px;
+    margin: 0 auto;
+    float: left;
+    position: absolute;
+}
+/* info section */ 
+#infoHolder {
+    width: 55%;
+    height: 100%;
+    position: relative;
+    float: right;
+    text-align: left;
+    padding-top: 10px;
+    margin-left: 5px;
+}
+
+#pokeID {
+    font-size: 14px;
+    color: #777;
+}
+
+#pokeName {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 2px; padding-bottom: 3px;
+    letter-spacing: 3px;
 }
 
 #region {
-    margin-top: 2px;
+    font-size: 10px;
+    margin-top: 0;
+    margin-bottom: 7px;
+    letter-spacing: 1px;
+    color: #b7b7b7;
+}
+/* type section */
+#typeHolder {
+    display: inline-block;
+    text-align: center;
     margin-bottom: 10px;
-    font-style: italic;
+}
+
+.type {
+    font-family: sans-serif;
+    width: 60px;
+    color: #fff;
+    font-size: 12px;
+    float: left;
+    display: inline;
+    margin-right: 10px;
+    padding-top: 3px; padding-bottom: 3px;
+}
+
+#type1 {
+    background: #FFAE19;
+}
+
+#type2 {
+    background: #cd9fe7;
+
+}
+
+#typeHolder::after {
+    clear: right;
+}
+
+#weakTitle {
+    font-size: 12px;
+    font-weight: 600;
+    color: #b7b7b7;
+}
+
+#weaknesses {
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding-top: 3px;
 }

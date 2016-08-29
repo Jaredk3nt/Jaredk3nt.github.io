@@ -33,8 +33,10 @@ function pokeSearch() {
     if (pokemon === currentShowing) {
         //keep the current showing
     } else {
+        
+        console.log("no currently showing or diff");
         document.getElementById("pokeDisplay").style.display = "none";
-        document.getElementById("errorDisplay").style.display = "none";
+        document.getElementById("errorState").style.display = "none";
         document.getElementById("loader").style.display = "block";
         //make the full URL based on search
         var url = baseurl.concat(pokemon);
@@ -48,7 +50,7 @@ function pokeSearch() {
             } else {
                 document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
                 document.getElementById("loader").style.display = "none";
-                document.getElementById("errorDisplay").style.display = "block";
+                document.getElementById("errorState").style.display = "block";
                 console.error(xmlhttp.statusText);
             }
         };
@@ -58,7 +60,7 @@ function pokeSearch() {
 
 //placing the data into the page
 function pokeDisplay(json) {
-    var name = json.name.capitalizeFirstLetter();
+    var name = json.name.capitalizeString();
     var weaknesses = "";
     
     //var urls = [];
@@ -66,10 +68,19 @@ function pokeDisplay(json) {
     //place information we already have
     document.getElementById("pokeDisplay").style.display = "block";
     document.getElementById("pokeName").innerHTML = name;
-    document.getElementById("pokeID").innerHTML = "#" + json.id;
+    console.log(json.id < 10);
+    if(json.id < 10) {
+        document.getElementById("pokeID").innerHTML = "#00" + json.id;
+    } else if (json.id < 100) {
+        document.getElementById("pokeID").innerHTML = "#0" + json.id;
+    } else {
+        document.getElementById("pokeID").innerHTML = "#" + json.id;
+    }
+    
     document.getElementById("pokeImg").src = json.sprites.front_default;
-    document.getElementById("pokeType").innerHTML = "";
-    document.getElementById("pokeWeak").innerHTML = "";
+    document.getElementById("type1").style.display = "none";
+    document.getElementById("type2").style.display = "none";
+    document.getElementById("weaknesses").innerHTML = "";
     
     console.log(json.id);
     showRegion(json.id);
@@ -79,7 +90,6 @@ function pokeDisplay(json) {
     for (i = 0; i < json.types.length; i++) {
         types.push(json.types[i].type.name);
     }
-    document.getElementById("typeTitle").style.visibility = "visible";
     document.getElementById("weakTitle").style.visibility = "visible";
     localType(types);
 
@@ -90,25 +100,35 @@ function pokeDisplay(json) {
 function localType(pTypes) {
     var allWeaknesses = [];
     for (i = 0; i < pTypes.length; i++) {
-        document.getElementById("pokeType").innerHTML += pTypes[i];
-        if (!(i === pTypes.length - 1)) {
-            document.getElementById("pokeType").innerHTML += " / ";
-        }
+        var color;
         for (j = 0; j < typeJSON.types.length; j++) {
             var type = typeJSON.types[j];
             if (pTypes[i] === type.name) {
+                color = type.color;
                 for (k = 0; k < type.effects.weak_to.length; k++) {
                     allWeaknesses.push(type.effects.weak_to[k]);
                 }
             }
         }
+        if(i === 0) {
+            var type = document.getElementById("type2");
+            type.style.display = "block";
+            type.innerHTML = pTypes[i];
+            type.style.background = color;
+        } else {
+            var type = document.getElementById("type1");
+            type.style.display = "block";
+            type.innerHTML = pTypes[i];
+            type.style.background = color;
+        }
+        
     }
     displayTypeWeaknesses(allWeaknesses);
 }
 
 function displayTypeWeaknesses(weaknesses) {
     var alreadyDisplayed = [];
-    var pokeWeak = document.getElementById("pokeWeak");
+    var pokeWeak = document.getElementById("weaknesses");
     for (i = 0; i < weaknesses.length; i++) {
         var found = false;
         for (j = 0; j < alreadyDisplayed.length; j++) {
@@ -121,7 +141,7 @@ function displayTypeWeaknesses(weaknesses) {
             alreadyDisplayed.push(weaknesses[i]);
             pokeWeak.innerHTML += weaknesses[i];
             if (!(i === weaknesses.length - 1)) {
-                pokeWeak.innerHTML += " / ";
+                pokeWeak.innerHTML += "  ";
             }
         }
         
@@ -131,22 +151,22 @@ function displayTypeWeaknesses(weaknesses) {
 function showRegion(id) {
     console.log("in region: " + id);
     var regionHolder = document.getElementById("region");
-    
+    var regionName = "";
     if (id < 152){
-        regionHolder.innerHTML = regionNames[0];
+        regionName = regionNames[0];
     } else if (152 <= id && id < 252) {
-        regionHolder.innerHTML = regionNames[1];
+        regionName = regionNames[1];
     } else if (252 <= id && id < 387) {
-        regionHolder.innerHTML = regionNames[2];
+        regionName = regionNames[2];
     } else if (387 <= id && id < 494) {
-        regionHolder.innerHTML = regionNames[3];
+        regionName = regionNames[3];
     } else if (494 <= id && id < 650) {
-        regionHolder.innerHTML = regionNames[4];
+        regionName = regionNames[4];
     } else {
-        regionHolder.innerHTML = regionNames[5];
+        regionName = regionNames[5];
     }
-    
-    regionHolder.innerHTML += " Region";
+    regionHolder.innerHTML = regionName.capitalizeString();
+    regionHolder.innerHTML += " REGION";
 }
 
 window.onload = function () {
@@ -167,23 +187,31 @@ String.prototype.lowerFirstLetter = function () {
     return this.charAt(0).toLowerCase() + this.slice(1);
 };
 
+String.prototype.capitalizeString = function () {
+    var capString = "";
+    for (i = 0; i < this.length; i++){
+        capString += this.charAt(i).toUpperCase();
+    }
+    return capString;
+};
+
 var regionNames = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"];
 
-var typeJSON = {"types": [{"name": "normal", "effects": {"weak_to": ["fighting"], "resistant_to":[],"immune_to":["ghost"]}},
-{"name":"fighting","effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
-{"name":"flying","effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
-{"name":"poison","effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},
-{"name":"ground","effects":{"weak_to":["water","grass","ice"],"resistant_to":["poison","rock"],"immune_to":["electric"]}},
-{"name":"rock","effects":{"weak_to":["fighting","ground","steel","water","grass"],"resistant_to":["normal","flying","poison","fire"],"immune_to":[]}},
-{"name":"bug","effects":{"weak_to":["flying","rock","fire"],"resistant_to":["fighting","ground","grass"],"immune_to":[]}},
-{"name":"ghost","effects":{"weak_to":["ghost","dark"],"resistant_to":["poison","bug"],"immune_to":["normal","fighting"]}},
-{"name":"steel","effects":{"weak_to":["fighting","ground","fire"],"resistant_to":["normal","flying","rock","bug","steel","grass","psychic","ice","dragon","fairy"],"immune_to":["poison"]}},
-{"name":"fire","effects":{"weak_to":["ground","rock","water"],"resistant_to":["bug","steel","fire","grass","ice","fairy"],"immune_to":[]}},
-{"name":"water","effects":{"weak_to":["grass","electric"],"resistant_to":["steel","fire","water","ice"],"immune_to":[]}},
-{"name":"grass","effects":{"weak_to":["flying","poison","bug","fire","ice"],"resistant_to":["ground","water","grass","electric"],"immune_to":[]}},
-{"name":"electric","effects":{"weak_to":["ground"],"resistant_to":["flying","steel","electric"],"immune_to":[]}},
-{"name":"psychic","effects":{"weak_to":["bug","ghost","dark"],"resistant_to":["fighting","psychic"],"immune_to":[]}},
-{"name":"ice","effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
-{"name":"dragon","effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
-{"name":"dark","effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
-{"name":"fairy","effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
+var typeJSON = {"types": [{"name": "normal", "color": "#aaa", "effects": {"weak_to": ["fighting"], "resistant_to":[],"immune_to":["ghost"]}},
+{"name":"fighting", "color": "#aaa", "effects":{"weak_to":["flying","psychic","fairy"],"resistant_to":["rock","bug","dark"],"immune_to":[]}},
+{"name":"flying", "color": "#aaa", "effects":{"weak_to":["rock","electric","ice"],"resistant_to":["fighting","bug","grass"],"immune_to":["ground"]}},
+{"name":"poison", "color": "#aaa", "effects":{"weak_to":["ground","psychic"],"resistant_to":["fighting","poison","bug","grass","fairy"],"immune_to":[]}},
+{"name":"ground", "color": "#aaa", "effects":{"weak_to":["water","grass","ice"],"resistant_to":["poison","rock"],"immune_to":["electric"]}},
+{"name":"rock", "color": "#aaa", "effects":{"weak_to":["fighting","ground","steel","water","grass"],"resistant_to":["normal","flying","poison","fire"],"immune_to":[]}},
+{"name":"bug", "color": "#aaa", "effects":{"weak_to":["flying","rock","fire"],"resistant_to":["fighting","ground","grass"],"immune_to":[]}},
+{"name":"ghost", "color": "#aaa", "effects":{"weak_to":["ghost","dark"],"resistant_to":["poison","bug"],"immune_to":["normal","fighting"]}},
+{"name":"steel", "color": "#aaa", "effects":{"weak_to":["fighting","ground","fire"],"resistant_to":["normal","flying","rock","bug","steel","grass","psychic","ice","dragon","fairy"],"immune_to":["poison"]}},
+{"name":"fire", "color": "#aaa", "effects":{"weak_to":["ground","rock","water"],"resistant_to":["bug","steel","fire","grass","ice","fairy"],"immune_to":[]}},
+{"name":"water", "color": "#aaa", "effects":{"weak_to":["grass","electric"],"resistant_to":["steel","fire","water","ice"],"immune_to":[]}},
+{"name":"grass", "color": "#aaa", "effects":{"weak_to":["flying","poison","bug","fire","ice"],"resistant_to":["ground","water","grass","electric"],"immune_to":[]}},
+{"name":"electric", "color": "#aaa", "effects":{"weak_to":["ground"],"resistant_to":["flying","steel","electric"],"immune_to":[]}},
+{"name":"psychic", "color": "#aaa", "effects":{"weak_to":["bug","ghost","dark"],"resistant_to":["fighting","psychic"],"immune_to":[]}},
+{"name":"ice", "color": "#aaa", "effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
+{"name":"dragon", "color": "#aaa", "effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
+{"name":"dark", "color": "#aaa", "effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
+{"name":"fairy", "color": "#aaa", "effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
