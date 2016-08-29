@@ -12,6 +12,13 @@
     *-remove overlapping types on pokemon weakness
     
     -some double pokemon show types they aren't weak against due to having types that are resistant to something as well as the other being weak to it, the algorithm needs to be expanded to include these
+    
+    
+    UI UPDATE NOTES
+    grey : #b7b7b7
+    pick a color for all types
+    make the top bar resize? look vs usabiltiy
+    USE ALL CAPS ON ERRYTHING
 */
 
 var xmlhttp = new XMLHttpRequest();
