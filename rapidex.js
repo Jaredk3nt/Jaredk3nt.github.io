@@ -17,7 +17,7 @@
     UI UPDATE NOTES
     grey : #b7b7b7
     pick a color for all types
-    make the top bar resize? look vs usabiltiy
+    make the top bar resize? look vs usability
     USE ALL CAPS ON ERRYTHING
 */
 
