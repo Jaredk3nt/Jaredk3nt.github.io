@@ -20,7 +20,7 @@ var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
 function pokeSearch() {
     //grab the pokemon they search for
-    var pokemon = document.getElementById("searchBar").value.lowerFirstLetter();
+    var pokemon = document.getElementById("searchBar").value.lowerString();
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerFirstLetter();
     //test if they are re-searching for whats already there
     //prevent another api call
@@ -189,6 +189,14 @@ String.prototype.capitalizeString = function () {
     }
     return capString;
 };
+
+String.prototype.lowerString = function () {
+    var lowString = "";
+    for (i = 0; i < this.length; i++) {
+        lowString += this.charAt(i).toLowerCase();
+    }
+    return lowString;
+}
 
 var regionNames = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"];
 /*
