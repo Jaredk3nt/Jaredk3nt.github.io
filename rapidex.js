@@ -9,9 +9,7 @@
     
     -some double pokemon show types they aren't weak against due to having types that are resistant to something as well as the other being weak to it, the algorithm needs to be expanded to include these
     
-    
-    UI UPDATE NOTES
-    Type colors :
+    -suggesting pokemon based on what is typed or some system of "did you mean" if they put in an improper name
     
 */
 
@@ -63,7 +61,6 @@ function pokeDisplay(json) {
     //place information we already have
     document.getElementById("pokeDisplay").style.display = "block";
     document.getElementById("pokeName").innerHTML = name;
-    console.log(json.id < 10);
     if(json.id < 10) {
         document.getElementById("pokeID").innerHTML = "#00" + json.id;
     } else if (json.id < 100) {
@@ -77,7 +74,6 @@ function pokeDisplay(json) {
     document.getElementById("type2").style.display = "none";
     document.getElementById("weaknesses").innerHTML = "";
     
-    console.log(json.id);
     showRegion(json.id);
 
     var types = [];
@@ -94,6 +90,7 @@ function pokeDisplay(json) {
 
 function localType(pTypes) {
     var allWeaknesses = [];
+    var resistances = [];
     for (i = 0; i < pTypes.length; i++) {
         var color;
         for (j = 0; j < typeJSON.types.length; j++) {
@@ -103,6 +100,9 @@ function localType(pTypes) {
                 for (k = 0; k < type.effects.weak_to.length; k++) {
                     allWeaknesses.push(type.effects.weak_to[k]);
                 }
+                for(l = 0; l < type.effects.resistant_to.length; l++){ 
+                    resistances.push(type.effects.resistant_to[l]);
+                }  
             }
         }
         if(i === 0) {
@@ -118,10 +118,10 @@ function localType(pTypes) {
         }
         
     }
-    displayTypeWeaknesses(allWeaknesses);
+    displayTypeWeaknesses(allWeaknesses, resistances);
 }
 
-function displayTypeWeaknesses(weaknesses) {
+function displayTypeWeaknesses(weaknesses, resistances) {
     var alreadyDisplayed = [];
     var pokeWeak = document.getElementById("weaknesses");
     for (i = 0; i < weaknesses.length; i++) {
@@ -133,10 +133,18 @@ function displayTypeWeaknesses(weaknesses) {
             }
         }
         if (!found) {
-            alreadyDisplayed.push(weaknesses[i]);
-            pokeWeak.innerHTML += weaknesses[i];
-            if (!(i === weaknesses.length - 1)) {
-                pokeWeak.innerHTML += "  ";
+            var resistantTo = false;
+            alreadyDisplayed.push(weaknesses[i]); //note that we already checked this one whether we are resistant or not
+            for(k = 0; k < resistances.length; k++) {
+                if(weaknesses[i] === resistances[k]) {
+                    resistantTo = true;
+                }
+            }
+            if(!resistantTo){
+                pokeWeak.innerHTML += weaknesses[i];
+                if (!(i === weaknesses.length - 1)) {
+                    pokeWeak.innerHTML += "  ";
+                }
             }
         }
         
