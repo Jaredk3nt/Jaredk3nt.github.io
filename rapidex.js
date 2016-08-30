@@ -16,16 +16,13 @@
 var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 
+//main method to search for pokemon
 function pokeSearch() {
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerString();
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerFirstLetter();
-    //test if they are re-searching for whats already there
-    //prevent another api call
-    if (pokemon === currentShowing) {
-        //keep the current showing
-    } else {
-        
+    //test if they are re-searching for whats already there to prevent another api call
+    if (!(pokemon === currentShowing)) {
         console.log("no currently showing or diff");
         document.getElementById("pokeDisplay").style.display = "none";
         document.getElementById("errorState").style.display = "none";
@@ -88,23 +85,31 @@ function pokeDisplay(json) {
     
 }
 
+//handle all type calculation and display
 function localType(pTypes) {
     var allWeaknesses = [];
     var resistances = [];
+    var immunities = []
+    //loop through the types the pokemon displays
     for (i = 0; i < pTypes.length; i++) {
         var color;
+        //use JSON to gather more data on the type
         for (j = 0; j < typeJSON.types.length; j++) {
             var type = typeJSON.types[j];
             if (pTypes[i] === type.name) {
                 color = type.color;
+                //gather the type weaknesses the pokemon displays
                 for (k = 0; k < type.effects.weak_to.length; k++) {
                     allWeaknesses.push(type.effects.weak_to[k]);
                 }
-                for(l = 0; l < type.effects.resistant_to.length; l++){ 
-                    resistances.push(type.effects.resistant_to[l]);
-                }  
+                //gather the type resistances the pokemon displays
+                for(r = 0; r < type.effects.resistant_to.length; r++){ 
+                    resistances.push(type.effects.resistant_to[r]);
+                } 
+                //gather the type immunities the pokemon displays
             }
         }
+        //display the main types on the page
         if(i === 0) {
             var type = document.getElementById("type2");
             type.style.display = "block";
@@ -121,26 +126,33 @@ function localType(pTypes) {
     displayTypeWeaknesses(allWeaknesses, resistances);
 }
 
+//calculate and display proper type weaknesses
 function displayTypeWeaknesses(weaknesses, resistances) {
     var alreadyDisplayed = [];
     var pokeWeak = document.getElementById("weaknesses");
+    //calculate which weaknesses will be displayed (mostly for 2 typed pokemon)
     for (i = 0; i < weaknesses.length; i++) {
         var found = false;
+        //see if the type is overlapped b/w the pokemons types
         for (j = 0; j < alreadyDisplayed.length; j++) {
             if (alreadyDisplayed[j] === weaknesses[i]) {
                 found = true;
                 break;
             }
         }
+        //if there is no overlap check to see if there is a resistance or immunity overlap
         if (!found) {
-            var resistantTo = false;
-            alreadyDisplayed.push(weaknesses[i]); //note that we already checked this one whether we are resistant or not
+            var typeInconsistency = false;
+            //note that we already checked this one whether we are resistant or not
+            alreadyDisplayed.push(weaknesses[i]); 
+            //loop through resistances
             for(k = 0; k < resistances.length; k++) {
                 if(weaknesses[i] === resistances[k]) {
-                    resistantTo = true;
+                    typeInconsistency = true;
                 }
             }
-            if(!resistantTo){
+            //loop through immunities
+            if(!typeInconsistency){
                 pokeWeak.innerHTML += weaknesses[i];
                 if (!(i === weaknesses.length - 1)) {
                     pokeWeak.innerHTML += "  ";
@@ -151,6 +163,7 @@ function displayTypeWeaknesses(weaknesses, resistances) {
     }
 }
 
+//display the home region of the pokemon based on id number
 function showRegion(id) {
     console.log("in region: " + id);
     var regionHolder = document.getElementById("region");
@@ -182,6 +195,7 @@ window.onload = function () {
     });
 };
 
+//String prototype helper methods for minimizing code
 String.prototype.capitalizeFirstLetter = function () {
     return this.charAt(0).toUpperCase() + this.slice(1);
 };
@@ -206,6 +220,7 @@ String.prototype.lowerString = function () {
     return lowString;
 }
 
+//stored data on type and region
 var regionNames = ["Kanto", "Johto", "Hoenn", "Sinnoh", "Unova", "Kalos"];
 /*
 normal: #aaa
