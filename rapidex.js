@@ -99,14 +99,17 @@ function localType(pTypes) {
             if (pTypes[i] === type.name) {
                 color = type.color;
                 //gather the type weaknesses the pokemon displays
-                for (k = 0; k < type.effects.weak_to.length; k++) {
-                    allWeaknesses.push(type.effects.weak_to[k]);
+                for (w = 0; w < type.effects.weak_to.length; w++) {
+                    allWeaknesses.push(type.effects.weak_to[w]);
                 }
                 //gather the type resistances the pokemon displays
                 for(r = 0; r < type.effects.resistant_to.length; r++){ 
                     resistances.push(type.effects.resistant_to[r]);
                 } 
                 //gather the type immunities the pokemon displays
+                for (im =0; im < type.effects.immune_to.length; im++) {
+                    immunities.push(type.effects.immune_to[im]);
+                }
             }
         }
         //display the main types on the page
@@ -123,11 +126,11 @@ function localType(pTypes) {
         }
         
     }
-    displayTypeWeaknesses(allWeaknesses, resistances);
+    displayTypeWeaknesses(allWeaknesses, resistances, immunities);
 }
 
 //calculate and display proper type weaknesses
-function displayTypeWeaknesses(weaknesses, resistances) {
+function displayTypeWeaknesses(weaknesses, resistances, immunities) {
     var alreadyDisplayed = [];
     var pokeWeak = document.getElementById("weaknesses");
     //calculate which weaknesses will be displayed (mostly for 2 typed pokemon)
@@ -146,8 +149,13 @@ function displayTypeWeaknesses(weaknesses, resistances) {
             //note that we already checked this one whether we are resistant or not
             alreadyDisplayed.push(weaknesses[i]); 
             //loop through resistances
-            for(k = 0; k < resistances.length; k++) {
+            for (k = 0; k < resistances.length; k++) {
                 if(weaknesses[i] === resistances[k]) {
+                    typeInconsistency = true;
+                }
+            }
+            for (im = 0; im < immunities.length; im++) {
+                if(weaknesses[i] === immunities[im]) {
                     typeInconsistency = true;
                 }
             }
@@ -159,7 +167,6 @@ function displayTypeWeaknesses(weaknesses, resistances) {
                 }
             }
         }
-        
     }
 }
 
