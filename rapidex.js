@@ -236,4 +236,4 @@ var typeJSON = {"types": [{"name": "normal", "color": "#aaa", "effects": {"weak_
 {"name":"ice", "color": "#AAFAF2", "effects":{"weak_to":["fighting","rock","steel","fire"],"resistant_to":["ice"],"immune_to":[]}},
 {"name":"dragon", "color": "#032B63", "effects":{"weak_to":["ice","dragon","fairy"],"resistant_to":["fire","water","grass","electric"],"immune_to":[]}},
 {"name":"dark", "color": "#1D2024", "effects":{"weak_to":["fighting","bug","fairy"],"resistant_to":["ghost","dark"],"immune_to":["psychic"]}},
-{"name":"fairy", "color": "F7B5EE", "effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
+{"name":"fairy", "color": "#F7B5EE", "effects":{"weak_to":["poison","steel"],"resistant_to":["fighting","bug","dark"],"immune_to":["dragon"]}}]};
