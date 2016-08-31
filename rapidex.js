@@ -69,7 +69,9 @@ function pokeDisplay(json) {
     document.getElementById("pokeImg").src = json.sprites.front_default;
     document.getElementById("type1").style.display = "none";
     document.getElementById("type2").style.display = "none";
-    document.getElementById("weaknesses").innerHTML = "";
+    document.getElementById("weaknessesUL").innerHTML = "";
+    document.getElementById("pokeDisplay").style.height = "170px";
+    //document.getElementById("weaknesses").innerHTML = "";
     
     showRegion(json.id);
 
@@ -132,7 +134,11 @@ function localType(pTypes) {
 //calculate and display proper type weaknesses
 function displayTypeWeaknesses(weaknesses, resistances, immunities) {
     var alreadyDisplayed = [];
-    var pokeWeak = document.getElementById("weaknesses");
+    var showing = 0;
+    //var pokeWeak = document.getElementById("weaknesses");
+    console.log("weaknesses: " + weaknesses);
+    console.log("resistances: " + resistances);
+    console.log("immunities: " + immunities);
     //calculate which weaknesses will be displayed (mostly for 2 typed pokemon)
     for (i = 0; i < weaknesses.length; i++) {
         var found = false;
@@ -148,26 +154,49 @@ function displayTypeWeaknesses(weaknesses, resistances, immunities) {
             var typeInconsistency = false;
             //note that we already checked this one whether we are resistant or not
             alreadyDisplayed.push(weaknesses[i]); 
-            //loop through resistances
+            //loop through resistances and then immunities to filter out wrong weaknesses
             for (k = 0; k < resistances.length; k++) {
                 if(weaknesses[i] === resistances[k]) {
+                    console.log("resistant: " + weaknesses[i]);
                     typeInconsistency = true;
                 }
             }
             for (im = 0; im < immunities.length; im++) {
                 if(weaknesses[i] === immunities[im]) {
+                    console.log("immune: " + weaknesses[i]);
                     typeInconsistency = true;
                 }
             }
-            //loop through immunities
             if(!typeInconsistency){
-                pokeWeak.innerHTML += weaknesses[i];
-                if (!(i === weaknesses.length - 1)) {
-                    pokeWeak.innerHTML += "  ";
+                console.log(weaknesses[i]);
+                var weaknessLI = document.createElement("li");
+                weaknessLI.className = "type";
+                weaknessLI.innerHTML = weaknesses[i];
+                //weaknessLI.style.background = getTypeColor(weaknesses[i]);
+                 for (c = 0; c < typeJSON.types.length; c++) {
+                    if (typeJSON.types[c].name === weaknesses[i]) {
+                        weaknessLI.style.background = typeJSON.types[c].color;
+                    }
                 }
+                document.getElementById("weaknessesUL").appendChild(weaknessLI);
+                showing++;
+                if (showing > 6) {
+                    console.log("changing size of pokeDisplay")
+                    document.getElementById("pokeDisplay").style.height = "200px";
+                }
+//                pokeWeak.innerHTML += weaknesses[i];
+//                if (!(i === weaknesses.length - 1)) {
+//                    pokeWeak.innerHTML += "  ";
+//                }
             }
         }
     }
+}
+
+function getTypeColor(type) {
+    var color = "";
+   
+    return color;
 }
 
 //display the home region of the pokemon based on id number
