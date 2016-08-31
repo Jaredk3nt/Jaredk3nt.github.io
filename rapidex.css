@@ -87,7 +87,7 @@ body {
     height: 2.4em;
     left: 0em;
     position: absolute;
-    border-bottom: .2em solid #555;
+    border-bottom: .2em solid #666;
 }
 
 #details {
@@ -98,7 +98,7 @@ body {
     border-radius: 50%;
     top: 1.7em;
     left: 1.6em;
-    border: .2em solid #555;
+    border: .2em solid #666;
 }
 
 @keyframes wiggle {

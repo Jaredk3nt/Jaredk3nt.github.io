@@ -7,8 +7,6 @@
     
     -add section for what types they are good against
     
-    -some double pokemon show types they aren't weak against due to having types that are resistant to something as well as the other being weak to it, the algorithm needs to be expanded to include these
-    
     -suggesting pokemon based on what is typed or some system of "did you mean" if they put in an improper name
     
 */
@@ -23,7 +21,7 @@ function pokeSearch() {
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerString();
     //test if they are re-searching for whats already there to prevent another api call
     if (!(pokemon === currentShowing)) {
-        console.log("no currently showing or diff");
+        console.log("API Call for " + pokemon);
         document.getElementById("pokeDisplay").style.display = "none";
         document.getElementById("errorState").style.display = "none";
         document.getElementById("loader").style.display = "block";
@@ -71,7 +69,6 @@ function pokeDisplay(json) {
     document.getElementById("type2").style.display = "none";
     document.getElementById("weaknessesUL").innerHTML = "";
     document.getElementById("pokeDisplay").style.height = "170px";
-    //document.getElementById("weaknesses").innerHTML = "";
     
     showRegion(json.id);
 
@@ -136,9 +133,6 @@ function displayTypeWeaknesses(weaknesses, resistances, immunities) {
     var alreadyDisplayed = [];
     var showing = 0;
     //var pokeWeak = document.getElementById("weaknesses");
-    console.log("weaknesses: " + weaknesses);
-    console.log("resistances: " + resistances);
-    console.log("immunities: " + immunities);
     //calculate which weaknesses will be displayed (mostly for 2 typed pokemon)
     for (i = 0; i < weaknesses.length; i++) {
         var found = false;
@@ -157,18 +151,15 @@ function displayTypeWeaknesses(weaknesses, resistances, immunities) {
             //loop through resistances and then immunities to filter out wrong weaknesses
             for (k = 0; k < resistances.length; k++) {
                 if(weaknesses[i] === resistances[k]) {
-                    console.log("resistant: " + weaknesses[i]);
                     typeInconsistency = true;
                 }
             }
             for (im = 0; im < immunities.length; im++) {
                 if(weaknesses[i] === immunities[im]) {
-                    console.log("immune: " + weaknesses[i]);
                     typeInconsistency = true;
                 }
             }
             if(!typeInconsistency){
-                console.log(weaknesses[i]);
                 var weaknessLI = document.createElement("li");
                 weaknessLI.className = "type";
                 weaknessLI.innerHTML = weaknesses[i];
@@ -181,27 +172,17 @@ function displayTypeWeaknesses(weaknesses, resistances, immunities) {
                 document.getElementById("weaknessesUL").appendChild(weaknessLI);
                 showing++;
                 if (showing > 6) {
-                    console.log("changing size of pokeDisplay")
                     document.getElementById("pokeDisplay").style.height = "200px";
+                } else if (showing > 3) {
+                    document.getElementById("pokeDisplay").style.height = "175px";
                 }
-//                pokeWeak.innerHTML += weaknesses[i];
-//                if (!(i === weaknesses.length - 1)) {
-//                    pokeWeak.innerHTML += "  ";
-//                }
             }
         }
     }
 }
 
-function getTypeColor(type) {
-    var color = "";
-   
-    return color;
-}
-
 //display the home region of the pokemon based on id number
 function showRegion(id) {
-    console.log("in region: " + id);
     var regionHolder = document.getElementById("region");
     var regionName = "";
     if (id < 152){
