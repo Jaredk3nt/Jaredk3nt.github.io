@@ -71,12 +71,12 @@ body {
 }
 
 #pokeball {
-  width: 5em;
-  height: 5em;
-  background: #eee;
-  border-radius: 50%;
-  margin: 0 auto;
-  animation: wiggle 1s linear .5s infinite;
+    width: 5em;
+    height: 5em;
+    background: #eee;
+    border-radius: 50%;
+    margin: 0 auto;
+    animation: wiggle 1s linear .5s infinite;
 }
 
 #pokeball::before {

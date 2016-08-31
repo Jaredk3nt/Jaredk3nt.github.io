@@ -20,7 +20,7 @@ var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 function pokeSearch() {
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerString();
-    var currentShowing = document.getElementById("pokeName").innerHTML.lowerFirstLetter();
+    var currentShowing = document.getElementById("pokeName").innerHTML.lowerString();
     //test if they are re-searching for whats already there to prevent another api call
     if (!(pokemon === currentShowing)) {
         console.log("no currently showing or diff");
