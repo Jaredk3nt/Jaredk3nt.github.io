@@ -81,13 +81,13 @@ body {
 
 #pokeball::before {
     content: '';
-    background-color: #EE6767;
+    background-color: #ec4545;
     border-radius: 2.5em 2.5em 0 0;
     width: 5em;
     height: 2.4em;
     left: 0em;
     position: absolute;
-    border-bottom: .2em solid #222;
+    border-bottom: .2em solid #555;
 }
 
 #details {
@@ -96,8 +96,9 @@ body {
     background: #fff;
     position: absolute;
     border-radius: 50%;
-    top: 1.9em;
-    left: 1.8em;
+    top: 1.7em;
+    left: 1.6em;
+    border: .2em solid #555;
 }
 
 @keyframes wiggle {
