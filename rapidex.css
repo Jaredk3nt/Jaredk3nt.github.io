@@ -64,20 +64,48 @@ body {
 }
 
 /* LOADER */
+
 #loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #ea4242;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 2s linear infinite;
     margin: 0 auto;
     margin-top: 50px;
 }
 
-@keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+#pokeball {
+  width: 5em;
+  height: 5em;
+  background: #eee;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: wiggle 1s linear .5s infinite;
+}
+
+#pokeball::before {
+    content: '';
+    background-color: #EE6767;
+    border-radius: 2.5em 2.5em 0 0;
+    width: 5em;
+    height: 2.4em;
+    left: 0em;
+    position: absolute;
+    border-bottom: .2em solid #222;
+}
+
+#details {
+    height: 1.25em;
+    width: 1.25em;
+    background: #fff;
+    position: absolute;
+    border-radius: 50%;
+    top: 1.9em;
+    left: 1.8em;
+}
+
+@keyframes wiggle {
+  0% { transform: rotate(0deg) }
+  25% { transform: rotate(-30deg) }
+  50% { transform: rotate(25deg) }
+  75% {transform: rotate(0deg) }
+  100% { transform: rotate(0deg) }
 }
 
 /* ERROR STATE */
@@ -168,7 +196,7 @@ body {
 #typeHolder {
     display: inline-block;
     text-align: center;
-    
+    margin-bottom: 7px;
 }
 
 .type {
