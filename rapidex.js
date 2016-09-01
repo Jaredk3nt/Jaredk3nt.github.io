@@ -9,10 +9,20 @@
     
     -suggesting pokemon based on what is typed or some system of "did you mean" if they put in an improper name
     
+    -start turning json call back immediately into local side storable json so the display method can work on both with no mods
+        also store before call to display
+    {"name": "x", "id":"y", "sprite": "z", "types": ["name": "1","name": "1"]}
 */
 
 var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
+var localStorageBool = false;
+
+function checkStorage(name){
+    if (localStorage.name !== null) {
+        return localStorage.getItem(name);
+    }
+}
 
 //main method to search for pokemon
 function pokeSearch() {
@@ -21,28 +31,44 @@ function pokeSearch() {
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerString();
     //test if they are re-searching for whats already there to prevent another api call
     if (!(pokemon === currentShowing)) {
-        console.log("API Call for " + pokemon);
         document.getElementById("pokeDisplay").style.display = "none";
         document.getElementById("errorState").style.display = "none";
         document.getElementById("loader").style.display = "block";
-        //make the full URL based on search
-        var url = baseurl.concat(pokemon);
-        url = url.concat("/");
-        console.log("begin request");
-        xmlhttp.open("GET", url, true);
-        xmlhttp.onload = function () {
-            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                var json = JSON.parse(xmlhttp.responseText);
-                console.log("end request");
-                pokeDisplay(json);
+        if (localStorageBool) {
+            var storedPokemon = checkStorage(pokemon);
+            if (storedPokemon !== null) {
+                pokeDisplay(storedPokemon);
             } else {
-                document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
-                document.getElementById("loader").style.display = "none";
-                document.getElementById("errorState").style.display = "block";
-                console.error(xmlhttp.statusText);
+                console.log("API Call for " + pokemon);
+                //make the full URL based on search
+                var url = baseurl.concat(pokemon);
+                url = url.concat("/");
+                console.log("begin request");
+                xmlhttp.open("GET", url, true);
+                xmlhttp.onload = function () {
+                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        var json = JSON.parse(xmlhttp.responseText);
+                        console.log("end request");
+                        //CREATE JSON THEN SEND THAT TO POKEDISPLAY AND STORE IN LOCAL STORAGE
+                        var storableJSON;
+                        if(json.types.length > 1){
+                            storableJSON = {"name": json.name, "id": json.id, "sprite": json.sprites.front_default, "types":[{"name": json.types[0].type.name}, {"name": json.types[1].type.name}]};
+                        } else {
+                            storableJSON = {"name": json.name, "id": json.id, "sprite": json.sprites.front_default, "types":[{"name": json.types[0].type.name}]};
+                        }
+                        console.log(JSON.stringify(storableJSON));
+                        pokeDisplay(json);
+                    } else {
+                        document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
+                        document.getElementById("loader").style.display = "none";
+                        document.getElementById("errorState").style.display = "block";
+                        console.error(xmlhttp.statusText);
+                    }
+                };
+                xmlhttp.send();
             }
-        };
-        xmlhttp.send();
+        }
+        
     }
 }
 
@@ -203,6 +229,9 @@ function showRegion(id) {
 }
 
 window.onload = function () {
+    if (typeof(Storage) !== "undefined") {
+        localStorageBool = true;
+    } 
     document.getElementById("searchButton").addEventListener("click", pokeSearch);
     document.getElementById("searchBar").addEventListener("keyup", function (event) {
         event.preventDefault();
