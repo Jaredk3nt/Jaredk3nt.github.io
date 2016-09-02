@@ -37,7 +37,10 @@ function pokeSearch() {
         if (localStorageBool) {
             var storedPokemon = checkStorage(pokemon);
             if (storedPokemon !== null) {
-                pokeDisplay(storedPokemon);
+                console.log("pulling from local storage: " + storedPokemon + " typeof:" + typeof storedPokemon);
+                var storedJSON = JSON.parse(storedPokemon);
+                console.log("done parsing: " + storedJSON);
+                pokeDisplay(storedJSON);
             } else {
                 console.log("API Call for " + pokemon);
                 //make the full URL based on search
@@ -47,17 +50,19 @@ function pokeSearch() {
                 xmlhttp.open("GET", url, true);
                 xmlhttp.onload = function () {
                     if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                        //console.log(xmlhttp.responseText);
                         var json = JSON.parse(xmlhttp.responseText);
+                        console.log(json);
                         console.log("end request");
                         //CREATE JSON THEN SEND THAT TO POKEDISPLAY AND STORE IN LOCAL STORAGE
                         var storableJSON;
                         if(json.types.length > 1){
-                            storableJSON = {"name": json.name, "id": json.id, "sprite": json.sprites.front_default, "types":[{"name": json.types[0].type.name}, {"name": json.types[1].type.name}]};
+                            storableJSON = {"name": json.name,"id": json.id, "sprite": json.sprites.front_default,"types": [{"name": json.types[0].type.name},{"name": json.types[1].type.name}]};
                         } else {
-                            storableJSON = {"name": json.name, "id": json.id, "sprite": json.sprites.front_default, "types":[{"name": json.types[0].type.name}]};
+                            storableJSON = {"name":json.name,"id":json.id,"sprite":json.sprites.front_default,"types":[{"name":json.types[0].type.name}]};
                         }
-                        console.log(JSON.stringify(storableJSON));
-                        pokeDisplay(json);
+                        localStorage.setItem(pokemon, JSON.stringify(storableJSON));
+                        pokeDisplay(storableJSON);
                     } else {
                         document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
                         document.getElementById("loader").style.display = "none";
@@ -74,6 +79,7 @@ function pokeSearch() {
 
 //placing the data into the page
 function pokeDisplay(json) {
+    console.log(json.name);
     var name = json.name.capitalizeString();
     var weaknesses = "";
     
@@ -90,7 +96,7 @@ function pokeDisplay(json) {
         document.getElementById("pokeID").innerHTML = "#" + json.id;
     }
     
-    document.getElementById("pokeImg").src = json.sprites.front_default;
+    document.getElementById("pokeImg").src = json.sprite;
     document.getElementById("type1").style.display = "none";
     document.getElementById("type2").style.display = "none";
     document.getElementById("weaknessesUL").innerHTML = "";
@@ -98,13 +104,8 @@ function pokeDisplay(json) {
     
     showRegion(json.id);
 
-    var types = [];
-    //create an array of type names for finding weaknesses and display
-    for (i = 0; i < json.types.length; i++) {
-        types.push(json.types[i].type.name);
-    }
     document.getElementById("weakTitle").style.visibility = "visible";
-    localType(types);
+    localType(json.types);
 
     document.getElementById("loader").style.display = "none";
     
@@ -121,7 +122,7 @@ function localType(pTypes) {
         //use JSON to gather more data on the type
         for (j = 0; j < typeJSON.types.length; j++) {
             var type = typeJSON.types[j];
-            if (pTypes[i] === type.name) {
+            if (pTypes[i].name === type.name) {
                 color = type.color;
                 //gather the type weaknesses the pokemon displays
                 for (w = 0; w < type.effects.weak_to.length; w++) {
@@ -141,12 +142,12 @@ function localType(pTypes) {
         if(i === 0) {
             var type = document.getElementById("type2");
             type.style.display = "block";
-            type.innerHTML = pTypes[i];
+            type.innerHTML = pTypes[i].name;
             type.style.background = color;
         } else {
             var type = document.getElementById("type1");
             type.style.display = "block";
-            type.innerHTML = pTypes[i];
+            type.innerHTML = pTypes[i].name;
             type.style.background = color;
         }
         
