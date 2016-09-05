@@ -18,62 +18,75 @@ var xmlhttp = new XMLHttpRequest();
 var baseurl = "http://pokeapi.co/api/v2/pokemon/";
 var localStorageBool = false;
 
-function checkStorage(name){
-    if (localStorage.name !== null) {
-        return localStorage.getItem(name);
-    }
-}
+window.onload = function () {
+    if (typeof(Storage) !== "undefined") {
+        localStorageBool = true;
+    } 
+    //setup event listeners for back and next arrows to call a modified pokeSearch
+    document.getElementById("back").addEventListener("click", pokeSearch(1));
+    document.getElementById("next").addEventListener("click", pokeSearch(2));
+    document.getElementById("searchButton").addEventListener("click", pokeSearch(0));
+    document.getElementById("searchBar").addEventListener("keyup", function (event) {
+        event.preventDefault();
+        if (event.keyCode === 13) {
+            pokeSearch();
+        }
+    });
+};
 
 //main method to search for pokemon
-function pokeSearch() {
+function pokeSearch(notifier) {
     //grab the pokemon they search for
     var pokemon = document.getElementById("searchBar").value.lowerString();
     var currentShowing = document.getElementById("pokeName").innerHTML.lowerString();
     //test if they are re-searching for whats already there to prevent another api call
     if (!(pokemon === currentShowing)) {
+        //begin setup to bring in the new data
         document.getElementById("pokeDisplay").style.display = "none";
         document.getElementById("errorState").style.display = "none";
         document.getElementById("loader").style.display = "block";
-        if (localStorageBool) {
+        //check if there is local storage avaliable 
+        if (localStorageBool) { 
             var storedPokemon = checkStorage(pokemon);
+            //use stored data if found
             if (storedPokemon !== null) {
                 console.log("pulling from local storage: " + storedPokemon + " typeof:" + typeof storedPokemon);
                 var storedJSON = JSON.parse(storedPokemon);
                 console.log("done parsing: " + storedJSON);
                 pokeDisplay(storedJSON);
-            } else {
-                console.log("API Call for " + pokemon);
-                //make the full URL based on search
-                var url = baseurl.concat(pokemon);
-                url = url.concat("/");
-                console.log("begin request");
-                xmlhttp.open("GET", url, true);
-                xmlhttp.onload = function () {
-                    if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
-                        //console.log(xmlhttp.responseText);
-                        var json = JSON.parse(xmlhttp.responseText);
-                        console.log(json);
-                        console.log("end request");
-                        //CREATE JSON THEN SEND THAT TO POKEDISPLAY AND STORE IN LOCAL STORAGE
-                        var storableJSON;
-                        if(json.types.length > 1){
-                            storableJSON = {"name": json.name,"id": json.id, "sprite": json.sprites.front_default,"types": [{"name": json.types[0].type.name},{"name": json.types[1].type.name}]};
-                        } else {
-                            storableJSON = {"name":json.name,"id":json.id,"sprite":json.sprites.front_default,"types":[{"name":json.types[0].type.name}]};
-                        }
-                        localStorage.setItem(pokemon, JSON.stringify(storableJSON));
-                        pokeDisplay(storableJSON);
-                    } else {
-                        document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
-                        document.getElementById("loader").style.display = "none";
-                        document.getElementById("errorState").style.display = "block";
-                        console.error(xmlhttp.statusText);
-                    }
-                };
-                xmlhttp.send();
+                return;
             }
         }
-        
+        console.log("API Call for " + pokemon);
+        //make the full URL based on search
+        var url = baseurl.concat(pokemon);
+        url = url.concat("/");
+        console.log("begin request");
+        xmlhttp.open("GET", url, true);
+        xmlhttp.onload = function () {
+            if (xmlhttp.readyState === 4 && xmlhttp.status === 200) {
+                //console.log(xmlhttp.responseText);
+                var json = JSON.parse(xmlhttp.responseText);
+                console.log(json);
+                console.log("end request");
+                var storableJSON;
+                //store the pokemon in local storage 
+                if(json.types.length > 1){
+                    storableJSON = {"name": json.name,"id": json.id, "sprite": json.sprites.front_default,"types": [{"name": json.types[0].type.name},{"name": json.types[1].type.name}]};
+                } else {
+                    storableJSON = {"name":json.name,"id":json.id,"sprite":json.sprites.front_default,"types":[{"name":json.types[0].type.name}]};
+                }
+                localStorage.setItem(pokemon, JSON.stringify(storableJSON));
+                pokeDisplay(storableJSON);
+            } else {
+                //display callback error
+                document.getElementById("errorMessage").innerHTML = pokemon + " can't be found!";
+                document.getElementById("loader").style.display = "none";
+                document.getElementById("errorState").style.display = "block";
+                console.error(xmlhttp.statusText);
+            }
+        };
+        xmlhttp.send();
     }
 }
 
@@ -229,18 +242,11 @@ function showRegion(id) {
     regionHolder.innerHTML += " REGION";
 }
 
-window.onload = function () {
-    if (typeof(Storage) !== "undefined") {
-        localStorageBool = true;
-    } 
-    document.getElementById("searchButton").addEventListener("click", pokeSearch);
-    document.getElementById("searchBar").addEventListener("keyup", function (event) {
-        event.preventDefault();
-        if (event.keyCode === 13) {
-            pokeSearch();
-        }
-    });
-};
+function checkStorage(name){
+    if (localStorage.name !== null) {
+        return localStorage.getItem(name);
+    }
+}
 
 //String prototype helper methods for minimizing code
 String.prototype.capitalizeFirstLetter = function () {
