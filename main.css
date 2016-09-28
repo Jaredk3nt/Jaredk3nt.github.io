@@ -1,5 +1,6 @@
 /* color definitions */
 /* size definitions */
+/* font definitions */
 body, #boxes {
   margin: 0;
   padding: 0; }
@@ -7,15 +8,16 @@ body, #boxes {
 a {
   text-decoration: none; }
 
-#hero {
+.hero {
   width: 100%;
   height: 100%;
   display: block;
   padding-bottom: 50px;
   padding-top: 50px; }
-  #hero h2 {
-    font-family: sans-serif;
+  .hero h2 {
+    font-family: "Open Sans", sans-serif;
     font-size: 40px;
+    font-weight: 800;
     padding: 0;
     margin: 0; }
 
@@ -42,7 +44,7 @@ a {
   float: left;
   text-align: center;
   color: #fff;
-  font-family: sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-size: 30px; }
   .box h2 {
     font-size: 24px; }
@@ -73,31 +75,39 @@ a {
 #about_wrapper {
   width: 55%;
   margin: 0 auto;
-  font-family: sans-serif;
   background: #fff;
   text-align: center; }
 
 #back {
-  padding: 10px; }
+  padding: 10px;
+  display: block;
+  position: absolute; }
 
 #back img {
   width: 40px;
   height: 40px; }
 
-#details h2 {
-  font-size: 30px;
-  padding: 0;
-  margin: 0; }
-#details h3 {
-  font-size: 16px;
-  font-weight: 400;
-  color: #444;
-  padding: 0;
-  margin: 0;
-  padding-bottom: 25px; }
+#details {
+  font-family: "Open Sans", sans-serif;
+  padding-top: 50px; }
+  #details h2 {
+    font-size: 50px;
+    padding: 0;
+    margin: 0; }
+  #details h3 {
+    font-size: 24px;
+    font-weight: 300;
+    color: #444;
+    padding: 0;
+    margin: 0; }
+  #details #title {
+    margin-bottom: 10px; }
+  #details #email {
+    color: #0099ff;
+    padding-bottom: 25px; }
 
-#email {
-  color: #0099ff; }
+#about_text p {
+  font-family: "Open Sans", sans-serif; }
 
 .nav_item {
   display: inline; }
@@ -112,7 +122,7 @@ nav img {
     display: block;
     float: none; }
 
-  #hero h2 {
+  .hero h2 {
     font-size: 30px;
     padding: 10px; }
 
@@ -123,6 +133,11 @@ nav img {
     width: 320px; }
 
   #about_wrapper {
-    width: 90%; } }
+    width: 90%; }
+
+  #about_text {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 0px; } }
 
 /*# sourceMappingURL=main.css.map */

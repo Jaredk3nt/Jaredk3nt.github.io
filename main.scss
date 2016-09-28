@@ -9,6 +9,10 @@ $red-variant: #ff8484;
 /* size definitions */
 $icon: 30px;
 
+/* font definitions */
+$Prata: 'Prata', serif;
+$OpenSans: 'Open Sans', sans-serif;
+
 body, #boxes {
   margin: 0;
   padding: 0;
@@ -16,7 +20,7 @@ body, #boxes {
 
 a { text-decoration: none;  }
 
-#hero {
+.hero {
   width: 100%;
   height: 100%;
   display: block;
@@ -24,8 +28,9 @@ a { text-decoration: none;  }
   padding-top: 50px;
   
   h2 {
-    font-family: sans-serif;
+    font-family: $OpenSans;
     font-size: 40px;
+    font-weight: 800;
     padding: 0;
     margin: 0;
   }
@@ -54,7 +59,7 @@ a { text-decoration: none;  }
   float: left;
   text-align: center;
   color: #fff;
-  font-family: sans-serif;
+  font-family: $OpenSans;
   font-size: 30px;
   
   h2 {  font-size: 24px;  }
@@ -84,12 +89,15 @@ a { text-decoration: none;  }
 #about_wrapper {
   width: 55%;
   margin: 0 auto;
-  font-family: sans-serif;
   background: #fff;
   text-align: center;
 }
 
-#back { padding: 10px;  }
+#back { 
+  padding: 10px;  
+  display:block;
+  position:absolute;
+}
 
 #back img{
   width: 40px;
@@ -97,23 +105,37 @@ a { text-decoration: none;  }
 }
 
 #details {
+  font-family: $OpenSans;
+  padding-top: 50px;
   h2 {
-    font-size: 30px;
+    font-size: 50px;
     padding: 0;
     margin: 0;
   }
   
   h3 {
-    font-size: 16px;
-    font-weight: 400;
+    font-size: 24px;
+    font-weight: 300;
     color: #444;
     padding: 0;
     margin: 0;
+  }
+  
+  #title {
+    margin-bottom: 10px;
+  }
+  
+  #email {  
+    color: $blue; 
     padding-bottom: 25px;
   }
 }
 
-#email {  color: $blue; }
+#about_text {
+  p {
+    font-family: $OpenSans;
+  }
+}
 
 .nav_item {  display: inline;  }
 
@@ -129,7 +151,7 @@ nav img {
     float: none;
   }
   
-  #hero h2 {
+  .hero h2 {
     font-size: 30px;
     padding: 10px;
   }
@@ -139,6 +161,9 @@ nav img {
   #title_wrapper {  width: 320px; }
   
   #about_wrapper {  width: 90%; }
+  
+  #about_text { 
+    padding-left: 15px; padding-right: 15px; margin-top: 0px;}
   
 }
 
