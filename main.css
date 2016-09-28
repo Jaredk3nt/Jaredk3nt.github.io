@@ -1,0 +1,153 @@
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+#hero {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+#title_wrapper {
+  margin: 0 auto;
+  width: 400px;
+  padding: 15px;
+  text-align: left;
+}
+
+#hero h2 {
+  font-family: sans-serif;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+
+/* BOXES CSS */
+#boxes {
+  width: 100%;
+  height: 33%;
+  padding: 0;
+  margin 0;
+}
+
+.box {
+  width: 33.333333333%;
+  height: 33%;
+  display: inline-block;
+  padding-top: 40px; padding-bottom: 40px;
+  margin: 0;
+  position: relative;
+  float: left;
+  text-align: center;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 30px;
+}
+
+#box_wrapper {
+  width: 75%;
+  margin: 0 auto;
+}
+
+.box h2 {
+  font-size: 24px;
+}
+
+#work {
+  background: #ffcc66;
+}
+
+#about {
+  background: #0099ff;
+}
+
+#design {
+  background: #ff6666;
+}
+
+/* ABOUT CSS */
+
+#about_wrapper {
+  width: 55%;
+  margin: 0 auto;
+  font-family: sans-serif;
+  background: #fff;
+  text-align: center;
+}
+
+#back {
+  padding: 10px;
+}
+
+#back img{
+  width: 40px;
+  height: 40px;
+}
+
+#name h2 {
+  font-size: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+#title h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #444;
+  padding: 0;
+  margin: 0;
+  padding-bottom: 25px;
+}
+
+#email {
+  color:  #0099ff;
+}
+
+#about_text {
+}
+
+.nav_item {
+  display: inline;
+}
+nav img {
+  width: 30px;
+  height: 30px;
+}
+
+@media (max-width: 670px){
+  .box {
+    width: 100%;
+    display: block;
+    float: none;
+  }
+  
+  #box_wrapper {
+    width: 100%;
+  }
+  
+  #title_wrapper {
+    width: 320px;
+  }
+  
+  #hero h2 {
+    font-size: 30px;
+    padding: 10px;
+  }
+  
+  #about_wrapper {
+    width: 90%;
+  }
+  
+  #back {
+    display: inline;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+}
+
