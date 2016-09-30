@@ -8,6 +8,19 @@ body, #boxes {
 a {
   text-decoration: none; }
 
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+ul {
+  padding: 0;
+  margin: 0; }
+
+h1,
+h2 {
+  font-family: "Open Sans", sans-serif; }
+
 .hero {
   width: 100%;
   height: 100%;
@@ -115,6 +128,12 @@ a {
 nav img {
   width: 30px;
   height: 30px; }
+
+#playground_wrapper {
+  margin: 0 auto;
+  padding-left: 15px;
+  padding-right: 15px;
+  text-align: center; }
 
 @media (max-width: 670px) {
   .box {
