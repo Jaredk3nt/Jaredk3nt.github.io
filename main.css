@@ -152,8 +152,14 @@ p {
 
 img {
 	width: 15%;
+	margin: 0 auto;
+	margin-top: 5em;
 }
 
+#about_wrapper {
+	margin: 0 auto;
+	text-align: center;
+}
 /*
 temp	- p: base    l: 6over   d: 2 over  d2: 4 over
 
@@ -185,6 +191,7 @@ design 	- p: #355c7d l: #aebdcb d: #2a4964 d2: #1f374b
 	}
 	
 	img {
+		margin-top: 2em;
 		width: 40%;
 	}
 }
