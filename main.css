@@ -160,6 +160,12 @@ img {
 	margin: 0 auto;
 	text-align: center;
 }
+
+#holder {
+	margin: 0 auto;
+	text-align: center;
+	align-content: center;
+}
 /*
 temp	- p: base    l: 6over   d: 2 over  d2: 4 over
 
