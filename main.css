@@ -106,6 +106,10 @@ a {
 	color: #e5c4cd;
 }
 
+.broken {
+	cursor: none;
+}
+
 .return {
 	position: absolute;
 	font: 400 18px 'Lato', sans-serif;
@@ -166,6 +170,8 @@ img {
 	text-align: center;
 	align-content: center;
 }
+
+
 /*
 temp	- p: base    l: 6over   d: 2 over  d2: 4 over
 
