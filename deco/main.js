@@ -13,7 +13,7 @@ $(document).ready(function () {
 		scrolling = true;
 		setTimeout(function () {
 			scrolling = false;
-		}, 1500);
+		}, 1300);
 	}
 	function navigateUp() {
 		if (currentSlide > 1) {
@@ -32,7 +32,7 @@ $(document).ready(function () {
   /*********************
   ***** MOUSEWHEEL *****
   *********************/
-	$(document).on("mousewheel DOMMouseScroll", function (e) {
+	$(document).on("mousewheel DOMMouseScroll touchmove", function (e) {
 		if (!scrolling) {
 			if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
 				navigateUp();
