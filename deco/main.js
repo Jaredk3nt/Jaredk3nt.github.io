@@ -32,7 +32,8 @@ $(document).ready(function () {
   /*********************
   ***** MOUSEWHEEL *****
   *********************/
-	$(document).on("mousewheel DOMMouseScroll touchmove", function (e) {
+  	var touchStartPos;
+	$(document).on("mousewheel DOMMouseScroll", function (e) {
 		if (!scrolling) {
 			if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
 				navigateUp();
@@ -40,6 +41,19 @@ $(document).ready(function () {
 				navigateDown();
 			}
 		}
+	});
+
+	$(document).bind('touchstart', function (e){
+   		touchStartPos = e.originalEvent.touches[0].clientY;
+	});
+
+	$(document).bind('touchend', function (e){
+	   var touchEndPos = e.originalEvent.changedTouches[0].clientY;
+	   if(touchStartPos > touchEndPos+5){
+	      navigateDown();
+	   }else if(touchStartPos < touchEndPos-5){
+	      navigateUp();
+	   }
 	});
 
 });
