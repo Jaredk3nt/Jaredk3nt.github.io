@@ -1,9 +1,7 @@
 $(document).ready(function () {
 	var $wrap = $(".slides-wrapper"), slides = $(".slide").length, scrolling = false, currentSlide = 1;
 
-  /*****************************
-  ***** NAVIGATE FUNCTIONS *****
-  *****************************/
+	// update active classes and control scroll timing
 	function manageClasses() {
 		$wrap.removeClass(function (index, css) {
 			return (css.match(/(^|\s)active-slide\S+/g) || []).join(' ');
@@ -15,13 +13,14 @@ $(document).ready(function () {
 			scrolling = false;
 		}, 1300);
 	}
+	// go up a slide
 	function navigateUp() {
 		if (currentSlide > 1) {
 			currentSlide -= 1;
 			manageClasses();
 		}
 	}
-
+	// go down a slide
 	function navigateDown() {
 		if (currentSlide < slides) {
 			currentSlide += 1;
@@ -29,9 +28,6 @@ $(document).ready(function () {
 		}
 	}
 
-  /*********************
-  ***** MOUSEWHEEL *****
-  *********************/
   	var touchStartPos;
 	$(document).on("mousewheel DOMMouseScroll", function (e) {
 		if (!scrolling) {
@@ -49,11 +45,13 @@ $(document).ready(function () {
 
 	$(document).bind('touchend', function (e){
 	   var touchEndPos = e.originalEvent.changedTouches[0].clientY;
-	   if(touchStartPos > touchEndPos+5){
-	      navigateDown();
-	   }else if(touchStartPos < touchEndPos-5){
-	      navigateUp();
-	   }
+	   if(!scrolling) {
+		   if(touchStartPos > touchEndPos+5){
+		      navigateDown();
+		   }else if(touchStartPos < touchEndPos-5){
+		      navigateUp();
+		   }
+		}
 	});
 
 });
