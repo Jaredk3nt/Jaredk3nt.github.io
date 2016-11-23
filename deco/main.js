@@ -30,12 +30,10 @@ $(document).ready(function () {
 
   	var touchStartPos;
 	$(document).on("mousewheel DOMMouseScroll", function (e) {
-		if (!scrolling) {
-			if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
-				navigateUp();
-			} else {
-				navigateDown();
-			}
+		if (e.originalEvent.wheelDelta > 0 || e.originalEvent.detail < 0) {
+			navigateUp();
+		} else {
+			navigateDown();
 		}
 	});
 
