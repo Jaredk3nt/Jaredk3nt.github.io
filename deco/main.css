@@ -1,9 +1,6 @@
 @font-face {
   font-family: gotham_rounded_book;
   src: local(gotham_rounded_book), url("GothamRnd-Book.otf") format("opentype"); }
-@font-face {
-  font-family: gotham_rounded_medium;
-  src: local(gotham_rounded_medium), url("GothamRnd-Medium.otf") format("opentype"); }
 *, *:before, *:after {
   box-sizing: border-box;
   margin: 0;
@@ -46,25 +43,34 @@ html, body {
     .slides-wrapper .slide.contact {
       background: #fff; }
     .slides-wrapper .slide .slide-content {
-      top: -10%;
       display: flex;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
       margin: 0 auto;
       width: 75%;
       height: 95%;
       padding: 5%;
-      justify-content: center;
-      align-content: center;
+      padding-top: 40%;
       flex-direction: column; }
+      .slides-wrapper .slide .slide-content .title-logo {
+        width: 100%;
+        margin-bottom: 10%; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .slide-content .title-logo {
+            width: 70%; } }
       .slides-wrapper .slide .slide-content .logo {
-        width: 75px;
-        height: 75px;
-        margin-bottom: 15%; }
+        width: 80%;
+        margin-bottom: 10%; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .slide-content .logo {
+            width: 50%; } }
       .slides-wrapper .slide .slide-content h2 {
         font-family: gotham_rounded_book;
         font-size: 32px;
         font-weight: 300; }
       .slides-wrapper .slide .slide-content h3 {
-        font-family: gotham_rounded_medium;
+        font-family: gotham_rounded_book;
         font-size: 18px;
         font-weight: 400;
         color: #fff;
