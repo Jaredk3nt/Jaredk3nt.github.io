@@ -8,8 +8,7 @@
 
 html, body {
   width: 100%;
-  height: 100%;
-  overflow: hidden; }
+  height: 100%; }
 
 .slides-wrapper {
   position: absolute;
@@ -23,7 +22,6 @@ html, body {
   .slides-wrapper .slide {
     position: relative;
     width: 100%;
-    height: 100%;
     backface-visibility: hidden;
     transition: transform 1s ease-in-out;
     -webkit-transition: transform 1s ease-in-out;
@@ -33,7 +31,7 @@ html, body {
     .slides-wrapper .slide.slide1 {
       background: #fff; }
     .slides-wrapper .slide.description {
-      background: #ddd; }
+      background: #fff; }
     .slides-wrapper .slide.learn {
       background: #3390ff; }
     .slides-wrapper .slide.build {
@@ -43,53 +41,87 @@ html, body {
     .slides-wrapper .slide.contact {
       background: #fff; }
     .slides-wrapper .slide .slide-content {
-      display: flex;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: -webkit-flex;
+      display: block;
       margin: 0 auto;
-      width: 75%;
+      width: 95%;
       height: 95%;
-      padding: 5%;
-      padding-top: 40%;
+      padding: 15%;
+      padding-bottom: 25%;
       flex-direction: column; }
+      @media only screen and (min-width: 768px) {
+        .slides-wrapper .slide .slide-content {
+          padding: 10%;
+          padding-bottom: 15%; } }
       .slides-wrapper .slide .slide-content .title-logo {
         width: 100%;
-        margin-bottom: 10%; }
+        margin-bottom: 5%;
+        margin-top: 20%; }
         @media only screen and (min-width: 960px) {
           .slides-wrapper .slide .slide-content .title-logo {
-            width: 70%; } }
+            width: 70%;
+            margin-top: 0%; } }
       .slides-wrapper .slide .slide-content .logo {
         width: 80%;
-        margin-bottom: 10%; }
+        margin-bottom: 10%;
+        margin: 0 auto; }
         @media only screen and (min-width: 960px) {
           .slides-wrapper .slide .slide-content .logo {
             width: 50%; } }
       .slides-wrapper .slide .slide-content h2 {
         font-family: gotham_rounded_book;
-        font-size: 32px;
-        font-weight: 300; }
+        font-size: 1.7rem;
+        font-weight: 300;
+        padding-bottom: 20%; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .slide-content h2 {
+            font-size: 3rem;
+            padding-bottom: 5%; } }
       .slides-wrapper .slide .slide-content h3 {
         font-family: gotham_rounded_book;
-        font-size: 18px;
+        font-size: 1.1rem;
         font-weight: 400;
         color: #fff;
         line-height: 130%; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .slide-content h3 {
+            font-size: 2.4rem; } }
       .slides-wrapper .slide .slide-content p {
-        font-family: gotham_rounded_book; }
+        font-family: gotham_rounded_book;
+        font-size: 1rem; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .slide-content p {
+            font-size: 2.2rem; } }
       .slides-wrapper .slide .slide-content .descrip-text {
         font-family: gotham_rounded_book;
         color: #111; }
-      .slides-wrapper .slide .slide-content .contact-card {
-        text-align: center;
-        justify-content: center; }
-        .slides-wrapper .slide .slide-content .contact-card .events {
-          margin: 0 auto;
-          height: 250px;
-          width: 250px;
-          border: 1px solid #000;
-          margin-top: 15%;
-          margin-bottom: 25%; }
+    .slides-wrapper .slide .contact-card {
+      text-align: center;
+      justify-content: center;
+      width: 100%;
+      padding-top: 10%;
+      padding-bottom: 10%; }
+      @media only screen and (min-width: 960px) {
+        .slides-wrapper .slide .contact-card {
+          padding-top: 7%;
+          padding-bottom: 8%; } }
+      .slides-wrapper .slide .contact-card p {
+        font-family: gotham_rounded_book;
+        font-size: 1rem; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .contact-card p {
+            font-size: 3rem; } }
+      .slides-wrapper .slide .contact-card .social-icon {
+        display: inline-block;
+        margin-right: 5%;
+        margin-left: 5%;
+        margin-top: 10%;
+        width: 7%; }
+        @media only screen and (min-width: 960px) {
+          .slides-wrapper .slide .contact-card .social-icon {
+            width: 4%;
+            margin-top: 5%;
+            margin-left: 3%;
+            margin-right: 3%; } }
     .slides-wrapper .slide .slide-base {
       text-align: center; }
       .slides-wrapper .slide .slide-base .scroll {
@@ -99,7 +131,7 @@ html, body {
     .slides-wrapper .slide .base {
       position: absolute;
       background: #000;
-      height: 125px;
+      height: 5%;
       width: 100%; }
   .slides-wrapper.active-slide1 {
     transform: translateY(0%);
