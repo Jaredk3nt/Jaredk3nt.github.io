@@ -1,0 +1,11 @@
+html, body {
+	background: #1d232f;
+}
+
+.title {
+	color: #ccc;
+	margin: 0 auto;
+	font-family: sans-serif;
+	padding: 5px;
+	text-align: center;
+}
