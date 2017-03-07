@@ -23,6 +23,10 @@ a {
   align-items     : stretch;
   justify-content : space-between;
   overflow        : hidden;
+	
+	@media screen and (max-width: 760px) {
+		display: block;
+	}
   
   .column { 
     display         : flex;
@@ -34,6 +38,10 @@ a {
     height          : 100%;
     transition      : .5s cubic-bezier(0.235, 0.035, 0.000, 1.530);
 
+	@media screen and (max-width: 760px) {
+		height: 33.3333333%;
+	}
+	  
     &:hover {
       flex: 1 180%;
       cursor: pointer;
@@ -76,6 +84,9 @@ a {
         transform : translateY(-20px);
       }
     }
+	  
+	
+	  
   }
   .one {
     background: $dark-blue;

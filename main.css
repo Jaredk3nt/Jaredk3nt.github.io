@@ -16,6 +16,9 @@ a {
   align-items: stretch;
   justify-content: space-between;
   overflow: hidden; }
+  @media screen and (max-width: 760px) {
+    .wrapper {
+      display: block; } }
   .wrapper .column {
     display: flex;
     flex: 1 100%;
@@ -25,6 +28,9 @@ a {
     text-align: center;
     height: 100%;
     transition: 0.5s cubic-bezier(0.235, 0.035, 0, 1.53); }
+    @media screen and (max-width: 760px) {
+      .wrapper .column {
+        height: 33.3333333%; } }
     .wrapper .column:hover {
       flex: 1 180%;
       cursor: pointer; }
