@@ -8,7 +8,7 @@
 </head>
 <body>
 <div class="wrapper">
-  <div class="column one">
+  <div class="column one" onclick="navigation(1)">
       <div class="inner-wrapper">
 		 <a href="dev/">
 			 <h1>DEV</h1>
@@ -16,7 +16,7 @@
 		  </a>
       </div>
   </div>
-  <div class="column two">
+  <div class="column two" onclick="navigation(2)">
       <div class="inner-wrapper">
 		  <a href="about/">
 			<h1>ABOUT</h1>
@@ -24,7 +24,7 @@
 		  </a>
       </div>
   </div>
-  <div class="column three">
+  <div class="column three" onclick="navigation(3)">
       <div class="inner-wrapper">
 		  <a href="design/">
 			<h1>DESIGN</h1>
@@ -34,4 +34,24 @@
   </div>
 </div>
 </body>
+
+<script>
+navigation = function(val) {
+  console.log(val);
+  switch(val){
+    case 1:
+      location.href = "dev/";
+      break;
+    case 2:
+      location.href = "about/";
+      break;
+    case 3:
+      location.href = "design/";
+      break;
+    default:
+
+  }
+
+}
+</script>
 </html>
