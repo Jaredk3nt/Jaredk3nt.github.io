@@ -23,12 +23,12 @@ a {
   align-items     : stretch;
   justify-content : space-between;
   overflow        : hidden;
-	
+
 	@media screen and (max-width: 760px) {
 		display: block;
 	}
-  
-  .column { 
+
+  .column {
     display         : flex;
     flex            : 1 100%;
     flex-direction  : column;
@@ -41,11 +41,11 @@ a {
 	@media screen and (max-width: 760px) {
 		height: 33.3333333%;
 	}
-	  
+
     &:hover {
       flex: 1 180%;
       cursor: pointer;
-      
+
       .inner-wrapper {
         h1 {
           font-size: 3.0rem;
@@ -55,15 +55,15 @@ a {
         h3 {
           visibility : visible;
           opacity    : 1;
-          font-size  : 1.2rem; 
+          font-size  : 1.2rem;
           font-family: sans-serif;
 		  font-weight: 300;
           color      : $lightest-blue;
           transform  : translateY(5px);
         }
       }
-    }  
-    
+    }
+
     .inner-wrapper {
       h1 {
         font-family: sans-serif;
@@ -71,22 +71,22 @@ a {
         margin     : 0px;
         transition : .5s cubic-bezier(0.235, 0.035, 0.000, 1.530);
       }
-      
+
       h3 {
         position  : relative;
         visibility: hidden;
         padding   : 0px;
         margin    : 0px;
         opacity   : 0;
-        transition: visibility 0s linear, 
-          opacity .3s ease-in, 
+        transition: visibility 0s linear,
+          opacity .3s ease-in,
           transform .5s cubic-bezier(0.235, 0.035, 0.000, 1.530);
         transform : translateY(-20px);
       }
     }
-	  
-	
-	  
+
+
+
   }
   .one {
     background: $dark-blue;
@@ -98,6 +98,114 @@ a {
 
   .three {
     background: $light-blue;
+  }
+}
+
+//ABOUT INDEX
+#about-wrapper {
+  width: 100%;
+  height: 50%;
+  top: 15%;
+  position: relative;
+
+  .content-wrapper{
+    width: 60%;
+    margin: 0 auto;
+
+    .img-holder {
+      display: inline-block;
+      width: 42%;
+      vertical-align: top;
+      .fullimg {
+        width: 100%;
+        margin-top: 0px;
+      }
+      .cropimg {
+        display: none;
+      }
+    }
+
+    .text-holder {
+      display: inline-block;
+      height: 100%;
+      width: 54%;
+      vertical-align: top;
+      font-family: 'Lato', sans-serif;
+      color: #fff;
+      padding-left: 3%;
+
+      h1 {
+        text-transform: uppercase;
+        font-weight: 900;
+        margin: 5px 0px 0px 0px;
+        font-size: 2.5em;
+      }
+      h2 {
+        font-weight: 700;
+        font-size: 1.4em;
+        margin: 15px 0px 4px 0px;
+      }
+      h3 {
+        font-weight: 400;
+        font-size: 1em;
+        margin: 2px 0px 8px 0px;
+      }
+      p{
+        text-align: left;
+        margin: 0px;
+        font-size: .95em;
+        width: 100%;
+      }
+      .divider {
+        height: 3px;
+        width: 100%;
+        background-color: #fff;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 760px) {
+  #about {
+    overflow: scroll;
+
+    #about-wrapper {
+      width: 100%;
+      height: auto;
+      top: 5%;
+      overflow: scroll;
+      padding-bottom: 15%;
+      .content-wrapper{
+        width: 90%;
+        height: auto;
+        .img-holder {
+          width: 100%;
+          .fullimg {
+            display: none;
+          }
+          .cropimg {
+            width: 100%;
+            display: block;
+          }
+        }
+        .text-holder {
+          width: 100%;
+          padding-left: 0px;
+          h1{
+
+          }
+          h2{
+
+          }
+          h3{
+
+          }
+          p{
+
+          }
+        }
+      }
+    }
   }
 }
 
@@ -114,7 +222,7 @@ a {
 }
 
 .title {
-	font: 900 32px 'Lato', sans-serif; 
+	font: 900 32px 'Lato', sans-serif;
 	color: #fff;
 	transition: all .2s ease;
 }
@@ -260,19 +368,19 @@ design 	- p: #355c7d l: #aebdcb d: #2a4964 d2: #1f374b
 		width: 100%;
 		height: 33%;
 	}
-	
+
 	.w_item {
 		width: 60%;
 	}
-	
+
 	.title {
 		font-size: 28px;
 	}
-	
+
 	p {
 		width: 80%;
 	}
-	
+
 	img {
 		margin-top: 2em;
 		width: 40%;
