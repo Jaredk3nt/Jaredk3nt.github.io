@@ -70,6 +70,15 @@ a {
   height: 50%;
   top: 15%;
   position: relative; }
+  #about-wrapper .dnd {
+    color: #7AD1DF;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    text-align: center; }
   #about-wrapper .content-wrapper {
     width: 60%;
     margin: 0 auto; }

@@ -108,6 +108,17 @@ a {
   top: 15%;
   position: relative;
 
+  .dnd {
+    color: $light-blue;
+    position:fixed;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    margin-bottom:0px;
+    width: 100%;
+    text-align: center;
+  }
+
   .content-wrapper{
     width: 60%;
     margin: 0 auto;
