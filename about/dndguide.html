@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>dndguide.md</title><link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'><style type='text/css'>html, body {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+<title>dndguide.md</title><style type='text/css'>html, body {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { background-color: rgb(181, 214, 252); text-shadow: none; background-position: initial initial; background-repeat: initial initial; }
@@ -122,393 +122,261 @@ a.md-print-anchor { border: none !important; display: inline-block !important; p
 .MathJax_SVG * { transition: none; }
 
 
-@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-/**
- * css forked from https://github.com/GitbookIO/gitbook
- * www.gitbook.com
- * Apache License
- * https://github.com/GitbookIO/gitbook/blob/master/LICENSE
- **/
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Open Sans Regular'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/400.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: normal;
-    src: local('Open Sans Italic'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/400i.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    src: local('Open Sans Bold'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/700.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/700i.woff') format('woff')
-}
-
 html {
-    font-size: 16px;
+	font-size: 19px;
 }
 
+html, body {
+	margin: auto;
+	background: #fefefe;
+}
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.2;
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
 }
 
-#write{
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 20px 30px 40px 30px;
-	padding-top: 20px;
-    padding-bottom: 100px;
-}
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
+#write>h2:first-child,
+#write>h3:first-child,
+#write>h4:first-child,
+#write>p:first-child{
+	margin-top: 1.2em;
 }
 
-body > *:first-child {
-    margin-top: 0 !important;
-}
-body > *:last-child {
-    margin-bottom: 0 !important;
-}
-a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    /*background: url("file:///Users/jaredjones/Library/Application%20Support/images/modules/styleguide/para.png") no-repeat 10px center;*/
-    text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
 h1 {
-    padding-bottom: .3em;
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-   padding-bottom: .3em;
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 4px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-    border-bottom: 1px solid #ddd;
+	margin-top: 1.6em;
+	font-weight: normal;
 }
 
-body > h2:first-child {
-    margin-top: 0;
-    padding-top: 0;
+h1 {
+	font-size:3em;
 }
-body > h1:first-child {
-    margin-top: 0;
-    padding-top: 0;
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
 }
-body > h1:first-child + h2 {
-    margin-top: 0;
-    padding-top: 0;
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
 }
-body > h3:first-child,
-body > h4:first-child,
-body > h5:first-child,
-body > h6:first-child {
-    margin-top: 0;
-    padding-top: 0;
+
+h1, 
+h2, 
+h3{
+	text-align: center;
 }
-a:first-child h1,
-a:first-child h2,
-a:first-child h3,
-a:first-child h4,
-a:first-child h5,
-a:first-child h6 {
-    margin-top: 0;
-    padding-top: 0;
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
 }
-h1 p,
-h2 p,
-h3 p,
-h4 p,
-h5 p,
-h6 p {
-    margin-top: 0;
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
 }
-li p.first {
-    display: inline-block;
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
 }
-ul,
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
 ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
+	padding-left: 1.2em;
 }
 blockquote {
-    border-left: 4px solid #dddddd;
-    padding: 0 15px;
-    color: #777777;
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
 }
-blockquote blockquote {
-    padding-right: 0;
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.md-table-edit {
+	background: #ededed;
+    padding-top: 4px;
 }
 table {
-    padding: 0;
-    word-break: initial;
+	margin-bottom: 1.333333rem
 }
-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-    padding: 0;
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
 }
-table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+table th {
+	font-weight: bold
 }
-table tr th {
-    font-weight: bold;
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
+table thead th {
+	vertical-align: bottom
 }
-table tr td {
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
 }
-table tr th:first-child,
-table tr td:first-child {
-    margin-top: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-    margin-bottom: 0;
+table tbody+tbody {
+	border-top: 2px solid #ddd
 }
 
-.CodeMirror-gutters {
-    border-right: 1px solid #ddd;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding: 0.2em 1em;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
 .task-list{
-	padding-left: 0;
+	padding:0;
 }
 
 .task-list-item {
-	padding-left:32px;
+	padding-left: 1.6rem;
 }
 
-.task-list-item input {
-  top: 3px;
-  left: 8px;
+.task-list-item input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
 }
 
-@media screen and (min-width: 914px) {
-    /*body {
-        width: 854px;
-        margin: 0 auto;
-    }*/
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+	color: inherit;
 }
-@media print {
-    html {
-        font-size: 13px;
-    }
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-    pre {
-        word-wrap: break-word;
-    }
-}
-
-.md-fences {
-	background-color: #f8f8f8;
+.md-tag {
+	color: inherit;
+	font: inherit;
 }
 #write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
+	min-height: 35px;
+	padding: 0.5em 1em;
 }
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
 }
-
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
 }
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
-}
-
-.md-tag{
-	color: inherit;
+#write>h5.md-focus:before {
+	top: 2px;
 }
 
 .md-toc {
-    margin-top:20px;
-    padding-bottom:20px;
+	margin-top: 40px;
 }
 
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+.md-toc-content {
+	padding-bottom: 20px;
 }
 
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
 }
 
-#md-notification:before {
-    top: 10px;
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
 }
 
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
 }
 
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
 }
 
 
@@ -516,6 +384,6 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h3><a name='header-c5' class='md-header-anchor '></a>Rolling</h3><blockquote><p>Whenever you divide a number you round DOWN</p></blockquote><h6><a name='header-c10' class='md-header-anchor '></a>D20</h6><p>Used to determine success or failure in actions taken</p><p>Steps to using the roll:</p><ul><li><p>Roll &amp; add relevent modifier</p><ul><li>Modifier is derived from one of the 6 ability scores or a proficiency bonus</li></ul></li><li><p>Apply circumstantial bonuses/penalties</p></li><li><p>Compare this roll to &quot;target&quot; number</p><ul><li><p>Difficulty Class</p><ul><li>Checking for &quot;saving throw&quot;</li></ul></li><li><p>Armor Class</p><ul><li>Target for a hitting attack, different for every character</li></ul></li></ul></li></ul><h6><a name='header-c44' class='md-header-anchor '></a>Advantage &amp; Disadvantage</h6><p>Modifiers based on special situations</p><p><strong>Advantage:</strong> a positive circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the higher of the 2 rolls</li></ul><p><strong>Disadvantage:</strong> a negative circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the lower of the 2 rolls</li></ul><p></p><h3><a name='header-c59' class='md-header-anchor '></a>Creating a Character</h3><h6><a name='header-c548' class='md-header-anchor '></a>The overview</h6><ol start='' ><li><p><strong>Choose a Race</strong></p><p><em>Common:</em> dwarves, elves, halflings, humans</p><p>Some races have <strong>subraces</strong> to choose from.</p><p>Your race helps define your background, general appearance, and natural talents (proficiencies)</p><p>Race can improve 1 or more of your ability scores</p><p>Record all traits gained by race on character sheet (languages, speed, etc.)</p></li><li><p><strong>Choose a Class</strong></p><p>Defines talents and tactics in the adventure</p><p>Gain <strong>class feature</strong> benefits &amp; capabilities</p><p><strong>Proficiencies</strong></p><ul><li>armor (heavy, light, etc)</li><li>weapons</li><li>skills (bluffing, sneaking, etc)</li><li>saving throws</li><li>tools</li></ul><p><strong>Proficiency Bonuses</strong></p><blockquote><p>+2 for a lv. 1</p></blockquote><p>This is a bonus that applies to many of the numbers you will be recording on your sheet.</p><ul><li>attack rolls using weapons you&#39;re prficient with</li><li>Attack rolls with spells you cast</li><li>Ability checks using skills you’re proficient in</li><li>Ability checks using tools you’re proficient with</li><li>Saving throws you’re proficient in</li><li>Saving throw DCs for spells you cast (explained in each spellcasting class)</li></ul><p><strong>Hit points &amp; Hit die</strong></p><p>At lv. 1 your character has 1 hit die which is determined by class.</p><p>HP = die type + constitution mod</p></li><li><p><strong>Determine Ability Scores</strong></p><blockquote><p>Stregth, Dexterity, Constitution, Intelligence, Wisdom &amp; Charisma</p></blockquote><p><strong>Generation</strong></p><p><em>Method 1:</em></p><p>	Roll 4 d6 and record the highest 3 (repeat 5 more times)</p><p><em>Method 2:</em></p><p>	Use ability array = {15, 14, 13, 12, 10, 8} </p><p>Assign 6 numbers in any way you want to your ability scores and add any changes as a result of your race.</p><p>Determine <strong>ability modifiers</strong>:</p><ul><li>(Ability Score - 10)/2 = Ability Modifier</li></ul><table><thead><tr><th>Ability Score</th><th>Measures</th><th>Important to</th><th>Racial increases</th></tr></thead><tbody><tr><td>Strength</td><td>Athleticism, Power</td><td>Fighter</td><td>Mountain dwarf(+2), Human(+1)</td></tr><tr><td>Dexterity</td><td>Agility, Reflexes, Balance, Poise</td><td>Rogue</td><td>Elf(+2), Human(+1), Halfling(+2)</td></tr><tr><td>Constitution</td><td>Health, Stamina, Vital force</td><td>Everyone</td><td>Dwarf(+2), Stout halfling(+1), Human(+1)</td></tr><tr><td>Intelligence</td><td>Acuity, Recall, Analytics</td><td>Wizard</td><td>High elf(+1), Human(+1)</td></tr><tr><td>Wisdom</td><td>Awareness, Intuition, Insight</td><td>Cleric</td><td>Hill dwarf(+1), Wood elf(+1), Human(+1)</td></tr><tr><td>Charisma</td><td>Confidence, Eloquence, Leadership</td><td>Leaders/Diplomats</td><td>Lightfoot halfling(+1), Human(+1)</td></tr></tbody></table></li></ol><ol start='' ><li><p><strong>Describe Your Character</strong></p><p>Spend time thinking about how your character behaves and their motivations.</p><p><em>Important factors:</em></p><ul><li>Alignment (moral compass) </li><li>Ideals</li><li>Bonds (things you hold dear)</li><li>Flaws</li></ul><p>Use your ability scores to determine traits of your character</p><ul><li>A high intelligence character may have good judgement and awareness rather than a low who could be brash and confused. OR a character with high charisma can exude confidence with a graceful or intimidating presence vs someone with low may come across as timid or abrasive.</li></ul></li></ol><ol start='' ><li><p><strong>Choose Equipment</strong></p><p><strong>Armor Class</strong></p><blockquote><p>How well your character avoids being wounded in battle</p></blockquote><p><em>Contributors:</em>	armor, shield, dexterity</p><p>Without any armor your characters <strong>AC</strong> is 10 + dexterity mod</p><p>With armor you calculate your <strong>AC</strong> like so:</p><p><strong>Weapons</strong></p><p>When you attack roll d20 and add proficiency bonus (if proficient with weapon)</p><ul><li><p>Melee weapons</p><ul><li>Strength modifier for both attack and damage rolls</li><li>Weapons with <em>finesse</em> modifier can use dexterity mod instead</li></ul></li><li><p>Ranged weapons</p><ul><li>Dexterity modifier for attack and damage rolls</li><li><em>Thrown weapons</em> can use stregth mod instead</li></ul></li></ul></li></ol><h6><a name='header-c542' class='md-header-anchor '></a>The specifics</h6><ol><li><p><strong>Choosing a Race</strong></p><p><em>Racial Traits:</em></p><ul><li><p>Ability score increase</p><ul><li>each race increases one or more ability scores</li></ul></li><li><p>Age</p><ul><li>Notes when a member of a race is considered an adult and life expectancy</li><li>Age can be used to explain ability scores (older may have low strength but high wisdom etc.)</li></ul></li><li><p>Alignment</p><ul><li>Most races have a tendency towards particular alignments (but are not binding)</li></ul></li><li><p>Size</p><ul><li>Most races are <em>Medium</em> sized (4-8 ft tall)</li><li>Some are <em>Small</em> (2-4 ft tall)</li><li>Use this to decide how certain things in the game affect your character (small characters will have trouble handling heavy weapons etc.)</li></ul></li><li><p>Speed</p><ul><li>Determines how far you can move while traveling &amp; fighting</li></ul></li><li><p>Languages</p><ul><li>Each race can initially speak certain languages that will affect how they can interact with others in the world</li></ul></li><li><p>Subraces</p><ul><li>Sub-races have the traits of the parent race in addition to the trains specified for their sub-race and can affect how they interact with others of their own race</li></ul></li></ul><p><a href='races.html'><em>Guide to Races</em></a></p></li></ol><ol><li><strong>Choosing a Class</strong></li><li><strong>Describing Character</strong></li><li><strong>Choosing Equipment</strong></li></ol><p></p><h3><a name='header-c1374' class='md-header-anchor '></a>Playing the Game</h3><p></p><p></p></div>
+<div  id='write'  class = 'is-mac'><p>Welcome to my casual guide on how to get started playing DnD. I am a beginner myself so this is my condensation of the Player Basic Rules v03. This will guide you through the rule set you should know before you start playing (like rolling and character creation) and then give you the basic rule set on what you need to know throughout your adventure. Let&#39;s Quest!</p><p></p><h2><a name='header-c1987' class='md-header-anchor '></a>Before you play</h2><h3><a name='header-c2176' class='md-header-anchor '></a>Roleplaying</h3><p>Decide how you will portray your character throughout the adventure. This is key in guiding interactions and gameplay.</p><ol><li><p>Descriptive Roleplaying</p><p>You describe your characters words &amp; actions as you see them happening in your imagination.</p><p>&quot;Tordek spits on the floor, growls an insult at the bard, and stoms over to the bar.&quot;</p><ul><li>describe emotions &amp; attitude</li><li>characters intent </li><li>embellish liberally</li></ul></li><li><p>Active Roleplaying</p><p>You speak as your character, like an actor taking on a role. You can even mimic movements and body language to make it more descriptive.</p></li></ol><h3><a name='header-c1436' class='md-header-anchor '></a>Rolling</h3><blockquote><p>Whenever you divide a number you round DOWN</p></blockquote><h6><a name='header-c10' class='md-header-anchor '></a>D20</h6><p>Used to determine success or failure in actions taken</p><p>Steps to using the roll:</p><ul><li><p>Roll &amp; add relevent modifier</p><ul><li>Modifier is derived from one of the 6 ability scores or a proficiency bonus</li></ul></li><li><p>Apply circumstantial bonuses/penalties</p></li><li><p>Compare this roll to &quot;target&quot; number</p><ul><li><p>Difficulty Class</p><ul><li>Checking for &quot;saving throw&quot;</li></ul></li><li><p>Armor Class</p><ul><li>Target for a hitting attack, different for every character</li></ul></li></ul></li></ul><h6><a name='header-c44' class='md-header-anchor '></a>Advantage &amp; Disadvantage</h6><p>Modifiers based on special situations</p><p><strong>Advantage:</strong> a positive circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the higher of the 2 rolls</li></ul><p><strong>Disadvantage:</strong> a negative circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the lower of the 2 rolls</li></ul><p></p><h3><a name='header-c59' class='md-header-anchor '></a>Creating a Character</h3><h6><a name='header-c548' class='md-header-anchor '></a>The overview</h6><ol start='' ><li><p><strong>Choose a Race</strong></p><p><em>Common:</em> dwarves, elves, halflings, humans</p><p>Some races have <strong>subraces</strong> to choose from.</p><p>Your race helps define your background, general appearance, and natural talents (proficiencies)</p><p>Race can improve 1 or more of your ability scores</p><p>Record all traits gained by race on character sheet (languages, speed, etc.)</p></li><li><p><strong>Choose a Class</strong></p><p>Defines talents and tactics in the adventure</p><p>Gain <strong>class feature</strong> benefits &amp; capabilities</p><p><strong>Proficiencies</strong></p><ul><li>armor (heavy, light, etc)</li><li>weapons</li><li>skills (bluffing, sneaking, etc)</li><li>saving throws</li><li>tools</li></ul><p><strong>Proficiency Bonuses</strong></p><blockquote><p>+2 for a lv. 1</p></blockquote><p>This is a bonus that applies to many of the numbers you will be recording on your sheet.</p><ul><li>attack rolls using weapons you&#39;re prficient with</li><li>Attack rolls with spells you cast</li><li>Ability checks using skills you’re proficient in</li><li>Ability checks using tools you’re proficient with</li><li>Saving throws you’re proficient in</li><li>Saving throw DCs for spells you cast (explained in each spellcasting class)</li></ul><p><strong>Hit points &amp; Hit die</strong></p><p>At lv. 1 your character has 1 hit die which is determined by class.</p><p>HP = die type + constitution mod</p></li><li><p><strong>Determine Ability Scores</strong></p><blockquote><p>Stregth, Dexterity, Constitution, Intelligence, Wisdom &amp; Charisma</p></blockquote><p><strong>Generation</strong></p><p><em>Method 1:</em></p><p>	Roll 4 d6 and record the highest 3 (repeat 5 more times)</p><p><em>Method 2:</em></p><p>	Use ability array = {15, 14, 13, 12, 10, 8} </p><p>Assign 6 numbers in any way you want to your ability scores and add any changes as a result of your race.</p><p>Determine <strong>ability modifiers</strong>:</p><ul><li>(Ability Score - 10)/2 = Ability Modifier</li></ul><table><thead><tr><th>Ability Score</th><th>Measures</th><th>Important to</th><th>Racial increases</th></tr></thead><tbody><tr><td>Strength</td><td>Athleticism, Power</td><td>Fighter</td><td>Mountain dwarf(+2), Human(+1)</td></tr><tr><td>Dexterity</td><td>Agility, Reflexes, Balance, Poise</td><td>Rogue</td><td>Elf(+2), Human(+1), Halfling(+2)</td></tr><tr><td>Constitution</td><td>Health, Stamina, Vital force</td><td>Everyone</td><td>Dwarf(+2), Stout halfling(+1), Human(+1)</td></tr><tr><td>Intelligence</td><td>Acuity, Recall, Analytics</td><td>Wizard</td><td>High elf(+1), Human(+1)</td></tr><tr><td>Wisdom</td><td>Awareness, Intuition, Insight</td><td>Cleric</td><td>Hill dwarf(+1), Wood elf(+1), Human(+1)</td></tr><tr><td>Charisma</td><td>Confidence, Eloquence, Leadership</td><td>Leaders/Diplomats</td><td>Lightfoot halfling(+1), Human(+1)</td></tr></tbody></table></li></ol><ol start='' ><li><p><strong>Describe Your Character</strong></p><p>Spend time thinking about how your character behaves and their motivations.</p><p><em>Important factors:</em></p><ul><li>Alignment (moral compass) </li><li>Ideals</li><li>Bonds (things you hold dear)</li><li>Flaws</li></ul><p>Use your ability scores to determine traits of your character</p><ul><li>A high intelligence character may have good judgement and awareness rather than a low who could be brash and confused. OR a character with high charisma can exude confidence with a graceful or intimidating presence vs someone with low may come across as timid or abrasive.</li></ul></li></ol><ol start='' ><li><p><strong>Choose Equipment</strong></p><p><strong>Armor Class</strong></p><blockquote><p>How well your character avoids being wounded in battle</p></blockquote><p><em>Contributors:</em>	armor, shield, dexterity</p><p>Without any armor your characters <strong>AC</strong> is 10 + dexterity mod</p><p>With armor you calculate your <strong>AC</strong> like so:</p><p><strong>Weapons</strong></p><p>When you attack roll d20 and add proficiency bonus (if proficient with weapon)</p><ul><li><p>Melee weapons</p><ul><li>Strength modifier for both attack and damage rolls</li><li>Weapons with <em>finesse</em> modifier can use dexterity mod instead</li></ul></li><li><p>Ranged weapons</p><ul><li>Dexterity modifier for attack and damage rolls</li><li><em>Thrown weapons</em> can use stregth mod instead</li></ul></li></ul></li></ol><h6><a name='header-c542' class='md-header-anchor '></a>The specifics</h6><ol><li><p><strong>Choosing a Race</strong></p><p><a href='races.html'><em>Practical Guide to the Races of DnD</em></a></p><p><em>Racial Traits:</em></p><ul><li><p>Ability score increase</p><ul><li>each race increases one or more ability scores</li></ul></li><li><p>Age</p><ul><li>Notes when a member of a race is considered an adult and life expectancy</li><li>Age can be used to explain ability scores (older may have low strength but high wisdom etc.)</li></ul></li><li><p>Alignment</p><ul><li>Most races have a tendency towards particular alignments (but are not binding)</li></ul></li><li><p>Size</p><ul><li>Most races are <em>Medium</em> sized (4-8 ft tall)</li><li>Some are <em>Small</em> (2-4 ft tall)</li><li>Use this to decide how certain things in the game affect your character (small characters will have trouble handling heavy weapons etc.)</li></ul></li><li><p>Speed</p><ul><li>Determines how far you can move while traveling &amp; fighting</li></ul></li><li><p>Languages</p><ul><li>Each race can initially speak certain languages that will affect how they can interact with others in the world</li></ul></li><li><p>Subraces</p><ul><li>Sub-races have the traits of the parent race in addition to the trains specified for their sub-race and can affect how they interact with others of their own race</li></ul></li></ul></li></ol><ol><li><p><strong>Choosing a Class</strong></p><p><a href='classes.html'>Guide to Classes</a> (coming soon)</p></li><li><p><strong>Describing Character</strong></p></li><li><p><strong>Choosing Equipment</strong></p><p><a href='equipment.html'>Guide to Equipment</a> (coming soon)</p></li></ol><p></p><h2><a name='header-c1440' class='md-header-anchor '></a>Playing the Game</h2><h3><a name='header-c1375' class='md-header-anchor '></a>Using Ability Scores</h3><p>A score of 10-11 is a normal human average, but adventurers and monsters tend to be a cut above average. A score of 18 is a typical high but characters can reach 20 and some monsters can be as high as 30.</p><blockquote><p>Calculate modifiers with (Ability score - 10) / 2 = Modifier</p></blockquote><p>A modifier is usually more important than the raw score because these are used to effect events like attack roll, ability check, saving throw and more.</p><h5><a name='header-c1463' class='md-header-anchor '></a>Advantage &amp; Disadvantage In-depth</h5><blockquote><p><strong>Advantage:</strong> a positive circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the higher of the 2 rolls</li></ul><p><strong>Disadvantage:</strong> a negative circumstance around a d20 roll</p><ul><li>Roll 2 d20, use the lower of the 2 rolls</li></ul></blockquote><p>Advantages &amp; disadvantages do not stack, even against multiple you only roll one extra d20.</p><p>A&amp;D cancel out if even and become neutral</p><p>You gain A&amp;D through use of special abilities, actions, or spells. The DM can also decide the circumstances that influence A&amp;D.</p><h5><a name='header-c1567' class='md-header-anchor '></a>Ability Checks</h5><p>An event that tests a character or monster&#39;s talent to overcome a challenge.</p><p>DM can call for check when character or monster attempts an action that has a chance of failure, and decides the <em>difficulty class</em> or the action</p><p><em>Difficulty class</em> decides how hard it is to overcome the action based on roll needed to succeed</p><table><thead><tr><th>Task Difficulty</th><th>D.C.</th></tr></thead><tbody><tr><td>Very easy</td><td>5</td></tr><tr><td>Easy</td><td>10</td></tr><tr><td>Medium</td><td>15</td></tr><tr><td>Hard</td><td>20</td></tr><tr><td>Very Hard</td><td>25</td></tr><tr><td>Nearly impossible</td><td>30</td></tr></tbody></table><p>You roll a d20 and add relevant modifier to pass ability check</p><h6><a name='header-c1649' class='md-header-anchor '></a>Contents</h6><p>A subset of checks where 2 characters are directly opposed and only one can succeed <em>ex. attempting to grab an object on floor, monster pushing door where character is pushing closed, etc.</em></p><p>Both <em>characters</em> make relevant checks and the <strong>higher</strong> of the 2 rolls wins. Ties result in a stalemate.</p><h6><a name='header-c1679' class='md-header-anchor '></a>Skills</h6><p>Skills represent a specific niche of a ability score that a character can have a proficiency in (determined at character creation).</p><table><thead><tr><th>Ability</th><th>Skills</th></tr></thead><tbody><tr><td>Stregth</td><td>Athletics</td></tr><tr><td>Dexterity</td><td>Acrobatics, Sleight of Hand, Stealth</td></tr><tr><td>Intelligence</td><td>Arcana, History, Investigation, Nature, Religion</td></tr><tr><td>Wisdom</td><td>Animal Handling, Insight, Medicine, Perception, Survival</td></tr><tr><td>Charisma</td><td>Deception, Intimidation, Performance, Persuasion</td></tr></tbody></table><p>DM can ask for an ability check using a specific skill, or the player can ask if a skill applies to a check. </p><p>Without a proficiency in the skill the individual makes a <em>normal ability check</em> with the over arching Ability Score</p><h6><a name='header-c1724' class='md-header-anchor '></a>Passive Checks</h6><p>An ability check that requires no dice roll that is often used for repetitive tasks or secret checks</p><p>Made using 10 + all mod that apply to check, then +5 for advantage or -5 for disadvantage</p><p><em>ex. For a check to see if players notice a hidden monster a player has a wisdom score of 15 and proficiency in perception so the passive check score is 14</em></p><h6><a name='header-c1746' class='md-header-anchor '></a>Group Checks</h6><p>If the task requires the whole group, everyone rolls and as long as <strong>half the group succeeds</strong> then everyone succeeds.</p><h5><a name='header-c1757' class='md-header-anchor '></a>Saving Throws</h5><p>Represents an attempt to resist a spell, trap, poison, disease, or any other similar threat.</p><p>Saving throws usually happen out of nessecity</p><p>To make a saving throw:</p><ul><li>roll d20 and add appropriate mod</li></ul><p>Difficulty class of saving throw is determined by the cause <em>ex. spell saving throw is determined by casters spellcasting ability and proficiency bonus</em></p><h3><a name='header-c1795' class='md-header-anchor '></a>Adventuring</h3><h5><a name='header-c1758' class='md-header-anchor '></a>Speed</h5><h6><a name='header-c1800' class='md-header-anchor '></a>Traveling pace</h6><ul><li><p>Forced March</p><ul><li>Assumes 8hr of travel in a day</li><li>To travel further you must make constitution saving throw each hour (D.C. is 10 + 1 for each hour past 8)</li></ul></li><li><p>Mounts &amp; Vehicles</p><ul><li>Mounted a character can ride 2x as fast for an hour</li><li>Depending on vehicle the pace is set, but can travel for longer times (see specific vehicles)</li></ul></li><li><p>Difficult Terrain</p><ul><li>Dense forests, swamps, rubble, mountains, ice-covered ground</li><li>You move at 1/2 speed in difficult terrain </li></ul></li></ul><p> </p><table><thead><tr><th>Pace</th><th>Minute</th><th>Hour</th><th>Day</th><th>Effect</th></tr></thead><tbody><tr><td>Fast</td><td>400 ft</td><td>4 mi</td><td>30 mi</td><td>-5 to passive wisdom (perception) scores</td></tr><tr><td>Normal</td><td>300 ft</td><td>3 mi</td><td>24 mi</td><td>--</td></tr><tr><td>Slow</td><td>200 ft </td><td>2 mi</td><td>18 mi</td><td>Able to use stealth</td></tr></tbody></table><h5><a name='header-c1913' class='md-header-anchor '></a>Environment</h5><h6><a name='header-c1916' class='md-header-anchor '></a>Falling</h6><p>Take <strong>1d6</strong> damage for every 10 ft fell to a max of <strong>20d6</strong></p><h6><a name='header-c1925' class='md-header-anchor '></a>Suffocating</h6><p>Can hold breath for a num. of minutes = 1 + constitution mod (minimum of 30 seconds)</p><h6><a name='header-c1933' class='md-header-anchor '></a>Vision</h6><ul><li><em>Lightly obscured:</em> (dim light, patchy fog, moderate foliage) creatures have <strong>disadvantage on perception checks on sight</strong></li><li><em>Heavily obscured:</em> (darkness, opaque fog, etc.) creature suffers from the <em>blinded</em> condition</li><li><em>Bright light:</em> lets most creatures see normally</li><li><em>Dim light:</em> shadows, usually at the edge of bright light and darkness such as when using a torch.</li><li><em>Darkness:</em> outdoors at night, unlit dungeons, or magical darkness</li></ul><p>Vision can be modified by multiple traits specific to certain races or creatures like <em>Blindsight, Darkvision</em>, and <em>Truesight</em></p><h6><a name='header-c1982' class='md-header-anchor '></a>Food &amp; Water</h6><p>If your character doesn&#39;t eat or drink enough they suffer from exhaustion.</p><ul><li>Requires 1 lb of food per day, but can go 3 + constitution mod. days without food. Each day beyond that causes them to suffer 1 lv. of exhaustion</li><li>Require 1 gallon of water per day, or 2 gallons if the weather is <em>hot</em>.</li></ul><h4><a name='header-c2058' class='md-header-anchor '></a>Social Interaction</h4><p> The DM takes on the role of all NPC&#39;s the players will interact with in the world</p><table><thead><tr><th>Friendly</th><th>Indifferent </th><th>Hostile</th></tr></thead><tbody><tr><td>predisposed to help you</td><td>don&#39;t give a shit about you</td><td>inclined to get in your way</td></tr></tbody></table><h4><a name='header-c2149' class='md-header-anchor '></a>Resting</h4><table><thead><tr><th>Short</th><th>Long</th></tr></thead><tbody><tr><td>at least 1 hour</td><td>at least 8 hours</td></tr><tr><td>Do nothing more than eat, drink, read or heal. can spend 1 or more hit dice at end of a short rest up to the characters max, to regain HP (You regain these hit dice on long rest)</td><td>Sleeping or standing watch (for no more than 2 hours). At the end a character regains all lost HP and spent hit dice (up to half of max). Can&#39;t perform a long rest more than once in 24 hours</td></tr></tbody></table><h3><a name='header-c2224' class='md-header-anchor '></a>Combat</h3><h4><a name='header-c2226' class='md-header-anchor '></a>Order of Combat</h4><p>DnD organizes combat into a cycle of rounds and turns. A <strong>round</strong> represents about 6 seconds. During a round each player takes a <strong>turn</strong> in which they can <strong>move</strong> and take <strong>one action</strong>. </p><blockquote><p>The order of turns is determined by rolling inititative at the beginning of an encounter (Dexterity check). </p><p>The DM rolls for groups of identical creatures, so they act at the same time.</p></blockquote><p></p><p></p></div>
 </body>
 </html>

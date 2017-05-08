@@ -1,3 +1,27 @@
+Welcome to my casual guide on how to get started playing DnD. I am a beginner myself so this is my condensation of the Player Basic Rules v03. This will guide you through the rule set you should know before you start playing (like rolling and character creation) and then give you the basic rule set on what you need to know throughout your adventure. Let's Quest!
+
+
+
+## Before you play
+
+### Roleplaying
+
+Decide how you will portray your character throughout the adventure. This is key in guiding interactions and gameplay.
+
+1. Descriptive Roleplaying
+
+   You describe your characters words & actions as you see them happening in your imagination.
+
+   "Tordek spits on the floor, growls an insult at the bard, and stoms over to the bar."
+
+   - describe emotions & attitude
+   - characters intent 
+   - embellish liberally
+
+2. Active Roleplaying
+
+   You speak as your character, like an actor taking on a role. You can even mimic movements and body language to make it more descriptive.
+
 ### Rolling
 
 > Whenever you divide a number you round DOWN
@@ -154,6 +178,8 @@ Modifiers based on special situations
 
 1. **Choosing a Race**
 
+   [*Practical Guide to the Races of DnD*](races.html)
+
    *Racial Traits:*
 
    - Ability score increase
@@ -174,16 +200,185 @@ Modifiers based on special situations
    - Subraces
      - Sub-races have the traits of the parent race in addition to the trains specified for their sub-race and can affect how they interact with others of their own race
 
-   [*Guide to Races*](races.html)
-
 
 1. **Choosing a Class**
+
+   [Guide to Classes](classes.html) (coming soon)
+
 2. **Describing Character**
+
 3. **Choosing Equipment**
 
+   [Guide to Equipment](equipment.html) (coming soon)
 
 
-### Playing the Game
+
+## Playing the Game
+
+### Using Ability Scores
+
+A score of 10-11 is a normal human average, but adventurers and monsters tend to be a cut above average. A score of 18 is a typical high but characters can reach 20 and some monsters can be as high as 30.
+
+> Calculate modifiers with (Ability score - 10) / 2 = Modifier
+
+A modifier is usually more important than the raw score because these are used to effect events like attack roll, ability check, saving throw and more.
+
+##### Advantage & Disadvantage In-depth
+
+>**Advantage:** a positive circumstance around a d20 roll
+>
+>- Roll 2 d20, use the higher of the 2 rolls
+>
+>**Disadvantage:** a negative circumstance around a d20 roll
+>
+>- Roll 2 d20, use the lower of the 2 rolls
+
+Advantages & disadvantages do not stack, even against multiple you only roll one extra d20.
+
+A&D cancel out if even and become neutral
+
+You gain A&D through use of special abilities, actions, or spells. The DM can also decide the circumstances that influence A&D.
+
+##### Ability Checks
+
+An event that tests a character or monster's talent to overcome a challenge.
+
+DM can call for check when character or monster attempts an action that has a chance of failure, and decides the *difficulty class* or the action
+
+*Difficulty class* decides how hard it is to overcome the action based on roll needed to succeed
+
+| Task Difficulty   | D.C. |
+| ----------------- | ---- |
+| Very easy         | 5    |
+| Easy              | 10   |
+| Medium            | 15   |
+| Hard              | 20   |
+| Very Hard         | 25   |
+| Nearly impossible | 30   |
+
+You roll a d20 and add relevant modifier to pass ability check
+
+###### Contents
+
+A subset of checks where 2 characters are directly opposed and only one can succeed *ex. attempting to grab an object on floor, monster pushing door where character is pushing closed, etc.*
+
+Both *characters* make relevant checks and the **higher** of the 2 rolls wins. Ties result in a stalemate.
+
+###### Skills
+
+Skills represent a specific niche of a ability score that a character can have a proficiency in (determined at character creation).
+
+| Ability      | Skills                                   |
+| ------------ | ---------------------------------------- |
+| Stregth      | Athletics                                |
+| Dexterity    | Acrobatics, Sleight of Hand, Stealth     |
+| Intelligence | Arcana, History, Investigation, Nature, Religion |
+| Wisdom       | Animal Handling, Insight, Medicine, Perception, Survival |
+| Charisma     | Deception, Intimidation, Performance, Persuasion |
+
+DM can ask for an ability check using a specific skill, or the player can ask if a skill applies to a check. 
+
+Without a proficiency in the skill the individual makes a *normal ability check* with the over arching Ability Score
+
+###### Passive Checks
+
+An ability check that requires no dice roll that is often used for repetitive tasks or secret checks
+
+Made using 10 + all mod that apply to check, then +5 for advantage or -5 for disadvantage
+
+*ex. For a check to see if players notice a hidden monster a player has a wisdom score of 15 and proficiency in perception so the passive check score is 14*
+
+###### Group Checks
+
+If the task requires the whole group, everyone rolls and as long as **half the group succeeds** then everyone succeeds.
+
+##### Saving Throws
+
+Represents an attempt to resist a spell, trap, poison, disease, or any other similar threat.
+
+Saving throws usually happen out of nessecity
+
+To make a saving throw:
+
+- roll d20 and add appropriate mod
+
+Difficulty class of saving throw is determined by the cause *ex. spell saving throw is determined by casters spellcasting ability and proficiency bonus*
+
+### Adventuring
+
+##### Speed
+
+###### Traveling pace
+
+- Forced March
+    - Assumes 8hr of travel in a day
+    - To travel further you must make constitution saving throw each hour (D.C. is 10 + 1 for each hour past 8)
+- Mounts & Vehicles
+    - Mounted a character can ride 2x as fast for an hour
+    - Depending on vehicle the pace is set, but can travel for longer times (see specific vehicles)
+- Difficult Terrain
+    - Dense forests, swamps, rubble, mountains, ice-covered ground
+    - You move at 1/2 speed in difficult terrain 
+
+ 
+
+| Pace   | Minute | Hour | Day   | Effect                                   |
+| ------ | ------ | ---- | ----- | ---------------------------------------- |
+| Fast   | 400 ft | 4 mi | 30 mi | -5 to passive wisdom (perception) scores |
+| Normal | 300 ft | 3 mi | 24 mi | --                                       |
+| Slow   | 200 ft | 2 mi | 18 mi | Able to use stealth                      |
+
+##### Environment
+
+###### Falling
+
+Take **1d6** damage for every 10 ft fell to a max of **20d6**
+
+###### Suffocating
+
+Can hold breath for a num. of minutes = 1 + constitution mod (minimum of 30 seconds)
+
+###### Vision
+
+- *Lightly obscured:* (dim light, patchy fog, moderate foliage) creatures have **disadvantage on perception checks on sight**
+- *Heavily obscured:* (darkness, opaque fog, etc.) creature suffers from the *blinded* condition
+- *Bright light:* lets most creatures see normally
+- *Dim light:* shadows, usually at the edge of bright light and darkness such as when using a torch.
+- *Darkness:* outdoors at night, unlit dungeons, or magical darkness
+
+Vision can be modified by multiple traits specific to certain races or creatures like *Blindsight, Darkvision*, and *Truesight*
+
+###### Food & Water
+
+If your character doesn't eat or drink enough they suffer from exhaustion.
+
+- Requires 1 lb of food per day, but can go 3 + constitution mod. days without food. Each day beyond that causes them to suffer 1 lv. of exhaustion
+- Require 1 gallon of water per day, or 2 gallons if the weather is *hot*.
+
+#### Social Interaction
+
+ The DM takes on the role of all NPC's the players will interact with in the world
+
+| Friendly                | Indifferent                 | Hostile                     |
+| ----------------------- | --------------------------- | --------------------------- |
+| predisposed to help you | don't give a shit about you | inclined to get in your way |
+
+#### Resting
+
+| Short                                    | Long                                     |
+| ---------------------------------------- | ---------------------------------------- |
+| at least 1 hour                          | at least 8 hours                         |
+| Do nothing more than eat, drink, read or heal. can spend 1 or more hit dice at end of a short rest up to the characters max, to regain HP (You regain these hit dice on long rest) | Sleeping or standing watch (for no more than 2 hours). At the end a character regains all lost HP and spent hit dice (up to half of max). Can't perform a long rest more than once in 24 hours |
+
+### Combat
+
+#### Order of Combat
+
+DnD organizes combat into a cycle of rounds and turns. A **round** represents about 6 seconds. During a round each player takes a **turn** in which they can **move** and take **one action**. 
+
+> The order of turns is determined by rolling inititative at the beginning of an encounter (Dexterity check). 
+>
+> The DM rolls for groups of identical creatures, so they act at the same time.
 
 
 

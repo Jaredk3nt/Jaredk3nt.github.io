@@ -1,4 +1,4 @@
-### Guide to the Races of DnD
+### Practical Guide to the Races of DnD
 
 A concise description of each race in alphabetical order
 
@@ -47,22 +47,22 @@ A concise description of each race in alphabetical order
 
 ##### Traits
 
-- Ability Score Increase
+- **Ability Score Increase**
   - Constitution +2
-- Age
+- **Age**
   - Mature at 50, live to 350 avg
-- Alignment
+- **Alignment**
   - lawful
   - tend towards good (fair play and everyone deserves a share)
-- Size
+- **Size**
   - 4-5 ft tall
   - 150 lbs 
-- Speed
+- **Speed**
   - 25ft
   - Not reduced by wearing heavy armor
-- Languages
+- **Languages**
   - Speak, read & write *Common* & *Dwarvish*
-- Traits
+- **Traits**
   - Darkvision
     - seen within 60ft in dim conditions (no color)
   - Dwarven Resilience
@@ -75,7 +75,7 @@ A concise description of each race in alphabetical order
       - Smith's tools, brewer's supplies, or mason's tools
   - Stonecunning
     - When you make *Intelligence* check related to origin of stone work you are considered proficient in history skill and add ouble your proficiency bonus to the check
-- Subraces
+- **Subraces**
   - Hill Dwarf
     - Wisom score +1
     - Hit point max increased by +1, and extra +1 on every level

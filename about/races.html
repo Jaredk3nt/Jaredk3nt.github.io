@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
-<title>races.md</title><link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext' rel='stylesheet' type='text/css'><style type='text/css'>html, body {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
+<title>races.md</title><style type='text/css'>html, body {overflow-x: initial !important;}html { font-size: 14px; background-color: rgb(255, 255, 255); color: rgb(51, 51, 51); }
 body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size: 1rem; line-height: 1.42857143; overflow-x: hidden; background-image: inherit; background-size: inherit; background-attachment: inherit; background-origin: inherit; background-clip: inherit; background-color: inherit; background-position: inherit inherit; background-repeat: inherit inherit; }
 a:active, a:hover { outline: 0px; }
 .in-text-selection, ::selection { background-color: rgb(181, 214, 252); text-shadow: none; background-position: initial initial; background-repeat: initial initial; }
@@ -122,393 +122,261 @@ a.md-print-anchor { border: none !important; display: inline-block !important; p
 .MathJax_SVG * { transition: none; }
 
 
-@include-when-export url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
-
-/**
- * css forked from https://github.com/GitbookIO/gitbook
- * www.gitbook.com
- * Apache License
- * https://github.com/GitbookIO/gitbook/blob/master/LICENSE
- **/
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Open Sans Regular'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/400.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: normal;
-    src: local('Open Sans Italic'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/400i.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: normal;
-    font-weight: bold;
-    src: local('Open Sans Bold'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/700.woff') format('woff')
-}
-
-@font-face {
-    font-family: 'Open Sans';
-    font-style: italic;
-    font-weight: bold;
-    src: local('Open Sans Bold Italic'),url('file:///Users/jaredjones/Library/Application%20Support/abnerworks.Typora/themes/github/700i.woff') format('woff')
-}
-
 html {
-    font-size: 16px;
+	font-size: 19px;
 }
 
+html, body {
+	margin: auto;
+	background: #fefefe;
+}
 body {
-    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: rgb(51, 51, 51);
-    line-height: 1.2;
+	font-family: "Vollkorn", Palatino, Times;
+	color: #333;
+	line-height: 1.4;
+	text-align: justify;
+}
+#write {
+	max-width: 960px;
+	margin: 0 auto;
+	margin-bottom: 2em;
+	line-height: 1.53;
 }
 
-#write{
-    max-width: 860px;
-  	margin: 0 auto;
-  	padding: 20px 30px 40px 30px;
-	padding-top: 20px;
-    padding-bottom: 100px;
-}
-#write > ul:first-child,
-#write > ol:first-child{
-    margin-top: 30px;
+#write>h2:first-child,
+#write>h3:first-child,
+#write>h4:first-child,
+#write>p:first-child{
+	margin-top: 1.2em;
 }
 
-body > *:first-child {
-    margin-top: 0 !important;
-}
-body > *:last-child {
-    margin-bottom: 0 !important;
-}
-a {
-    color: #4183C4;
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-    position: relative;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    line-height: 1.4;
-    cursor: text;
-}
-h1:hover a.anchor,
-h2:hover a.anchor,
-h3:hover a.anchor,
-h4:hover a.anchor,
-h5:hover a.anchor,
-h6:hover a.anchor {
-    /*background: url("file:///Users/jaredjones/Library/Application%20Support/images/modules/styleguide/para.png") no-repeat 10px center;*/
-    text-decoration: none;
-}
-h1 tt,
-h1 code {
-    font-size: inherit;
-}
-h2 tt,
-h2 code {
-    font-size: inherit;
-}
-h3 tt,
-h3 code {
-    font-size: inherit;
-}
-h4 tt,
-h4 code {
-    font-size: inherit;
-}
-h5 tt,
-h5 code {
-    font-size: inherit;
-}
-h6 tt,
-h6 code {
-    font-size: inherit;
-}
+/* Typography
+-------------------------------------------------------- */
+
+#write>h1:first-child,
 h1 {
-    padding-bottom: .3em;
-    font-size: 2.25em;
-    line-height: 1.2;
-    border-bottom: 1px solid #eee;
-}
-h2 {
-   padding-bottom: .3em;
-    font-size: 1.75em;
-    line-height: 1.225;
-    border-bottom: 1px solid #eee;
-}
-h3 {
-    font-size: 1.5em;
-    line-height: 1.43;
-}
-h4 {
-    font-size: 1.25em;
-}
-h5 {
-    font-size: 1em;
-}
-h6 {
-   font-size: 1em;
-    color: #777;
-}
-p,
-blockquote,
-ul,
-ol,
-dl,
-table{
-    margin: 0.8em 0;
-}
-li>ol,
-li>ul {
-    margin: 0 0;
-}
-hr {
-    height: 4px;
-    padding: 0;
-    margin: 16px 0;
-    background-color: #e7e7e7;
-    border: 0 none;
-    overflow: hidden;
-    box-sizing: content-box;
-    border-bottom: 1px solid #ddd;
+	margin-top: 1.6em;
+	font-weight: normal;
 }
 
-body > h2:first-child {
-    margin-top: 0;
-    padding-top: 0;
+h1 {
+	font-size:3em;
 }
-body > h1:first-child {
-    margin-top: 0;
-    padding-top: 0;
+
+h2 {
+	margin-top:2em;
+	font-weight: normal;
 }
-body > h1:first-child + h2 {
-    margin-top: 0;
-    padding-top: 0;
+
+h3 {
+	font-weight: normal;
+	font-style: italic;
+	margin-top: 3em;
 }
-body > h3:first-child,
-body > h4:first-child,
-body > h5:first-child,
-body > h6:first-child {
-    margin-top: 0;
-    padding-top: 0;
+
+h1, 
+h2, 
+h3{
+	text-align: center;
 }
-a:first-child h1,
-a:first-child h2,
-a:first-child h3,
-a:first-child h4,
-a:first-child h5,
-a:first-child h6 {
-    margin-top: 0;
-    padding-top: 0;
+
+h2:after{
+	border-bottom: 1px solid #2f2f2f;
+    content: '';
+    width: 100px;
+    display: block;
+    margin: 0 auto;
+    height: 1px;
 }
-h1 p,
-h2 p,
-h3 p,
-h4 p,
-h5 p,
-h6 p {
-    margin-top: 0;
+
+h1+h2, h2+h3 {
+	margin-top: 0.83em;
 }
-li p.first {
-    display: inline-block;
+
+p,
+.mathjax-block {
+	margin-top: 0;
+	-webkit-hypens: auto;
+	-moz-hypens: auto;
+	hyphens: auto;
 }
-ul,
+ul {
+	list-style: square;
+	padding-left: 1.2em;
+}
 ol {
-    padding-left: 30px;
-}
-ul:first-child,
-ol:first-child {
-    margin-top: 0;
-}
-ul:last-child,
-ol:last-child {
-    margin-bottom: 0;
+	padding-left: 1.2em;
 }
 blockquote {
-    border-left: 4px solid #dddddd;
-    padding: 0 15px;
-    color: #777777;
+	margin-left: 1em;
+	padding-left: 1em;
+	border-left: 1px solid #ddd;
 }
-blockquote blockquote {
-    padding-right: 0;
+code,
+pre {
+	font-family: "Consolas", "Menlo", "Monaco", monospace, serif;
+	font-size: .9em;
+	background: white;
+}
+.md-fences{
+	margin-left: 1em;
+	padding-left: 1em;
+	border: 1px solid #ddd;
+	padding-bottom: 8px;
+	padding-top: 6px;
+	margin-bottom: 1.5em;
+}
+
+a {
+	color: #2484c1;
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+a img {
+	border: none;
+}
+h1 a,
+h1 a:hover {
+	color: #333;
+	text-decoration: none;
+}
+hr {
+	color: #ddd;
+	height: 1px;
+	margin: 2em 0;
+	border-top: solid 1px #ddd;
+	border-bottom: none;
+	border-left: 0;
+	border-right: 0;
+}
+.md-table-edit {
+	background: #ededed;
+    padding-top: 4px;
 }
 table {
-    padding: 0;
-    word-break: initial;
+	margin-bottom: 1.333333rem
 }
-table tr {
-    border-top: 1px solid #cccccc;
-    background-color: white;
-    margin: 0;
-    padding: 0;
+table th,
+table td {
+	padding: 8px;
+	line-height: 1.333333rem;
+	vertical-align: top;
+	border-top: 1px solid #ddd
 }
-table tr:nth-child(2n) {
-    background-color: #f8f8f8;
+table th {
+	font-weight: bold
 }
-table tr th {
-    font-weight: bold;
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
+table thead th {
+	vertical-align: bottom
 }
-table tr td {
-    border: 1px solid #cccccc;
-    text-align: left;
-    margin: 0;
-    padding: 6px 13px;
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+	border-top: 0
 }
-table tr th:first-child,
-table tr td:first-child {
-    margin-top: 0;
-}
-table tr th:last-child,
-table tr td:last-child {
-    margin-bottom: 0;
+table tbody+tbody {
+	border-top: 2px solid #ddd
 }
 
-.CodeMirror-gutters {
-    border-right: 1px solid #ddd;
-}
-
-.md-fences,
-code,
-tt {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
-    border-radius: 3px;
-    padding: 0;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-}
-
-.md-fences {
-    margin-bottom: 15px;
-    margin-top: 15px;
-    padding: 0.2em 1em;
-    padding-top: 8px;
-    padding-bottom: 6px;
-}
 .task-list{
-	padding-left: 0;
+	padding:0;
 }
 
 .task-list-item {
-	padding-left:32px;
+	padding-left: 1.6rem;
 }
 
-.task-list-item input {
-  top: 3px;
-  left: 8px;
+.task-list-item input:before {
+	content: '\221A';
+	display: inline-block;
+	width: 1.33333333rem;
+  	height: 1.6rem;
+	vertical-align: middle;
+	text-align: center;
+	color: #ddd;
+	background-color: #fefefe;
 }
 
-@media screen and (min-width: 914px) {
-    /*body {
-        width: 854px;
-        margin: 0 auto;
-    }*/
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before{
+	color: inherit;
 }
-@media print {
-    html {
-        font-size: 13px;
-    }
-    table,
-    pre {
-        page-break-inside: avoid;
-    }
-    pre {
-        word-wrap: break-word;
-    }
-}
-
-.md-fences {
-	background-color: #f8f8f8;
+.md-tag {
+	color: inherit;
+	font: inherit;
 }
 #write pre.md-meta-block {
-	padding: 1rem;
-    font-size: 85%;
-    line-height: 1.45;
-    background-color: #f7f7f7;
-    border: 0;
-    border-radius: 3px;
-    color: #777777;
-    margin-top: 0 !important;
+	min-height: 35px;
+	padding: 0.5em 1em;
 }
+#write pre.md-meta-block {
+	white-space: pre;
+	background: #f8f8f8;
+	border: 0px;
+	color: #999;
+	
+	width: 100vw;
+	max-width: calc(100% + 60px);
+	margin-left: -30px;
+	border-left: 30px #f8f8f8 solid;
+	border-right: 30px #f8f8f8 solid;
 
-.mathjax-block>.code-tooltip {
-	bottom: .375rem;
+	margin-bottom: 2em;
+	margin-top: -1.3333333333333rem;
+	padding-top: 26px;
+	padding-bottom: 10px;
+	line-height: 1.8em;
+	font-size: 0.9em;
+	font-size: 0.76em;
+	padding-left: 0;
 }
-
-#write>h3.md-focus:before{
-	left: -1.5625rem;
-	top: .375rem;
+.md-img-error.md-image>.md-meta{
+	vertical-align: bottom;
 }
-#write>h4.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h5.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-#write>h6.md-focus:before{
-	left: -1.5625rem;
-	top: .285714286rem;
-}
-.md-image>.md-meta {
-    border: 1px solid #ddd;
-    border-radius: 3px;
-    font-family: Consolas, "Liberation Mono", Courier, monospace;
-    padding: 2px 4px 0px 4px;
-    font-size: 0.9em;
-    color: inherit;
-}
-
-.md-tag{
-	color: inherit;
+#write>h5.md-focus:before {
+	top: 2px;
 }
 
 .md-toc {
-    margin-top:20px;
-    padding-bottom:20px;
+	margin-top: 40px;
 }
 
-#typora-quick-open {
-    border: 1px solid #ddd;
-    background-color: #f8f8f8;
+.md-toc-content {
+	padding-bottom: 20px;
 }
 
-#typora-quick-open-item {
-    background-color: #FAFAFA;
-    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
-    border-style: solid;
-    border-width: 1px;
+.outline-expander:before {
+	color: inherit;
+	font-size: 14px;
+	top: auto;
+	content: "\f0da";
+	font-family: FontAwesome;
 }
 
-#md-notification:before {
-    top: 10px;
+.outline-expander:hover:before,
+.outline-item-open>.outline-item>.outline-expander:before {
+  	content: "\f0d7";
 }
 
-/** focus mode */
-.on-focus-mode blockquote {
-    border-left-color: rgba(85, 85, 85, 0.12);
+/** source code mode */
+#typora-source {
+	font-family: Courier, monospace;
+    color: #6A6A6A;
 }
 
-header, .context-menu, .megamenu-content, footer{
-    font-family: "Segoe UI", "Arial", sans-serif;
+.cm-s-typora-default .cm-header, 
+.cm-s-typora-default .cm-property,
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+	color: #428bca;
+}
+
+.cm-s-typora-default .cm-atom, .cm-s-typora-default .cm-number {
+	color: #777777;
 }
 
 
@@ -516,13 +384,13 @@ header, .context-menu, .megamenu-content, footer{
 </style>
 </head>
 <body class='typora-export' >
-<div  id='write'  class = 'is-mac'><h3><a name='header-c5' class='md-header-anchor '></a>Guide to the Races of DnD</h3><p>A concise description of each race in alphabetical order</p><h4><a name='header-c491' class='md-header-anchor '></a>Dwarf</h4><h5><a name='header-c23' class='md-header-anchor '></a>Short &amp; Stout</h5><ul><li>Shorter than 5ft, but can weight as much as a human</li><li>Courage &amp; endurace match larger races</li><li>Dwarven skin ranges from deep brown to a paler
+<div  id='write'  class = 'is-mac'><h3><a name='header-c5' class='md-header-anchor '></a>Practical Guide to the Races of DnD</h3><p>A concise description of each race in alphabetical order</p><h4><a name='header-c491' class='md-header-anchor '></a>Dwarf</h4><h5><a name='header-c23' class='md-header-anchor '></a>Short &amp; Stout</h5><ul><li>Shorter than 5ft, but can weight as much as a human</li><li>Courage &amp; endurace match larger races</li><li>Dwarven skin ranges from deep brown to a paler
 hue tinged with red. The most common shades are
 light brown or deep tan.</li><li>Their hair, worn long but in simple styles, is usually black, gray, or brown, though paler dwarves often have red hair. </li><li>Male dwarves value their beards highly and
 groom them carefully</li></ul><h5><a name='header-c45' class='md-header-anchor '></a>Long memory, Long grudges</h5><ul><li><p>Live to be more than 400 years old (unique perspective of world)</p></li><li><p>Respectful of their traditions</p><ul><li><p>Devotion to the <em>gods of the dwarves</em></p><ul><li><strong>Ideals</strong>: industrious labor, skill in battle, and devotion to the forge (loyalty)</li></ul></li></ul></li></ul><h5><a name='header-c63' class='md-header-anchor '></a>Gods, gold &amp; clan</h5><ul><li>Motivated by desire for treasure (for self or clan), command of inspiration from gods, seeking to restore clan etc.</li></ul><h5><a name='header-c70' class='md-header-anchor '></a>Slow to trust</h5><ul><li>Get along passably with other races </li><li>&quot;The difference between an acquaintance and a friend is about a hundred years&quot;, can have trouble trusting shorter lived races</li><li>Distrustful or elves but respectful of smiths and hatred of orcs</li><li>Don&#39;t take halflings seriously</li><li>Admire humans but the short life spans cause it hard to make lasting friendships</li></ul><h5><a name='header-c415' class='md-header-anchor '></a>Names</h5><ul><li>Usually granted by elder. Usually passed down from generations.</li><li><strong>Male Names:</strong> Adrik, Alberich, Baern, Barendd, Brottor,
 Bruenor, Dain, Darrak, Delg, Eberk, Einkil, Fargrim,
 Flint, Gardain, Harbek, Kildrak, Morgran, Orsik,
 Oskar, Rangrim, Rurik, Taklinn, Thoradin, Thorin,
-Tordek, Traubon, Travok, Ulfgar, Veit, Vonda</li><li><strong>Female Names:</strong> Amber, Artin, Audhild, Bardryn, Dagnal, Diesa, Eldeth, Falkrunn, Finellen, Gunnloda, Gurdis, Helja, Hlin, Kathra, Kristryd, Ilde, Liftrasa, Mardred, Riswynn, Sannl, Torbera, Torgga, Vistra</li><li><strong>Clan Names:</strong> Balderk, Battlehammer, Brawnanvil, Dankil, Fireforge, Frostbeard, Gorunn, Holderhek, Ironfist, Loderr, Lutgehr, Rumnaheim, Strakeln, Torunn, Ungart</li></ul><h5><a name='header-c438' class='md-header-anchor '></a>Traits</h5><ul><li><p>Ability Score Increase</p><ul><li>Constitution +2</li></ul></li><li><p>Age</p><ul><li>Mature at 50, live to 350 avg</li></ul></li><li><p>Alignment</p><ul><li>lawful</li><li>tend towards good (fair play and everyone deserves a share)</li></ul></li><li><p>Size</p><ul><li>4-5 ft tall</li><li>150 lbs </li></ul></li><li><p>Speed</p><ul><li>25ft</li><li>Not reduced by wearing heavy armor</li></ul></li><li><p>Languages</p><ul><li>Speak, read &amp; write <em>Common</em> &amp; <em>Dwarvish</em></li></ul></li><li><p>Traits</p><ul><li><p>Darkvision</p><ul><li>seen within 60ft in dim conditions (no color)</li></ul></li><li><p>Dwarven Resilience</p><ul><li>Advantage on saving throws against <strong>poison</strong></li><li>Resistance against <strong>poison</strong> damage</li></ul></li><li><p>Dwarven Combat Training</p><ul><li>Proficiency with <strong>battleaxe, handaxe, light hammer &amp; warhammer</strong></li></ul></li><li><p>Tool Proficiency</p><ul><li><p>Proficiency with artisan tools of choice</p><ul><li>Smith&#39;s tools, brewer&#39;s supplies, or mason&#39;s tools</li></ul></li></ul></li><li><p>Stonecunning</p><ul><li>When you make <em>Intelligence</em> check related to origin of stone work you are considered proficient in history skill and add ouble your proficiency bonus to the check</li></ul></li></ul></li><li><p>Subraces</p><ul><li><p>Hill Dwarf</p><ul><li>Wisom score +1</li><li>Hit point max increased by +1, and extra +1 on every level</li></ul></li><li><p>Mountain Dwarf</p><ul><li>tend to be taller and with lighter skin</li><li>Strength score +2</li><li>Proficiency with ligh and medium armor</li></ul></li></ul></li></ul><p></p><h4><a name='header-c752' class='md-header-anchor '></a>Elf</h4><h5><a name='header-c727' class='md-header-anchor '></a>Slender &amp; Graceful</h5><h5><a name='header-c732' class='md-header-anchor '></a>Timeless Perspective</h5><h5><a name='header-c734' class='md-header-anchor '></a>Hidden Woodland Realms</h5><h5><a name='header-c736' class='md-header-anchor '></a>Exploration and Adventure</h5><h5><a name='header-c738' class='md-header-anchor '></a>Haughty but Gracious</h5><h5><a name='header-c740' class='md-header-anchor '></a>Names</h5><h5><a name='header-c742' class='md-header-anchor '></a>Traits</h5><p></p><h4><a name='header-c751' class='md-header-anchor '></a>Halfling</h4><h5><a name='header-c754' class='md-header-anchor '></a>Small &amp; Practical</h5><h5><a name='header-c756' class='md-header-anchor '></a>Blend into the Crowd</h5><h5><a name='header-c758' class='md-header-anchor '></a>Pastoral Pleasantries</h5><h5><a name='header-c760' class='md-header-anchor '></a>Exploring Opportunities</h5><h5><a name='header-c762' class='md-header-anchor '></a>Names</h5><h5><a name='header-c764' class='md-header-anchor '></a>Traits</h5><p></p><h4><a name='header-c773' class='md-header-anchor '></a>Human</h4><h5><a name='header-c774' class='md-header-anchor '></a>Broad Spectrum</h5><h5><a name='header-c776' class='md-header-anchor '></a>Variety</h5><h5><a name='header-c778' class='md-header-anchor '></a>Lasting Institutions</h5><h5><a name='header-c780' class='md-header-anchor '></a>Ambition</h5><h5><a name='header-c782' class='md-header-anchor '></a>Names &amp; Ethnicities</h5><h5><a name='header-c784' class='md-header-anchor '></a>Everyone&#39;s Second-Best Friends</h5><h5><a name='header-c786' class='md-header-anchor '></a>Traits</h5></div>
+Tordek, Traubon, Travok, Ulfgar, Veit, Vonda</li><li><strong>Female Names:</strong> Amber, Artin, Audhild, Bardryn, Dagnal, Diesa, Eldeth, Falkrunn, Finellen, Gunnloda, Gurdis, Helja, Hlin, Kathra, Kristryd, Ilde, Liftrasa, Mardred, Riswynn, Sannl, Torbera, Torgga, Vistra</li><li><strong>Clan Names:</strong> Balderk, Battlehammer, Brawnanvil, Dankil, Fireforge, Frostbeard, Gorunn, Holderhek, Ironfist, Loderr, Lutgehr, Rumnaheim, Strakeln, Torunn, Ungart</li></ul><h5><a name='header-c438' class='md-header-anchor '></a>Traits</h5><ul><li><p><strong>Ability Score Increase</strong></p><ul><li>Constitution +2</li></ul></li><li><p><strong>Age</strong></p><ul><li>Mature at 50, live to 350 avg</li></ul></li><li><p><strong>Alignment</strong></p><ul><li>lawful</li><li>tend towards good (fair play and everyone deserves a share)</li></ul></li><li><p><strong>Size</strong></p><ul><li>4-5 ft tall</li><li>150 lbs </li></ul></li><li><p><strong>Speed</strong></p><ul><li>25ft</li><li>Not reduced by wearing heavy armor</li></ul></li><li><p><strong>Languages</strong></p><ul><li>Speak, read &amp; write <em>Common</em> &amp; <em>Dwarvish</em></li></ul></li><li><p><strong>Traits</strong></p><ul><li><p>Darkvision</p><ul><li>seen within 60ft in dim conditions (no color)</li></ul></li><li><p>Dwarven Resilience</p><ul><li>Advantage on saving throws against <strong>poison</strong></li><li>Resistance against <strong>poison</strong> damage</li></ul></li><li><p>Dwarven Combat Training</p><ul><li>Proficiency with <strong>battleaxe, handaxe, light hammer &amp; warhammer</strong></li></ul></li><li><p>Tool Proficiency</p><ul><li><p>Proficiency with artisan tools of choice</p><ul><li>Smith&#39;s tools, brewer&#39;s supplies, or mason&#39;s tools</li></ul></li></ul></li><li><p>Stonecunning</p><ul><li>When you make <em>Intelligence</em> check related to origin of stone work you are considered proficient in history skill and add ouble your proficiency bonus to the check</li></ul></li></ul></li><li><p><strong>Subraces</strong></p><ul><li><p>Hill Dwarf</p><ul><li>Wisom score +1</li><li>Hit point max increased by +1, and extra +1 on every level</li></ul></li><li><p>Mountain Dwarf</p><ul><li>tend to be taller and with lighter skin</li><li>Strength score +2</li><li>Proficiency with ligh and medium armor</li></ul></li></ul></li></ul><p></p><h4><a name='header-c752' class='md-header-anchor '></a>Elf</h4><h5><a name='header-c727' class='md-header-anchor '></a>Slender &amp; Graceful</h5><h5><a name='header-c732' class='md-header-anchor '></a>Timeless Perspective</h5><h5><a name='header-c734' class='md-header-anchor '></a>Hidden Woodland Realms</h5><h5><a name='header-c736' class='md-header-anchor '></a>Exploration and Adventure</h5><h5><a name='header-c738' class='md-header-anchor '></a>Haughty but Gracious</h5><h5><a name='header-c740' class='md-header-anchor '></a>Names</h5><h5><a name='header-c742' class='md-header-anchor '></a>Traits</h5><p></p><h4><a name='header-c751' class='md-header-anchor '></a>Halfling</h4><h5><a name='header-c754' class='md-header-anchor '></a>Small &amp; Practical</h5><h5><a name='header-c756' class='md-header-anchor '></a>Blend into the Crowd</h5><h5><a name='header-c758' class='md-header-anchor '></a>Pastoral Pleasantries</h5><h5><a name='header-c760' class='md-header-anchor '></a>Exploring Opportunities</h5><h5><a name='header-c762' class='md-header-anchor '></a>Names</h5><h5><a name='header-c764' class='md-header-anchor '></a>Traits</h5><p></p><h4><a name='header-c773' class='md-header-anchor '></a>Human</h4><h5><a name='header-c774' class='md-header-anchor '></a>Broad Spectrum</h5><h5><a name='header-c776' class='md-header-anchor '></a>Variety</h5><h5><a name='header-c778' class='md-header-anchor '></a>Lasting Institutions</h5><h5><a name='header-c780' class='md-header-anchor '></a>Ambition</h5><h5><a name='header-c782' class='md-header-anchor '></a>Names &amp; Ethnicities</h5><h5><a name='header-c784' class='md-header-anchor '></a>Everyone&#39;s Second-Best Friends</h5><h5><a name='header-c786' class='md-header-anchor '></a>Traits</h5></div>
 </body>
 </html>
