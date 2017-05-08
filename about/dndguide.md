@@ -1,6 +1,48 @@
 Welcome to my casual guide on how to get started playing DnD. I am a beginner myself so this is my condensation of the Player Basic Rules v03. This will guide you through the rule set you should know before you start playing (like rolling and character creation) and then give you the basic rule set on what you need to know throughout your adventure. Let's Quest!
 
+### Summary
 
+> *More information to each portion can be found in the more verbose later sections.*
+
+Before we start playing we need to understand some of the basics of the game. This includes *roleplaying*, *rolling*, and how to *create our character*. 
+
+Roleplaying is how we portray our character in the game. The two main ways are **descriptive**, describing how your character acts in the world, and **active**, acting as your character.
+
+In the game all events are determined by **dice rolls**. Depending on the situation your DM will tell you what kind to roll (d20, d12, d10, d8, d6, d4). Most commonly for character actions we will use d20 to determine success or failure. In certain situations there can also be *advantage* and *disadvantage* that will affect your rolls.
+
+To **create our character** we need to do 4 things:
+
+1. Choose your race
+   - dragonborn, dwarf, halfing, elf, gnome, tiefling, human, half-elf, half-orc
+   - [*Practical Guide to the Races of DnD*](races.html)
+2. Choose your class
+   - Barbarian, Bard, Cleric, Druid, Fighter, Monk, Paladin, Ranger, Rogue, Sorcerer, Warlock, Wizard
+   - [*Practical Guide to the Classes of DnD*](classes.html)
+3. Determine ability points
+4. Describe your character
+5. Choose equipment
+
+Once we have set up our characters and we understand the basics we can get started on our adventure! There are alot of things that can happen along our quest so lets start to learn the rules of the world.
+
+Our character has a set of 6 ability scores that make up *who they are and what they are good at*, the small number under this score is the **modifer** and will discern how these are practically used. Whenever our character has to do something in-game they will make an **ability check**. Your character rolls a d20 dice and adds the relevant modifier, if it is greater than or equal to the *difficulty* of the action you do it. One special type of action is called a **saving throw** that you will take to resist *spells*, *traps*, *posion*, or any similar thing.
+
+During our adventure our character has physical limitations like **speed**, **hunger & thirst**, **vision**, and **environmental damage**.
+
+You can rest along your adventure to regain HP. There are both **short** and **long** rests. Short allow you to heal and use hit dice, while long auto refill your HP and regen hit dice.
+
+**Combat** is a very important part of DnD so lets take a look. Combat is broken into rounds where each character in the fight takes a turn in order (based on **initiative roll**).
+
+*How combat will run in each instance*
+
+1. Determine suprise
+2. Establish positions
+3. Roll Initiative
+4. Take turns
+5. Begin next round
+
+
+
+# The REAL Guide
 
 ## Before you play
 
@@ -174,7 +216,7 @@ Modifiers based on special situations
      - *Thrown weapons* can use stregth mod instead
 
 
-###### The specifics
+### The specifics
 
 1. **Choosing a Race**
 
@@ -379,6 +421,73 @@ DnD organizes combat into a cycle of rounds and turns. A **round** represents ab
 > The order of turns is determined by rolling inititative at the beginning of an encounter (Dexterity check). 
 >
 > The DM rolls for groups of identical creatures, so they act at the same time.
+
+Certain special abilities, spells, & situations allow you to take a **reaction** which is an instant response to a trigger of some kind.
+
+You can break up your move by moving some amount, taking your action, and moving the remainder of your movement value.
+
+**Standing** from prone takes effort equal to half your movement distance.
+
+#### Actions in combat
+
+##### Attack
+
+Basic action where you attack with either melee or ranged weapon against an enemy.
+
+To attack you:
+
+1. Choose a target
+2. Determine modifiers, advantage/disadvantage, etc
+   - Strength modifier for melee
+   - Dexterity modifier for ranged
+   - Include proficiency bonus if proficient with weapon
+3. Resolve the attack
+
+To determine a **hit** on your enemy you roll a d20 and add appropriate modifier, if you overcome the enemy's **armor class** you hit and you can roll for damage.
+
+**Special rolls** include 1 & 20. On roll of a 20 it is a *critical hit* and the attack hits no matter the enemies armor class. A 1 misses no matter the armor class.
+
+##### Cast a Spell
+
+If your character can use magic you can cast spells as an action. Follow the guide on your spell to know how to cast. Certain actions can have a casting time that is longer than a typical action and therefore will require different rules.
+
+##### Dash
+
+An action used to double your movement during your turn.
+
+##### Disengage
+
+Your movement no longer provokes opportunity attacks for the rest of turn
+
+##### Dodge
+
+Focus entirely on dodging incoming attacks. For the rest of the turn all invoming attacks have disadvantage and dexterity saving throws you roll have advantage.
+
+##### Help
+
+Lend aide to another character, they gain ability on their next action
+
+##### Hide
+
+Make a dexterity *stealth* check to attempt to hide
+
+##### Ready
+
+Set up for a *reaction* for some percievable action an enemy could take
+
+##### Search
+
+##### Use Object
+
+###### Step by step
+
+*How combat will run in each instance*
+
+1. Determine suprise
+2. Establish positions
+3. Roll Initiative
+4. Take turns
+5. Begin next round
 
 
 
