@@ -32,13 +32,9 @@ You can rest along your adventure to regain HP. There are both **short** and **l
 
 **Combat** is a very important part of DnD so lets take a look. Combat is broken into rounds where each character in the fight takes a turn in order (based on **initiative roll**).
 
-*How combat will run in each instance*
+*How combat will run in each instance:*
 
-1. Determine suprise
-2. Establish positions
-3. Roll Initiative
-4. Take turns
-5. Begin next round
+Determine suprise - Establish positions - Roll Initiative - Take turns - Begin next round
 
 
 
