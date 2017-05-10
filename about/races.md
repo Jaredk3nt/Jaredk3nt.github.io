@@ -1,4 +1,4 @@
-### Practical Guide to the Races of DnD
+## Practical Guide to the Races of DnD
 
 A concise description of each race in alphabetical order to help you create your character.
 
@@ -137,6 +137,8 @@ Has a mind and mastery of at least the basics of magic
 ---
 
 ### Gnome
+
+A race that is as innovative as they are small.
 
 | A.S increase    | Age                               | Alignment           | Speed | Language        |
 | --------------- | --------------------------------- | ------------------- | ----- | --------------- |
