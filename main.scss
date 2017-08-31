@@ -122,6 +122,8 @@ a {
   .content-wrapper{
     width: 60%;
     margin: 0 auto;
+    padding: 1em;
+    background: #fff;
 
     .img-holder {
       display: inline-block;
@@ -142,7 +144,6 @@ a {
       width: 54%;
       vertical-align: top;
       font-family: 'Lato', sans-serif;
-      color: #fff;
       padding-left: 3%;
 
       h1 {
@@ -170,7 +171,7 @@ a {
       .divider {
         height: 3px;
         width: 100%;
-        background-color: #fff;
+        background-color: #000;
       }
     }
   }

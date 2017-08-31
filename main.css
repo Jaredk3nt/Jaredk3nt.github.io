@@ -81,7 +81,9 @@ a {
     text-align: center; }
   #about-wrapper .content-wrapper {
     width: 60%;
-    margin: 0 auto; }
+    margin: 0 auto;
+    padding: 1em;
+    background: #fff; }
     #about-wrapper .content-wrapper .img-holder {
       display: inline-block;
       width: 42%;
@@ -97,7 +99,6 @@ a {
       width: 54%;
       vertical-align: top;
       font-family: 'Lato', sans-serif;
-      color: #fff;
       padding-left: 3%; }
       #about-wrapper .content-wrapper .text-holder h1 {
         text-transform: uppercase;
@@ -120,7 +121,7 @@ a {
       #about-wrapper .content-wrapper .text-holder .divider {
         height: 3px;
         width: 100%;
-        background-color: #fff; }
+        background-color: #000; }
 
 @media screen and (max-width: 760px) {
   #about {
